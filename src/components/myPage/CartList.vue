@@ -1,6 +1,6 @@
 <template>
   <section class="cart_list">
-    <ul>
+    <ul v-if="cartItem != 0" class="cart_list-yes">
       <li class="cart_list-left">
         <ul classs="cart_list-left-header">
           <li class="cart_list-left-product">상품</li>
@@ -52,6 +52,15 @@
             <button>결제하기</button>
           </li>
         </ul>
+      </li>
+    </ul>
+    <ul v-else class="cart_list-no">
+      <li class="cart_list-no-icon">
+        <i class="fa-solid fa-basket-shopping"></i>
+      </li>
+      <li class="cart_list-no-text">장바구니에 상품이 없습니다!</li>
+      <li class="cart_list-no-btn">
+        <router-link to="/home">쇼핑 계속하기</router-link>
       </li>
     </ul>
   </section>
@@ -115,7 +124,7 @@ export default {
 
 <style lang="scss" scoped>
 .cart_list {
-  ul {
+  .cart_list-yes {
     display: flex;
     gap: 2%;
     .cart_list-left {
@@ -238,6 +247,29 @@ export default {
             width: 100%;
             background-color: var(--main-color);
           }
+        }
+      }
+    }
+  }
+  .cart_list-no {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--gray-color);
+    padding: 8em 0;
+    li {
+      margin: 1% 0;
+      .cart_list-no-text {
+        background-color: blue;
+      }
+      .cart_list-no-btn {
+        background: red;
+        a {
+          display: block;
+          background-color: var(--main-color);
+          padding: 10px 15px;
+          color: white;
         }
       }
     }

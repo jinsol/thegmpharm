@@ -1,7 +1,7 @@
 <template>
   <section class="board_list">
     <ul>
-      <li>
+      <li class="board_list-title">
         <ul class="board_list-content table_header">
           <li class="board_list-content-id">번호</li>
           <li class="board_list-content-title">제목</li>
@@ -65,6 +65,7 @@ export default {
       justify-content: space-between;
       text-align: center;
       padding: 1% 0;
+      border-bottom: 1px solid var(--gray-color);
       * {
         font-family: var(--body-font);
       }
@@ -88,6 +89,45 @@ export default {
     &.table_header {
       background-color: gray;
       color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .board_list {
+    ul {
+      .board_list-title {
+        display: none;
+      }
+      li {
+        .board_list-content {
+          a {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 0.6em 0;
+            .board_list-content-id {
+              display: none;
+            }
+            .board_list-content-title {
+              width: 100%;
+              font-weight: 600;
+              color: black;
+              flex-basis: 100%;
+              font-size: 18px;
+            }
+            .board_list-content-author,
+            .board_list-content-date {
+              flex-basis: auto;
+              width: auto;
+              color: gray;
+              font-size: 13px;
+            }
+            .board_list-content-author {
+              margin-right: 8px;
+            }
+          }
+        }
+      }
     }
   }
 }

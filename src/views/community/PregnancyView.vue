@@ -7,9 +7,12 @@
       :currentPage.sync="currentPage"
       :itemsPerPage="itemsPerPage"
     />
-    <button class="board_edit_BT">
-      <router-link to="/boardcreate">글쓰기</router-link>
-    </button>
+    <div class="board_edit_BT">
+      <router-link to="/boardcreate">
+        <i class="fa-solid fa-pen-to-square"></i>
+        글쓰기
+      </router-link>
+    </div>
     <pagination
       :totalItems="dataPregnancyList.length"
       :currentPage.sync="currentPage"
@@ -64,13 +67,20 @@ export default {
 
 <style lang="scss" scoped>
 .board_edit_BT {
-  width: 140px;
-  height: 50px;
-  background-color: var(--main-color);
-  color: white;
-  font-size: 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  margin: 2% 0;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid gray;
+    color: gray;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: clamp(13px, 2.5vw, 16px);
+    padding: 10px 20px 8px;
+  }
 }
 </style>

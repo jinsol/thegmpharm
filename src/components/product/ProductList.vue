@@ -35,7 +35,8 @@
           <li class="product_name">{{ item.name }}</li>
           <li class="product_desc">{{ item.desc }}</li>
           <li v-if="item.stock">
-            {{ item.price }}원
+            {{ item.price | formatPrice }}
+            <span v-if="item.discount">{{ item.price / item.discount }}</span>
             <button @click="addCart(item)">
               <i v-if="heartFilled[index]" class="fa-heart fa-solid"></i>
               <i v-else class="fa-heart fa-regular"></i>
@@ -82,15 +83,49 @@ export default {
   },
   methods: {
     addCart(item) {
-      this.$store.commit("add__Cart", item);
+      const existingItem = this.$store.state.cartItem.find(
+        (cartItem) => cartItem.id === item.id
+      );
+
+      if (existingItem) {
+        const confirmMessage = `이미 카트에 담긴 아이템입니다. 수량을 추가하시겠습니까?`;
+        if (confirm(confirmMessage)) {
+          // 사용자가 확인을 누르면 수량 추가 로직을 수행합니다.
+          this.$store.commit("add__Cart", item);
+        }
+      } else {
+        // 카트에 상품이 없으면 바로 추가합니다.
+        this.$store.commit("add__Cart", item);
+      }
     },
     calculateHeartFilled(startIndex, endIndex) {
       this.heartFilled = []; // 배열 초기화
-      for (let i = startIndex; i < endIndex; i++) {
+      for (
+        let i = startIndex;
+        i < endIndex && i < this.productList.length;
+        i++
+      ) {
         const cartItem = this.$store.state.cartItem.find(
           (cartItem) => cartItem.id === this.productList[i].id
         );
         this.heartFilled.push(!!cartItem); // 해당 상품에 대한 카트 아이템이 있는지 확인하여 하트 상태 결정
+      }
+    },
+  },
+  filters: {
+    formatPrice(price) {
+      if (!parseInt(price)) {
+        return "";
+      }
+      if (price > 999) {
+        let priceString = String(price);
+        let priceArray = priceString.split("").reverse();
+        let index = 0;
+        while (priceArray.length > index + 3) {
+          priceArray.splice(index + 3, 0, ",");
+          index += 4;
+        }
+        return priceArray.reverse().join("") + "원";
       }
     },
   },

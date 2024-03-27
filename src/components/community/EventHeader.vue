@@ -1,6 +1,6 @@
 <template>
   <section class="event_header">
-    <ul>
+    <ul class="event_header-box">
       <li
         v-for="(item, index) in menuCategory"
         :key="index"
@@ -9,6 +9,7 @@
       >
         {{ item }}
       </li>
+      <li class="event_header-box-background"></li>
     </ul>
   </section>
 </template>
@@ -25,6 +26,11 @@ export default {
     changeCategory(category) {
       this.selectedCategory = category;
       this.$emit("changeCategory", category);
+      const backgroundElement = document.querySelector(
+        ".event_header-box-background"
+      );
+      backgroundElement.style.left =
+        this.menuCategory.indexOf(category) * 50 + "%";
     },
   },
 };
@@ -32,25 +38,44 @@ export default {
 
 <style lang="scss" scoped>
 .event_header {
+  margin-bottom: 4%;
   ul {
     display: flex;
     justify-content: space-between;
-    background-color: var(--gray-color);
+    align-items: center;
+    background-color: whitesmoke;
     border-radius: 50px;
+    position: relative;
+
     li {
-      // flex-basis: 50%;
+      transition: all 0.5s;
+      color: gray;
+      cursor: pointer;
+      &:not(:last-child) {
+        z-index: 1;
+      }
+      flex-basis: 50%;
       text-align: center;
       padding: 2% 0;
-
       &:hover {
         background: rgba(255, 255, 255, 0.1);
       }
       &.active {
-        background-color: white;
         color: var(--main-color);
-        margin: 1%;
-        border-radius: 50px;
+        font-weight: bolder;
       }
+    }
+    .event_header-box-background {
+      position: absolute;
+      width: 48%;
+      height: 80%;
+      transform: translateX(2%);
+      border-radius: 50px;
+      background-color: white;
+      transition: all 0.5s ease-in-out;
+      left: 0;
+      border: 1px solid var(--gray-color);
+      box-shadow: 0 0 10px 0px var(--gray-color);
     }
   }
 }
