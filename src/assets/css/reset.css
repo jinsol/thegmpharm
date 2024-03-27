@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GmarketSansMedium";
+  letter-spacing: -0.8px;
+}
+
+body {
+  background-color: white;
+}
+:root {
+  --main-color: #46b7b0;
+  --gray-color: rgba(0, 0, 0, 0.15);
+  --main-font: "GmarketSansMedium";
+  --body-font: "Gothic A1";
+  --mobile-width: 900;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="text"] {
+  border: none;
+  outline: none;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+  background-color: none;
+  background: none;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
+.row {
+  max-width: 1400px;
+  margin: 4% auto 10%;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    padding: 0 4%;
+  }
+}
+
+.text-right {
+  text-align: right;
+}

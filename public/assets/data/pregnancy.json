@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "익명",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 2,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "익명",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 3,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "익명",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 4,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "익명",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 5,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "익명",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 6,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "aab",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 7,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "익명",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 8,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "aaa",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 9,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "aaa",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 10,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "aaa",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 11,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "aaa",
+    "date": "2024-03-15",
+    "hits": 4
+  },
+  {
+    "id": 12,
+    "title": "다른 제목",
+    "content": "내용을 입력하세요",
+    "author": "aaa",
+    "date": "2024-03-15",
+    "hits": 4
+  }
+]
