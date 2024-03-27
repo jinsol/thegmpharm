@@ -45,7 +45,6 @@ export default {
     border: 1px solid var(--gray-color);
     box-shadow: 0 4px 6px 2px var(--gray-color);
     margin-bottom: 6%;
-
     transition: all 0.3s ease-in-out;
     .event_list-content-img {
       transition: all 0.5s;

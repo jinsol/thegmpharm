@@ -54,9 +54,9 @@
                 <i class="fa-solid fa-user"></i>
               </li>
               <li class="top_section-info_section-content">
-                <a href=""
+                <router-link to="/signup"
                   >로그인을 진행해주세요 <i class="fa-solid fa-angle-right"></i
-                ></a>
+                ></router-link>
                 <a href="">마이페이지</a>
               </li>
               <li>
@@ -217,7 +217,7 @@ header {
   padding: 0 2%;
   position: relative;
   z-index: 9999;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
+  // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
   .header_nav {
     margin: 0 auto;
     & > li > ul {
@@ -389,7 +389,7 @@ header {
 }
 
 header.mobile {
-  box-shadow: 5px 5px 5px var(--gray-color);
+  // box-shadow: 5px 5px 5px var(--gray-color);
   .header_nav {
     .header_nav-row2 {
       background-color: white;

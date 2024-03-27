@@ -1,8 +1,8 @@
 <template>
-  <div class="section__title row">
+  <section class="section__title">
     <h2>{{ title }}</h2>
     <p>{{ sub_title }}</p>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -15,18 +15,31 @@ export default {
 <style lang="scss" scoped>
 .section__title {
   padding: 2em 0 4em;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid var(--gray-color);
+  text-align: center;
+  transition: all 0.5s;
+
   h2 {
-    text-align: center;
-    font-size: 42px;
+    font-size: clamp(32px, 2.5vw, 42px);
     font-weight: bold;
     text-transform: uppercase;
   }
   p {
-    text-align: center;
-    font-size: 18px;
-    font-weight: lighter;
+    font-size: clamp(12px, 2.5vw, 18px);
+    font-weight: 300;
     color: gray;
+    font-family: var(--body-font);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .section__title {
+    padding: 0 0 1em;
+    text-align: left;
+
+    p {
+      font-size: 16px;
+    }
   }
 }
 </style>

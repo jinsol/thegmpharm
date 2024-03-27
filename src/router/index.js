@@ -43,103 +43,36 @@ import InformationView from "@/views/InformationView.vue";
 import AllianceView from "@/views/AllianceView.vue";
 // 마이페이지 (cart 등)
 import CartView from "@/views/mypage/CartView.vue";
-import PopUpView from "@/views/Pop/PopUpView.vue" 
+import SignUpview from "@/views/mypage/SignUpView.vue";
+import PopUpView from "@/views/Pop/PopUpView.vue";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
   routes: [
-    {
-      path: "/",
-      name: "home",
-      component: HomeView,
-    },
-    {
-      path: "/aboutus",
-      name: "aboutus",
-      component: AboutUsView,
-    },
-    {
-      path: "/shopping",
-      name: "shopping",
-      component: ShoppingView,
-    },
+    { path: "/", name: "home", component: HomeView },
+    { path: "/aboutus", name: "aboutus", component: AboutUsView },
+    { path: "/shopping", name: "shopping", component: ShoppingView },
     {
       path: "/regulardelivery",
       name: "regulardelivery",
       component: RegularDeliveryView,
     },
-    {
-      path: "/gmpharmcare",
-      name: "gmpharmcare",
-      component: GmpharmCareView,
-    },
-    {
-      path: "/pilldoc",
-      name: "pilldoc",
-      component: PillDocView,
-    },
-    {
-      path: "/teuni",
-      name: "teuni",
-      component: TeuniView,
-    },
-    {
-      path: "/event",
-      name: "event",
-      component: EventView,
-    },
-    {
-      path: "/board",
-      name: "board",
-      component: BoardView,
-    },
-    {
-      path: "/pregnancy",
-      name: "pregnancy",
-      component: PregnancyView,
-    },
-    {
-      path: "/ambassador",
-      name: "ambassador",
-      component: AmbassadorView,
-    },
-    {
-      path: "/magazine",
-      name: "magazine",
-      component: MagazineView,
-    },
-    {
-      path: "/pharmacist",
-      name: "pharmacist",
-      component: PharmacistView,
-    },
-    {
-      path: "/membership",
-      name: "membership",
-      component: MembershipView,
-    },
-    {
-      path: "/questions",
-      name: "questions",
-      component: QuestionsView,
-    },
-    {
-      path: "/inquiry",
-      name: "inquiry",
-      component: InquiryView,
-    },
-    {
-      path: "/contact",
-      name: "contact",
-      component: ContactView,
-    },
-    {
-      path: "/notice",
-      name: "notice",
-      component: NoticeView,
-    },
+    { path: "/gmpharmcare", name: "gmpharmcare", component: GmpharmCareView },
+    { path: "/pilldoc", name: "pilldoc", component: PillDocView },
+    { path: "/teuni", name: "teuni", component: TeuniView },
+    { path: "/event", name: "event", component: EventView },
+    { path: "/board", name: "board", component: BoardView },
+    { path: "/pregnancy", name: "pregnancy", component: PregnancyView },
+    { path: "/ambassador", name: "ambassador", component: AmbassadorView },
+    { path: "/magazine", name: "magazine", component: MagazineView },
+    { path: "/pharmacist", name: "pharmacist", component: PharmacistView },
+    { path: "/membership", name: "membership", component: MembershipView },
+    { path: "/questions", name: "questions", component: QuestionsView },
+    { path: "/inquiry", name: "inquiry", component: InquiryView },
+    { path: "/contact", name: "contact", component: ContactView },
+    { path: "/notice", name: "notice", component: NoticeView },
     { path: "/Terms", name: "Terms", component: TermsView },
     { path: "/privacy", name: "privacy", component: PrivacyView },
     { path: "/information", name: "information", component: InformationView },
@@ -154,7 +87,7 @@ export default new Router({
     { path: "/noticepost7", name: "noticepost7", component: NoticePostView7 },
     { path: "/noticepost8", name: "noticepost8", component: NoticePostView8 },
     { path: "/noticepost9", name: "noticepost9", component: NoticePostView9 },
-    { path: "/popup", name: "popup", component:PopUpView },
+    { path: "/popup", name: "popup", component: PopUpView },
     {
       path: "/noticepost10",
       name: "noticepost10",
@@ -165,15 +98,8 @@ export default new Router({
       name: "boardcreate",
       component: BoardCreate,
     },
-    {
-      path: "/boarddetail/:id",
-      name: "Id",
-      component: BoardDetail,
-    },
-    {
-      path: "/cart",
-      name: "cart",
-      component: CartView,
-    },
+    { path: "/boarddetail/:id", name: "Id", component: BoardDetail },
+    { path: "/cart", name: "cart", component: CartView },
+    { path: "/signup", name: "signup", component: SignUpview },
   ],
 });
