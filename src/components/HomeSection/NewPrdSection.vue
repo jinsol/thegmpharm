@@ -4,33 +4,31 @@
       <div class="New">
           <div class="titBox">
             <p>New Product</p>
-            <p>지엠팜의 새로운 제품을 소개합니다.</p>
+            <p class="slogun">지엠팜의 새로운 제품을 소개합니다.</p>
             <div class="Btn">
-                 <button @click="changeActiveButton(BtnNames.name1)" :class="{ active: activeButton === BtnNames.name1 }">{{ BtnNames.name1 }}</button>
-                 <button @click="changeActiveButton(BtnNames.name2)" :class="{ active: activeButton === BtnNames.name2 }">{{ BtnNames.name2 }}</button>
-                 <button @click="changeActiveButton(BtnNames.name3)" :class="{ active: activeButton === BtnNames.name3 }">{{ BtnNames.name3 }}</button>
-                 <button @click="changeActiveButton(BtnNames.name4)" :class="{ active: activeButton === BtnNames.name4 }">{{ BtnNames.name4 }}</button>
+                 <div><button @click="changeActiveButton(BtnNames.name1)" :class="{ active: activeButton === BtnNames.name1 }">{{ BtnNames.name1 }}</button></div>
+                 <div><button @click="changeActiveButton(BtnNames.name2)" :class="{ active: activeButton === BtnNames.name2 }">{{ BtnNames.name2 }}</button></div>
+                 <div><button @click="changeActiveButton(BtnNames.name3)" :class="{ active: activeButton === BtnNames.name3 }">{{ BtnNames.name3 }}</button></div>
+                 <div><button @click="changeActiveButton(BtnNames.name4)" :class="{ active: activeButton === BtnNames.name4 }">{{ BtnNames.name4 }}</button></div>
             </div>
           </div>
           <div class="prodBox" v-for="(item,index) in activeProduct.PrdInfo" :key="index">
-            <div class="imgBox">
-              <img :src="item.img" alt="">
+            <div class="img__warp">
+              <div class="imgBox">
+                <img :src="item.img" alt="">
+              </div>
             </div>
             <div class="productText">
               <div class="textBox">
-                <p>{{ item.name }}</p>
-                <p>{{ item.sub }}</p>
+                <div class="name"><p>{{ item.name }}</p></div>
+                <div class="sub"><p>{{ item.sub }}</p></div>
+                <div class="desc"><p>{{ item.desc }}</p></div>
+                <div class="coment"><p>{{ item.coment }}</p></div>
+                <div class="price"><p>{{ item.price }}</p></div>
               </div>
-              <div class="prodName">
-                <p>{{ item.desc }}</p>
-                <p>{{ item.coment }}</p>
-                <p>{{ item.price }}</p>
-              </div>
-              <div class="desc">
-                <p></p>
-                <p></p>
-                <router-link to="/">구매하기</router-link>
-              </div>
+              <div>
+                  <router-link to="/">구매하기</router-link>
+             </div>
             </div>
           </div>
       </div>
@@ -91,30 +89,43 @@ methods: {
 background: #f7f9f6;
 .New {
 display: flex;
+justify-content: space-between;
 padding: 15px;
   .titBox {
     p{
       font-size: 45px;
       color: #333;
     }
+    .slogun{
+      font-size: 17px;
+      color: #888;
+    }
   }
   .Btn{
     display: flex;
     flex-direction: column;
     button{
-    border: 1px solid #333;
+    border: 1px solid #e1e1e1;
     padding: 30px;
     border-radius: 50px;
     background: #fff;
     margin: 5px;
+    font-size: 16px;
+    color: #666;
     &:hover{
       color:#46b7B0;
         border:1px solid #46b7B0;
+    }
+    &.active{
+      color:#fff;
+      background: #46b7B0;
     }
   }}
   .prodBox {
     display: flex;
       justify-content: space-between;
+      .img__warp{
+       padding: 10px 30px;
     .imgBox {
       background: #fff;
       border-radius: 50%;
@@ -123,24 +134,56 @@ padding: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex:0 0 70%;
       img {
+        transition: all 0.3s;
+        &:hover{
+          scale: (1.1);
+        }
       }
     }
+  }
     .productText {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      width: 300px;
     }
     .textBox{
-      border-bottom: 1px solid #333;
+      .name{
+        font-size: 32px;
+        color: #111;
+        margin-bottom: 10px;
+      }
+      .sub{
+        font-size: 16px;
+        color: #8c8c8c;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #333;
+      }
+      .desc{
+        font-size: 20px;
+        color: #222;
+        margin-bottom: 10px;
+      }
+      .coment{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 15px;
+        color: #777;
+        margin-bottom: 10px;
     }
-    .prodName {
+    .price{
+      font-size: 20px;
+      color: #222;
+      margin-bottom: 10px;
+    }
     }
     .desc {
     }
     a{
       display: block;
-      border: 1px solid #999;
+      border: 1px solid #e1e1e1;
       padding: 30px;
       border-radius: 75px;
       text-align: center;
