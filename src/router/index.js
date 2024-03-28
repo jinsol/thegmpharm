@@ -42,8 +42,10 @@ import PrivacyView from "@/views/PrivacyView.vue";
 import InformationView from "@/views/InformationView.vue";
 import AllianceView from "@/views/AllianceView.vue";
 // 마이페이지 (cart 등)
+import MyPageView from "@/views/mypage/MyPageView.vue";
 import CartView from "@/views/mypage/CartView.vue";
 import SignUpview from "@/views/mypage/SignUpView.vue";
+import Loginview from "@/views/mypage/LoginView.vue";
 import PopUpView from "@/views/Pop/PopUpView.vue";
 
 Vue.use(Router);
@@ -99,7 +101,9 @@ export default new Router({
       component: BoardCreate,
     },
     { path: "/boarddetail/:id", name: "Id", component: BoardDetail },
+    { path: "/mypage", name: "mypage", component: MyPageView },
     { path: "/cart", name: "cart", component: CartView },
+    { path: "/login", name: "login", component: Loginview },
     { path: "/signup", name: "signup", component: SignUpview },
   ],
 });

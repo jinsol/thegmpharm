@@ -23,6 +23,10 @@ export default {
   beforeDestroy() {
     window.removeEventListener("resize", this.updateScreenWidth);
   },
+  created() {
+    // this.initLoginState();
+    // this.$store.dispatch("initLoginState");
+  },
   methods: {
     updateScreenWidth() {
       const is1400 = window.innerWidth < 1400;
@@ -31,6 +35,7 @@ export default {
       const isMobile = window.innerWidth < 900;
       store.commit("setMobile", isMobile);
     },
+    // ...mapActions(["initLoginState"]),
   },
 };
 </script>
