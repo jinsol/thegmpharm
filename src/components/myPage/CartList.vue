@@ -56,11 +56,20 @@
     </ul>
     <ul v-else class="cart_list-no">
       <li class="cart_list-no-icon">
-        <i class="fa-solid fa-basket-shopping"></i>
+        <dotlottie-player
+          src="https://lottie.host/26cbe740-4fdd-43a4-a00e-5f0503decfb1/4kiJiYWbIl.json"
+          background="transparent"
+          speed="1"
+          style="width: 300px; height: 300px"
+          direction="1"
+          playMode="normal"
+          loop
+          autoplay
+        ></dotlottie-player>
       </li>
       <li class="cart_list-no-text">장바구니에 상품이 없습니다!</li>
       <li class="cart_list-no-btn">
-        <router-link to="/home">쇼핑 계속하기</router-link>
+        <router-link to="/">쇼핑 계속하기</router-link>
       </li>
     </ul>
   </section>
@@ -260,10 +269,14 @@ export default {
     padding: 8em 0;
     li {
       margin: 1% 0;
-      .cart_list-no-text {
-        background-color: blue;
+      &.cart_list-no-icon {
+        font-size: 50px;
       }
-      .cart_list-no-btn {
+      &.cart_list-no-text {
+        font-size: clamp(16px, 2.5vw, 20px);
+        transition: all 0.5s;
+      }
+      &.cart_list-no-btn {
         background: red;
         a {
           display: block;
