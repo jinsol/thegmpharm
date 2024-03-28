@@ -2,14 +2,22 @@
     <div id="hotKeyword" class="row" >
         <section-title title="Hot Keyword" /> 
         <div class="Btn">
-            <button @click="changeActiveButton(PrdMenu.menu1)" :class="{ active: activeButton === PrdMenu.menu1 }"><div><img src="/image/main_hot-tab01.png" alt="dd">{{ PrdMenu.menu1 }}</div></button>
-            <button @click="changeActiveButton(PrdMenu.menu2)" :class="{ active: activeButton === PrdMenu.menu2 }"><div><img src="/image/main_hot-tab02.png" alt="dd">{{ PrdMenu.menu2 }}</div></button>
-            <button @click="changeActiveButton(PrdMenu.menu3)" :class="{ active: activeButton === PrdMenu.menu3 }"><div><img src="/image/main_hot-tab03.png" alt="dd">{{ PrdMenu.menu3 }}</div></button>
-            <button @click="changeActiveButton(PrdMenu.menu4)" :class="{ active: activeButton === PrdMenu.menu4 }"><div><img src="/image/main_hot-tab04.png" alt="dd">{{ PrdMenu.menu4 }}</div></button>
-            <button @click="changeActiveButton(PrdMenu.menu5)" :class="{ active: activeButton === PrdMenu.menu5 }"><div><img src="/image/main_hot-tab05.png" alt="dd">{{ PrdMenu.menu5 }}</div></button>
-            <button @click="changeActiveButton(PrdMenu.menu6)" :class="{ active: activeButton === PrdMenu.menu6 }"><div><img src="/image/main_hot-tab06.png" alt="dd">{{ PrdMenu.menu6 }}</div></button>
-            <button @click="changeActiveButton(PrdMenu.menu7)" :class="{ active: activeButton === PrdMenu.menu7 }"><div><img src="/image/main_hot-tab07.png" alt="dd">{{ PrdMenu.menu7 }}</div></button>
-            <button @click="changeActiveButton(PrdMenu.menu8)" :class="{ active: activeButton === PrdMenu.menu8 }"><div><img src="/image/main_hot-tab08.png" alt="dd">{{ PrdMenu.menu8 }}</div></button>
+            <button @click="changeActiveButton(PrdMenu.menu1)" :class="{ active: activeButton === PrdMenu.menu1 }">
+                <div><img :src="getButtonImage(PrdMenu.menu1)" alt="dd"><span>{{ PrdMenu.menu1 }}</span></div></button>
+            <button @click="changeActiveButton(PrdMenu.menu2)" :class="{ active: activeButton === PrdMenu.menu2 }">
+                <div><img :src="getButtonImage(PrdMenu.menu2)" alt="dd"><span>{{ PrdMenu.menu2 }}</span></div></button>
+            <button @click="changeActiveButton(PrdMenu.menu3)" :class="{ active: activeButton === PrdMenu.menu3 }">
+                <div><img :src="getButtonImage(PrdMenu.menu3)" alt="dd"><span>{{ PrdMenu.menu3 }}</span></div></button>
+            <button @click="changeActiveButton(PrdMenu.menu4)" :class="{ active: activeButton === PrdMenu.menu4 }">
+                <div><img :src="getButtonImage(PrdMenu.menu4)" alt="dd"><span>{{ PrdMenu.menu4 }}</span></div></button>
+            <button @click="changeActiveButton(PrdMenu.menu5)" :class="{ active: activeButton === PrdMenu.menu5 }">
+                <div><img :src="getButtonImage(PrdMenu.menu5)" alt="dd"><span>{{ PrdMenu.menu5 }}</span></div></button>
+            <button @click="changeActiveButton(PrdMenu.menu6)" :class="{ active: activeButton === PrdMenu.menu6 }">
+                <div><img :src="getButtonImage(PrdMenu.menu6)" alt="dd"><span>{{ PrdMenu.menu6 }}</span></div></button>
+            <button @click="changeActiveButton(PrdMenu.menu7)" :class="{ active: activeButton === PrdMenu.menu7 }">
+                <div><img :src="getButtonImage(PrdMenu.menu7)" alt="dd"><span>{{ PrdMenu.menu7 }}</span></div></button>
+            <button @click="changeActiveButton(PrdMenu.menu8)" :class="{ active: activeButton === PrdMenu.menu8 }">
+                <div><img :src="getButtonImage(PrdMenu.menu8)" alt="dd"><span>{{ PrdMenu.menu8 }}</span></div></button>
         </div>
         <div id="slideSection2" class="slideInner">
         <Swiper  class="slide" :options="swiperOptions">
@@ -73,6 +81,7 @@ export default {
                 {img:'./image/f7aada54d7b297ae5ebedbeb494d55f1.png',alt:'제품사진', link:'/',name:'[지엠팜] 더프로바이오 아연디 (17종 유산균+비타민D+아연)  유소아용 유산균',coment:'보장균수 50억 유산균과 아연, 비타민D를 한 번에. 여러 가지 찾아 먹이지 마시고 한 번에 편하게 먹이세요. 지엠팜은 엄마 아빠의 마음으로 생각합니다.', price:'45,000원', icon:['./image/custom_2716877566803974.png'] },
                 {img:'./image/RDV_m1_p06.png',                      alt:'제품사진', link:'/',name:'[지엠팜] 더징크디시럽 / 1개월분 ( 아연 + 비타민D ) 어린이아연',coment:'흡수율이 높은 글루콘산 아연과 비타민 D를 달콤한 딸기맛 시럽으로 한 번에. 국내산 딸기 원물을 사용하여 믿을 수 있는 제품.', price:'25,000원', icon:['./image/custom_2716877566803974.png', './image/custom_1016487034057505.png'] },
                 {img:'./image/RDV_m1_p14.png',                      alt:'제품사진', link:'/',name:'[지엠팜]더칼슘디/1개월분 (유소아 / 어린이 칼슘) 칼슘 마그네슘',coment:'유소아 성장기 필수 미네랄인 칼슘과 뼈 건강에 도움이 되는 비타민 D, 칼슘 흡수/활용에 도움이 되는 망간, 마그네슘까지 한 번에.', price:'25,000원', icon:['./image/custom_2716877566803974.png'] },
+                {munuImages:'./image/main_hot-tab01_h.png'}
             ]
             },
             {
@@ -168,7 +177,36 @@ export default {
         methods: {
         changeActiveButton(menu) {
             this.activeButton = menu;
-        }
+        },
+        changeActiveButton(menu) {
+      this.activeButton = menu;
+    },
+    getButtonImage(menu) {
+  // 현재 버튼이 활성화되었는지 확인
+  const isActive = this.activeButton === menu;
+  // 활성화되었다면 바꾼 후 이미지를 반환, 그렇지 않으면 기존 이미지 반환
+  switch (menu) {
+    case this.PrdMenu.menu1:
+      return isActive ? '/image/main_hot-tab01_h.png' : '/image/main_hot-tab01.png';
+    case this.PrdMenu.menu2:
+      return isActive ? '/image/main_hot-tab02_h.png' : '/image/main_hot-tab02.png';
+    case this.PrdMenu.menu3:
+      return isActive ? '/image/main_hot-tab03_h.png' : '/image/main_hot-tab03.png';
+    case this.PrdMenu.menu4:
+      return isActive ? '/image/main_hot-tab04_h.png' : '/image/main_hot-tab04.png';
+    case this.PrdMenu.menu5:
+      return isActive ? '/image/main_hot-tab05_h.png' : '/image/main_hot-tab05.png';
+    case this.PrdMenu.menu6:
+      return isActive ? '/image/main_hot-tab06_h.png' : '/image/main_hot-tab06.png';
+    case this.PrdMenu.menu7:
+      return isActive ? '/image/main_hot-tab07_h.png' : '/image/main_hot-tab07.png';
+    case this.PrdMenu.menu8:
+      return isActive ? '/image/main_hot-tab08_h.png' : '/image/main_hot-tab08.png';
+    // 나머지 버튼들에 대해서도 동일하게 처리 가능
+    default:
+      return ''; // 기본값 설정
+  }
+},
     },
 }
 </script>
@@ -177,12 +215,19 @@ export default {
 #hotKeyword{
     .Btn{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         border-bottom: 1px solid #d9d9d9;
         button{
           font-size: 15px;
           color: #333;
           &.active{color: #46b7B0;}
+          span{
+            display: block;
+            padding: 10px;
+          }
+          img{
+            
+          }
         }
     }
     .slideInner{
@@ -215,6 +260,8 @@ export default {
             font-size: 18px;
             color:#222;
         }
+        .prev{}
+        .next{}
     }
 }
 </style>

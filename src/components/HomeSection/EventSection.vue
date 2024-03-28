@@ -1,16 +1,21 @@
 <template>
         <div class="row">
+        <div class="container">
             <div class="event ">
-                <img src="/image/4.png" alt="banner">
-            </div>
-            <div id="eventSlide" class="slideInner">
-                <swiper class="slide" :options="eventSlide">
-                   <swiper-slide v-for="(item, index) in images" :key="index">
-                           <img :src="item.img" :alt="item.alt">
-                    </swiper-slide>
-                    <div class="swiper-pagination" slot="pagination"></div>
-                </swiper>
-            </div>
+                    <img src="/image/4.png" alt="banner">
+                </div>
+                <div class="slideOuter">
+                    <div id="eventSlide" class="slideInner">
+                        <swiper class="slide" :options="eventSlide">
+                           <swiper-slide v-for="(item, index) in images" :key="index">
+                                   <img :src="item.img" :alt="item.alt">
+                            </swiper-slide>
+                            <div class="swiper-pagination" slot="pagination"></div>
+                        </swiper>
+                    </div>
+                </div>
+
+</div>
         </div>
 </template>
 
@@ -50,4 +55,23 @@ import '@/assets/css/myswiper.css'
 </script>
 
 <style lang="scss" scoped>
+.container{
+    display: flex;
+    justify-content: space-between;
+    .event{
+        width: 49%;
+        img{
+  
+        }
+    }
+    .slideOuter{
+        width: 49%;
+        .slideInner{
+            .slide{
+                img{
+                }
+            }
+        }
+    }
+}
 </style>
