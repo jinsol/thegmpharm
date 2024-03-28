@@ -16,8 +16,8 @@
           </li>
           <li class="myPage_section">
             <div v-if="!isMobile">
-              <span v-if="isLoggedIn == true"
-                >환영합니다, {{ username }} 님</span
+              <span v-if="isLoggedIn == true" class="myPage_section-username"
+                >환영합니다, <span>{{ username }}</span> 님</span
               >
               <router-link to="/cart">
                 <i
@@ -321,23 +321,31 @@ header {
             div {
               display: flex;
               gap: 12px;
-              button {
-                i {
-                  font-size: 18px;
-                  color: gray;
-                }
-                .goToCart_BT.fa-solid {
+              .myPage_section-username {
+                font-size: 14px;
+                color: gray;
+                font-family: var(--body-font);
+                span {
                   color: var(--main-color);
-                  position: relative;
-                  span {
-                    position: absolute;
-                    inset: 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 6px;
-                    color: white;
-                  }
+                  font-family: var(--main-font);
+                  font-weight: bold;
+                }
+              }
+              i {
+                font-size: 18px;
+                color: gray;
+              }
+              .goToCart_BT.fa-solid {
+                color: var(--main-color);
+                position: relative;
+                span {
+                  position: absolute;
+                  inset: 0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 6px;
+                  color: white;
                 }
               }
             }

@@ -125,9 +125,11 @@ export default new Vuex.Store({
       context.commit("remove__Cart", index);
     },
     signup({ commit, state }, { id, username, password }) {
+      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
       const newUser = { id, username, password };
+      existingUsers.push(newUser);
+      localStorage.setItem("users", JSON.stringify(existingUsers));
       commit("addUser", newUser);
-      localStorage.setItem("users", JSON.stringify(state.users));
       return Promise.resolve();
     },
     login({ commit }, { username, password }) {
