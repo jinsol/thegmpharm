@@ -22,7 +22,7 @@
   :root :hover{
     color: #5e5c5c;
   }
-  #eventSlide   .swiper-container {
+  #eventSlide .swiper-container {
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -84,7 +84,8 @@
     transition-property: transform;
   }
   .swiper-slide-invisible-blank {
-    visibility: hidden;
+    visibility
+    : hidden;
   }
   /* Auto Height */
   .swiper-container-autoheight,
@@ -297,6 +298,14 @@
   }
   .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
     transform: scale(0.33);
+  }
+  #eventSlide .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #fff;
+    border:1px solid #fff;
   }
   /*도트버튼의 기본 스타일*/
   .swiper-pagination-bullet {

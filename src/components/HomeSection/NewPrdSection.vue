@@ -89,9 +89,10 @@ methods: {
 background: #f7f9f6;
 .New {
 display: flex;
-justify-content: space-between;
 padding: 15px;
   .titBox {
+    flex: 1;
+    width: 30%;
     p{
       font-size: 45px;
       color: #333;
@@ -102,8 +103,6 @@ padding: 15px;
     }
   }
   .Btn{
-    display: flex;
-    flex-direction: column;
     button{
     border: 1px solid #e1e1e1;
     padding: 30px;
@@ -122,18 +121,21 @@ padding: 15px;
     }
   }}
   .prodBox {
+    width: 70%;
     display: flex;
       justify-content: space-between;
       .img__warp{
        padding: 10px 30px;
+       width: 70%;
     .imgBox {
       background: #fff;
       border-radius: 50%;
-      width: 500px;
-      height: 500px;
+      width: 80%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
       img {
         transition: all 0.3s;
         &:hover{
@@ -143,16 +145,16 @@ padding: 15px;
     }
   }
     .productText {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      width: 300px;
-    }
+      overflow: hidden;
+      width: 30%;
     .textBox{
+      overflow: hidden;
+      text-align: left;
+      word-break: keep-all;
       .name{
         font-size: 32px;
         color: #111;
-        margin-bottom: 10px;
+        margin-bottom: 10px; 
       }
       .sub{
         font-size: 16px;
@@ -168,7 +170,7 @@ padding: 15px;
       .coment{
         text-overflow: ellipsis;
         white-space: nowrap;
-        overflow: hidden;
+
         font-size: 15px;
         color: #777;
         margin-bottom: 10px;
@@ -178,8 +180,6 @@ padding: 15px;
       color: #222;
       margin-bottom: 10px;
     }
-    }
-    .desc {
     }
     a{
       display: block;
@@ -192,6 +192,7 @@ padding: 15px;
         border:1px solid #46b7B0;
       }
     }
+  }
   }
 }
 }
