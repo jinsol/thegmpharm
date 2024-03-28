@@ -264,4 +264,58 @@ export default {
         .next{}
     }
 }
+@media screen and (max-width:900px){
+    #hotKeyword{
+    .Btn{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #d9d9d9;
+        button{
+          font-size: 10px;
+          color: #333;
+          &.active{color: #46b7B0;}
+          span{
+            display: block;
+            padding: 10px;
+          }
+          img{
+            width: 40%;
+          }
+        }
+    }
+    .slideInner{
+        padding: 50px 0;
+        .imgBox{
+            background: #f7f7f7;
+            border-radius: 15px;
+            overflow:hidden ;
+            img{
+            padding: 30px;
+            transition: all 0.3s;
+            &:hover{
+                scale:(1.1);
+            }
+            }
+        }
+        .name{
+            font-size: 10px;
+            color: #222;
+        }
+        .coment{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 10px;
+            color: #777;
+            margin: 5px 0;
+        }
+        .price{
+            font-size: 10px;
+            color:#222;
+        }
+        .prev{}
+        .next{}
+    }
+}
+}
 </style>
