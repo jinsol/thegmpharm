@@ -16,22 +16,32 @@
           </li>
           <li class="myPage_section">
             <div v-if="!isMobile">
-              <button>
-                <router-link to="/cart">
-                  <i
-                    class="fa-heart goToCart_BT"
-                    :class="{
-                      'fa-regular': !cartsCount,
-                      'fa-solid': cartsCount,
-                    }"
-                  >
-                    <span v-if="cartsCount != 0" class="cartsCount">
-                      {{ cartsCount }}
-                    </span>
-                  </i>
-                </router-link>
+              <span v-if="isLoggedIn == true" class="myPage_section-username"
+                >환영합니다, <span>{{ username }}</span> 님</span
+              >
+              <router-link to="/cart">
+                <i
+                  class="fa-heart goToCart_BT"
+                  :class="{
+                    'fa-regular': !cartsCount,
+                    'fa-solid': cartsCount,
+                  }"
+                >
+                  <span v-if="cartsCount != 0" class="cartsCount">
+                    {{ cartsCount }}
+                  </span>
+                </i>
+              </router-link>
+              <router-link v-if="isLoggedIn == false" to="/login">
+                <i class="fa-regular fa-user"></i>
+              </router-link>
+              <button
+                v-if="isLoggedIn == true"
+                @click="logout"
+                class="logout_btn"
+              >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
               </button>
-              <button><i class="fa-regular fa-user"></i></button>
             </div>
             <div v-else>
               <button @click="showNav" class="bars_icon">
@@ -54,13 +64,25 @@
                 <i class="fa-solid fa-user"></i>
               </li>
               <li class="top_section-info_section-content">
-                <router-link to="/signup"
-                  >로그인을 진행해주세요 <i class="fa-solid fa-angle-right"></i
-                ></router-link>
-                <a href="">마이페이지</a>
+                <router-link to="/login" v-if="isLoggedIn == false">
+                  <span>
+                    로그인을 진행해주세요
+                    <i class="fa-solid fa-angle-right"></i>
+                  </span>
+                </router-link>
+                <span v-else>환영합니다, {{ username }} 님</span>
+                <router-link to="/mypage">마이페이지</router-link>
+                <router-link to="/cart">장바구니</router-link>
               </li>
               <li>
-                <router-link to="/cart">장바구니</router-link>
+                <button
+                  v-if="isLoggedIn == true"
+                  @click="logout"
+                  class="logout_btn"
+                >
+                  로그아웃
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </button>
               </li>
             </ul>
           </li>
@@ -133,7 +155,7 @@
             <ul class="depth2">
               <li><router-link to="/event">이벤트</router-link></li>
               <li><router-link to="/board">자유게시판</router-link></li>
-              <li><router-link to="/pregnancy">임밍아웃</router-link></li>
+              <li><router-link to="/pregnancy">임신소식</router-link></li>
               <li><router-link to="/ambassador">엠버서더</router-link></li>
               <li><router-link to="/magazine">매거진</router-link></li>
               <li><router-link to="/pharmacist">약사전문칼럼</router-link></li>
@@ -170,12 +192,16 @@
 
 <script>
 import { mapState } from "vuex";
+
 export default {
   name: "Header",
   data() {
     return {
       carts: [],
     };
+  },
+  created() {
+    this.$store.dispatch("initLoginState");
   },
   methods: {
     showNav() {
@@ -193,12 +219,24 @@ export default {
     header_menu_click(event) {
       event.currentTarget.classList.toggle("active");
     },
+    logout() {
+      if (confirm("로그아웃하시겠습니까?")) {
+        this.$store.dispatch("logout");
+        this.$router.push("/");
+      }
+    },
   },
   computed: {
     cartsCount() {
       let set = new Set(this.$store.state.cartItem);
       let items = [...set];
       return items.length;
+    },
+    isLoggedIn() {
+      return this.$store.getters.isLoggedIn;
+    },
+    username() {
+      return this.$store.getters.loggedInUsername;
     },
     ...mapState(["isMobile"]),
   },
@@ -217,6 +255,7 @@ header {
   padding: 0 2%;
   position: relative;
   z-index: 9999;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   // box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.05);
   .header_nav {
     margin: 0 auto;
@@ -282,23 +321,31 @@ header {
             div {
               display: flex;
               gap: 12px;
-              button {
-                i {
-                  font-size: 18px;
-                  color: gray;
-                }
-                .goToCart_BT.fa-solid {
+              .myPage_section-username {
+                font-size: 14px;
+                color: gray;
+                font-family: var(--body-font);
+                span {
                   color: var(--main-color);
-                  position: relative;
-                  span {
-                    position: absolute;
-                    inset: 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 6px;
-                    color: white;
-                  }
+                  font-family: var(--main-font);
+                  font-weight: bold;
+                }
+              }
+              i {
+                font-size: 18px;
+                color: gray;
+              }
+              .goToCart_BT.fa-solid {
+                color: var(--main-color);
+                position: relative;
+                span {
+                  position: absolute;
+                  inset: 0;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 6px;
+                  color: white;
                 }
               }
             }

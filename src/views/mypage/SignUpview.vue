@@ -1,29 +1,22 @@
 <template>
-  <main>
-    <section-title title="회원가입" />
-    <form @submit.prevent="onSubmit">
-      <input type="text" v-model="username" placeholder="사용자 이름" />
-      <input type="email" v-model="email" placeholder="이메일 주소" />
-      <input type="password" v-model="password" placeholder="비밀번호" />
-      <button type="submit">회원가입</button>
-    </form>
+  <main class="row">
+    <section-title
+      title="회원가입"
+      sub_title="간편한 회원가입을 통해 지엠팜과 함께하세요!"
+    />
+    <sign-up />
   </main>
 </template>
 
 <script>
 import SectionTitle from "@/components/layout/SectionTitle.vue";
+import SignUp from "@/components/mypage/SignUp.vue";
+
 export default {
   components: {
     SectionTitle,
+    SignUp,
   },
-  data() {
-    return {
-      username: "",
-      email: "",
-      password: "",
-    };
-  },
-  methods: {},
 };
 </script>
 

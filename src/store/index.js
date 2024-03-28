@@ -8,17 +8,16 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isMobile: false,
-    is1400: false,
     shoppingList: [],
     boardList: [],
     pregnancyList: [],
     cartItem: [],
     isAddedToCart: {},
+    users: [],
+    isLoggedIn: false,
+    username: "",
   },
   mutations: {
-    set1400(state, value) {
-      state.is1400 = value;
-    },
     setMobile(state, value) {
       state.isMobile = value;
     },
@@ -70,6 +69,25 @@ export default new Vuex.Store({
         state.cartItem[cartItemIndex].quantity++;
       }
     },
+    addUser(state, user) {
+      state.users.push(user);
+    },
+    login(state, username) {
+      state.isLoggedIn = true;
+      state.username = username;
+      localStorage.setItem("isLoggedIn", true);
+      localStorage.setItem("username", username);
+    },
+    logout(state) {
+      state.isLoggedIn = false;
+      state.username = null;
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("username");
+    },
+    setLoginState(state, { isLoggedIn, username }) {
+      state.isLoggedIn = isLoggedIn;
+      state.username = username;
+    },
   },
   actions: {
     init__Shopping({ commit }) {
@@ -101,10 +119,41 @@ export default new Vuex.Store({
       }
     },
     addToCart(context, item) {
-      context.commit("add__Cart", item); // mutation을 호출하여 장바구니에 항목 추가
+      context.commit("add__Cart", item);
     },
     removeFromCart(context, index) {
-      context.commit("remove__Cart", index); // mutation을 호출하여 장바구니에서 항목 제거
+      context.commit("remove__Cart", index);
+    },
+    signup({ commit, state }, { id, username, password }) {
+      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+      const newUser = { id, username, password };
+      existingUsers.push(newUser);
+      localStorage.setItem("users", JSON.stringify(existingUsers));
+      commit("addUser", newUser);
+      return Promise.resolve();
+    },
+    login({ commit }, { username, password }) {
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const loggedInUser = users.find(
+        (user) => user.username === username && user.password === password
+      );
+      if (loggedInUser) {
+        commit("login", username);
+        alert("로그인에 성공하였습니다.");
+        window.location.href = "/";
+        return true;
+      } else {
+        alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+        return false;
+      }
+    },
+    logout({ commit }) {
+      commit("logout");
+    },
+    initLoginState({ commit }) {
+      const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+      const username = localStorage.getItem("username");
+      commit("setLoginState", { isLoggedIn, username });
     },
   },
   getters: {
@@ -112,5 +161,7 @@ export default new Vuex.Store({
     fnGetBoardList: (state) => state.boardList,
     fnGetPregnancyList: (state) => state.pregnancyList,
     cartItemCount: (state) => state.cartItem.length,
+    loggedInUsername: (state) => state.username,
+    isLoggedIn: (state) => state.isLoggedIn,
   },
 });
