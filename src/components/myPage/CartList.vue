@@ -2,7 +2,7 @@
   <section class="cart_list">
     <ul v-if="cartItem != 0" class="cart_list-yes">
       <li class="cart_list-left">
-        <ul classs="cart_list-left-header">
+        <ul class="cart_list-left-header">
           <li class="cart_list-left-product">상품</li>
           <li class="cart_list-left-price">가격</li>
           <li class="cart_list-left-quantity">수량</li>
@@ -165,6 +165,8 @@ export default {
             }
             .textBox {
               color: black;
+              font-weight: bold;
+              font-size: 14px;
             }
           }
           &.cart_list-left-price {
@@ -283,6 +285,31 @@ export default {
           background-color: var(--main-color);
           padding: 10px 15px;
           color: white;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .cart_list-yes {
+      flex-direction: column;
+      .cart_list-left,
+      .cart_list-right {
+        width: 100%;
+
+        &.cart_list-left {
+          .cart_list-left-header {
+            display: none;
+          }
+          .cart_list-left-content {
+            .cart_list-left-product {
+              .imageBox {
+                max-width: 100px;
+              }
+              .textBox {
+              }
+            }
+          }
         }
       }
     }

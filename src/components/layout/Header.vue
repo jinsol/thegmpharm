@@ -436,6 +436,7 @@ header {
 }
 
 header.mobile {
+  padding: 0 4%;
   // box-shadow: 5px 5px 5px var(--gray-color);
   .header_nav {
     .header_nav-row2 {

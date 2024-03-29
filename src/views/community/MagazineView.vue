@@ -2,7 +2,7 @@
   <main class="row">
     <section-title
       title="매거진"
-      sub_title="지엠팜이 펴내는 매거진입니다..??"
+      sub_title="지엠팜에서 볼 수 있는 매거진입니다"
     />
     <community-list
       :contentsList="contentsList"

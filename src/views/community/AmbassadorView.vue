@@ -36,7 +36,7 @@ export default {
       itemsPerPage: 4,
       contentsList: [
         {
-          imageSrc: "@/../public/image/ambassador_230626.jpg",
+          imageSrc: "@/../public/image/ambassador_230626.png",
           title: "지엠팜케어에 대한 서진혁 대표님의 이야기",
           postingDate: "2023-06-26",
         },
