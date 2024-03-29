@@ -96,6 +96,30 @@ export default new Vuex.Store({
       localStorage.setItem("userId", userId);
       localStorage.setItem("username", username);
     },
+    DELETE_POST(state, { postId, boardType }) {
+      if (boardType === "board") {
+        state.boardList = state.boardList.filter((post) => post.id !== postId);
+        localStorage.setItem("boardList", JSON.stringify(state.boardList));
+      } else if (boardType === "pregnancy") {
+        state.pregnancyList = state.pregnancyList.filter(
+          (post) => post.id !== postId
+        );
+        localStorage.setItem(
+          "pregnancyList",
+          JSON.stringify(state.pregnancyList)
+        );
+      }
+    },
+    UPDATE_POST(state, { postId, modifiedPost, boardType }) {
+      // 보드 타입에 따라서 게시물 목록을 찾아 수정
+      const boardList =
+        boardType === "board" ? state.boardList : state.pregnancyList;
+      const postIndex = boardList.findIndex((post) => post.id === postId);
+      if (postIndex !== -1) {
+        // 해당 게시물을 찾았을 때 수정 내용으로 업데이트
+        Object.assign(boardList[postIndex], modifiedPost);
+      }
+    },
   },
   actions: {
     init__Shopping({ commit }) {
@@ -167,6 +191,27 @@ export default new Vuex.Store({
         userId = localStorage.getItem("userId");
       }
       commit("setLoginState", { isLoggedIn, username, userId });
+    },
+    async deletePost({ commit, state }, { postId, boardType }) {
+      try {
+        commit("DELETE_POST", { postId, boardType });
+      } catch (error) {
+        throw new Error("게시물 삭제에 오류가 발생했습니다.");
+      }
+    },
+    async updatePost({ commit, state }, { postId, modifiedPost, boardType }) {
+      // UPDATE_POST mutation 호출하여 게시물 수정
+      commit("UPDATE_POST", { postId, modifiedPost, boardType });
+
+      // 로컬 스토리지에 수정된 게시물 리스트 반영
+      if (boardType === "board") {
+        localStorage.setItem("boardList", JSON.stringify(state.boardList));
+      } else if (boardType === "pregnancy") {
+        localStorage.setItem(
+          "pregnancyList",
+          JSON.stringify(state.pregnancyList)
+        );
+      }
     },
   },
   getters: {

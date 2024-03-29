@@ -43,12 +43,18 @@
 export default {
   data() {
     return {
+      boardType: "",
       boardList: {},
     };
   },
   beforeRouteEnter(to, from, next) {
-    let componentName = from.name;
     next((vm) => {
+      const componentName = from.name;
+      if (componentName === "board") {
+        vm.boardType = "board";
+      } else if (componentName === "pregnancy") {
+        vm.boardType = "pregnancy";
+      }
       if (componentName === "board") {
         vm.boardList = vm.$store.getters.fnGetBoardList.find(
           (item) => item.id == vm.$route.params.id
@@ -65,25 +71,24 @@ export default {
       this.$router.go(-1);
     },
     handleModify() {
-      // 게시물 ID를 파라미터로 전달하여 수정 페이지로 이동
+      // 보드의 타입과 ID를 함께 전달합니다.
       this.$router.push({
         name: "modify-post",
-        params: { id: this.boardList.id },
+        params: { id: this.boardList.id, boardType: this.boardType },
       });
     },
     handleDelete() {
-      // 삭제 확인 메시지 출력
       if (confirm("게시물을 삭제하시겠습니까?")) {
-        // Vuex store의 deletePost 액션 호출
         this.$store
-          .dispatch("deletePost", this.boardList.id)
+          .dispatch("deletePost", {
+            postId: this.boardList.id,
+            boardType: this.boardType,
+          })
           .then(() => {
-            // 삭제 성공 시 메시지 출력 및 목록 페이지로 이동
             alert("게시물 삭제 완료");
-            this.$router.push("/");
+            this.$router.go(-1);
           })
           .catch((error) => {
-            // 삭제 실패 시 에러 메시지 출력
             alert("게시물 삭제 실패: " + error.message);
           });
       }

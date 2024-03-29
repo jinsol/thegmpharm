@@ -19,6 +19,7 @@ import MagazineView from "@/views/community/MagazineView.vue";
 import PharmacistView from "@/views/community/PharmacistView.vue";
 import BoardCreate from "@/components/community/BoardCreate.vue";
 import BoardDetail from "@/components/community/BoardDetail.vue";
+import ModifyPost from "@/components/community/ModifyPost.vue";
 // 고객센터 (맴버십안내, 자주묻는질문, 1:1문의, 기업제휴문의, 공지사항)
 import GuidelineView from "@/views/GuidelineView.vue";
 import MembershipView from "@/views/MembershipView.vue";
@@ -96,6 +97,7 @@ export default new Router({
       component: BoardCreate,
     },
     { path: "/boarddetail/:id", name: "Id", component: BoardDetail },
+    { path: "/modify-post/:id", name: "modify-post", component: ModifyPost },
     { path: "/mypage", name: "mypage", component: MyPageView },
     { path: "/cart", name: "cart", component: CartView },
     { path: "/login", name: "login", component: Loginview },
