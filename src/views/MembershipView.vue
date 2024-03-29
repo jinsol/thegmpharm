@@ -265,4 +265,127 @@ export default {
         }
       }
     }
+    @media screen and (max-width:900px){
+        .contents{
+    padding: 0 0 100px;
+
+.info-section{
+    padding: 27px 10px 46px 9px;
+
+        .box_a{
+            .inBox{
+                padding: 20px 0 40px;
+                h3{
+                    text-align: center;
+                    font-size: 20px;
+                    color: #444;
+                }
+                p{ 
+                    text-align: center;
+                    font-size: 15px;
+                    color: #888;
+                }
+                .box_b{ 
+                background: #f7f9f6;
+                font-size: 15px;
+                margin: 5px 0;
+                float: none;
+                width: 100%;
+                padding: 20px 15px;
+                border-radius: 15px;
+                p{
+                    font-size: 20px;
+                    color: #838383;
+                    font-weight: bold;
+                }
+                .circle{
+                width: 32px;
+                height: 32px;
+                background: #46b7b0;
+                border-radius: 50%; 
+                text-align: center;
+                line-height: 34px;
+                color: #fff;
+                display: inline-block;
+                }
+                .member{
+                    a{   
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                        p{
+                        text-align: left;
+                        font-size: 20px;
+                        margin: 0 0 0 30px;
+                        color: #000;
+                        span{
+                            color: #46b7b0;
+                        }
+                        
+                    }
+                }
+                }
+            }
+            }
+            .tier{
+    padding: 35px;
+    clear: both;
+    .advantage{
+    padding: 20px 0 20px;
+    text-align: center;
+    h3{
+        color: #444;
+        font-size: 30px;
+        margin: 0 0 5px;
+
+    }
+    p{
+        color: #888;
+        font-size: 18px;
+    }
+}
+
+    table {
+        border-collapse: collapse;
+        width: 100%; /* 표의 전체 너비 설정 */
+        margin: auto; /* 가운데 정렬을 위한 마진 설정 */
+        border-top: 2px solid #000;
+
+        th, td {
+        border: 1px solid #e3e3e3;
+        padding: 10px;
+        text-align: center;
+
+
+    }
+    td{
+        color: #888;
+        padding: 15px;
+        border-right: none;
+        font-size: 10px;
+    }
+    th {
+        background-color: #f9f9f9;
+        color: #555;
+        border-left: none;
+        font-size: 10px;
+        word-break: keep-all
+    }
+    }
+    .caution{
+        padding-top: 35px ;
+        h3{
+            font-size: 18px;
+            color: #555;
+        }
+        p{
+            font-size: 15px;
+            color : #888;
+        }
+    }
+}
+        }
+      }
+    }
+    }
 </style>

@@ -34,8 +34,8 @@ export default {
                 { image: "./image/메인배너(pc).gif", alt: "이미지1", href: "/", mobile: "./image/slide_(4).jpg" },
                 { image: "./image/메인배너(pc)-정기배송.jpg", alt: "이미지2", href: "/", mobile: "./image/slide_(5).jpg" },
                 { image: "./image/메인배너(pc)앱.jpg", alt: "이미지3", href: "/", mobile: "./image/slide_(6).jpg" },
-                { image: "./image/메인배너(pc)-라이브.jpg", alt: "이미지1", href: "/", mobile: "./image/slide_(7).jpg" },
-                { image: "./image/메인배너(pc)_3.jpg", alt: "이미지2", href: "/", mobile: "./image/slide_(8).jpg" },
+                { image: "./image/메인배너(pc)-라이브.jpg", alt: "이미지1", href: "/", mobile: "./image/slide_(3).jpg" },
+                { image: "./image/메인배너(pc)_3.jpg", alt: "이미지2", href: "/", mobile: "./image/slide_(4).jpg" },
             ],
             breakpoint: 900,
             isMobileView: false

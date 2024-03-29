@@ -32,8 +32,6 @@
     <div class="footerbot row">
         <div class="info">
             <div class="footerlogo"><router-link to="#"> <img :src="photo[0].logo" :alt="photo[0].alt"> </router-link></div>
-            
-    
     <div class="cominfo">
         <p>상호명 : <span class="gmpharm">(주)지엠팜</span></p><p>&nbsp;|&nbsp;</p>
         <p>대표이사 : 김세종, 서진혁, 전윤식</p><p>&nbsp;|&nbsp;</p>
@@ -255,5 +253,150 @@
     }
 
 }
+@media screen and (max-width:900px){
+    #footer{
+    height: 400px;
+    background: #fafafa;
+    border-top: 1px solid #ddd; ;
 
+    .footertop{
+        height: 75px;
+        font-size: 10px;
+        border-bottom: 1px solid  #ddd ;
+        display: flex;
+        justify-content: space-around;
+        .footerlink{
+            flex: 0 0 45%;
+            display: flex;
+            align-items: center;
+            ul{
+                display: flex;
+                li{
+                    color: #888;
+                    margin-right: 10px;
+                    font-weight: bold;
+                }
+                .privacy{
+                    color:#444
+                }
+            }
+        }
+        .footerright{
+            display: flex;
+            align-items: center;
+            .inquiry{
+            width: 122px;
+            height: 47px;
+            border-radius: 25px;
+            color: #444;
+            font-size: 13px;
+            text-align: center;
+            line-height: 47px;
+            border: 1px solid #e9e9e9;
+            display: inline-block;
+            margin-right: 10px;
+            background: #fff;
+            transition:all 0.3s
+            }
+            .inquiry:hover {
+            color: #46b7B0;
+            border: 1px solid #46b7B0;
+    }
+    .hoverBox{
+        width: 45px;
+        height: 46px;
+        margin-right: 5px;
+            .kakao{
+            .talk-image:hover {
+            content: url("./image/footer_talk_h.png");
+}
+            }
+        }
+        .hoverBox{
+            width: 45px;
+        height: 46px;
+            .instagram{
+            .insta-image:hover {
+            content: url("./image/footer_instar_h.png");
+}
+            }
+        }
+        }
+    }
+    .footerbot{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 10px 50px;
+        text-align: center;
+        .info{
+            color: #888;
+            .footerlogo{
+                width: 140px;
+                height: 36px;
+                margin: 0 0 30px ;
+            }
+            .cominfo{
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 10px;
+                color: #888;
+                .gmpharm{
+                    color: #555;   
+                }
+                .confi{
+                    color: #000;
+                }
+            }
+            .copyrights{
+                color: #afafaf;
+                font-size: 8px;
+                margin: 25px 0 0;
+            }
+        }
+    }
+    .special{
+        .cs{
+            .tit{
+                color: #666;
+                font-size: 8px;
+                margin: 0 0 8px;
+            }
+            .num{
+                color: #46b7B0;
+                font-size: 15px;
+                margin: 0 0 5px;
+                font-weight: bold;
+            }
+            .em{
+                color: #333;
+                font-size: 14px;
+            }
+            .time{
+                margin: 0 0 50px;
+            p{
+                color: #888;
+                font-size: 10px;
+            }
+        }
+        }
+        .bank{
+            .bank_tit{
+                color: #666;
+                font-size: 10px;
+                margin: 0 0 8px;
+            }
+            .bank_num{
+                color: #333;
+                font-size: 10px;
+                margin: 0 0 8px;
+            }
+            .bank_icon{
+                color: #888;
+                font-size: 10px;
+            }
+        }
+    }
+
+}
+}
 </style>

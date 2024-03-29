@@ -73,4 +73,43 @@ export default {
         }
     }
 }
+@media screen and (max-width:900px){
+    .tag__list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 20px;
+    .tag__item {
+        flex: 0 0 19%;
+        display: flex;
+        flex-direction: column;
+        button {
+            color: #555;
+            font-size: 19px;
+            font-weight: bold;
+            margin: 0 -5px;
+            padding: 20px 10px;
+            background: #fff;
+            border: 1px solid #ddd;
+            height: 71px;
+            border-radius: 10px;
+            &.first-button {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+            &.last-button {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+        &.active {
+            button {
+                background-color: #46b7B0;
+                color: #fff;
+                border: 1px solid #46b7B0;
+            }
+        }
+    }
+}
+}
 </style>

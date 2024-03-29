@@ -56,4 +56,32 @@
   }
     }
 }
+@media screen and (max-width:900px){
+    .back{
+    background: #eef4f8;
+    .cage{
+        max-width: 1400px;
+  margin: 4% auto 0%;
+  .linkBox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .mainBox{
+        padding: 10px;
+        .imgContainer{
+            .imgBox{
+                img{
+                }
+            }
+        }
+        .textBox{
+            h3{font-size: 15px;
+            text-align: center;}
+            p{display: none;}
+        }
+    }
+  }
+    }
+}
+}
 </style>

@@ -61,7 +61,6 @@ import '@/assets/css/myswiper.css'
     .event{
         width: 49%;
         img{
-  
         }
     }
     .slideOuter{
@@ -73,5 +72,27 @@ import '@/assets/css/myswiper.css'
             }
         }
     }
+}
+@media screen and (max-width:900px){
+    .container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    .event{
+        width: 100%;
+        img{
+        }
+    }
+    .slideOuter{
+        width: 100%;
+        margin-top:30px;
+        .slideInner{
+            .slide{
+                img{
+                }
+            }
+        }
+    }
+}
 }
 </style>

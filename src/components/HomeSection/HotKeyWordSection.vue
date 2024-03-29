@@ -81,7 +81,7 @@ export default {
                 {img:'./image/f7aada54d7b297ae5ebedbeb494d55f1.png',alt:'제품사진', link:'/',name:'[지엠팜] 더프로바이오 아연디 (17종 유산균+비타민D+아연)  유소아용 유산균',coment:'보장균수 50억 유산균과 아연, 비타민D를 한 번에. 여러 가지 찾아 먹이지 마시고 한 번에 편하게 먹이세요. 지엠팜은 엄마 아빠의 마음으로 생각합니다.', price:'45,000원', icon:['./image/custom_2716877566803974.png'] },
                 {img:'./image/RDV_m1_p06.png',                      alt:'제품사진', link:'/',name:'[지엠팜] 더징크디시럽 / 1개월분 ( 아연 + 비타민D ) 어린이아연',coment:'흡수율이 높은 글루콘산 아연과 비타민 D를 달콤한 딸기맛 시럽으로 한 번에. 국내산 딸기 원물을 사용하여 믿을 수 있는 제품.', price:'25,000원', icon:['./image/custom_2716877566803974.png', './image/custom_1016487034057505.png'] },
                 {img:'./image/RDV_m1_p14.png',                      alt:'제품사진', link:'/',name:'[지엠팜]더칼슘디/1개월분 (유소아 / 어린이 칼슘) 칼슘 마그네슘',coment:'유소아 성장기 필수 미네랄인 칼슘과 뼈 건강에 도움이 되는 비타민 D, 칼슘 흡수/활용에 도움이 되는 망간, 마그네슘까지 한 번에.', price:'25,000원', icon:['./image/custom_2716877566803974.png'] },
-                {munuImages:'./image/main_hot-tab01_h.png'}
+               
             ]
             },
             {
@@ -263,5 +263,59 @@ export default {
         .prev{}
         .next{}
     }
+}
+@media screen and (max-width:900px){
+    #hotKeyword{
+    .Btn{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #d9d9d9;
+        button{
+          font-size: 10px;
+          color: #333;
+          &.active{color: #46b7B0;}
+          span{
+            display: block;
+            padding: 10px;
+          }
+          img{
+            width: 40%;
+          }
+        }
+    }
+    .slideInner{
+        padding: 50px 0;
+        .imgBox{
+            background: #f7f7f7;
+            border-radius: 15px;
+            overflow:hidden ;
+            img{
+            padding: 30px;
+            transition: all 0.3s;
+            &:hover{
+                scale:(1.1);
+            }
+            }
+        }
+        .name{
+            font-size: 10px;
+            color: #222;
+        }
+        .coment{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 10px;
+            color: #777;
+            margin: 5px 0;
+        }
+        .price{
+            font-size: 10px;
+            color:#222;
+        }
+        .prev{}
+        .next{}
+    }
+}
 }
 </style>
