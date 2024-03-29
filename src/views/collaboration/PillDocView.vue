@@ -1,10 +1,7 @@
 <template>
   <main class="row">
-    <section-title
-      title="필독상식"
-      sub_title="지엠팜 전문약사 X 약 짓는 오빠들"
-    />
-    <pill-Introduction />
+    <pill-title />
+    <pill-introduction />
     <Contents-list :pillData="pillData" :class="{ mobile: isMobile }" />
     <p class="info">
       *본 내용은 생활 속 건강 정보를 전달하기 위해 구성된 약사칼럼입니다.
@@ -14,6 +11,7 @@
 
 <script>
 import SectionTitle from "@/components/layout/SectionTitle.vue";
+import PillTitle from "@/components/collaboration/pillTitle.vue";
 import PillIntroduction from "@/components/collaboration/pillIntroduction.vue";
 import ContentsList from "@/components/collaboration/ContentsList.vue";
 
@@ -23,6 +21,7 @@ export default {
   name: "PillDoc",
   components: {
     SectionTitle,
+    PillTitle,
     PillIntroduction,
     ContentsList,
   },
@@ -115,7 +114,8 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  display: block;
+  margin: 0 auto;
+
   img {
     width: 100%;
   }
