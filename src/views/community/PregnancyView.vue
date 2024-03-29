@@ -1,6 +1,9 @@
 <template>
   <main class="row">
-    <section-title title="임밍아웃" sub_title="임신 소식 넣는 곳?" />
+    <section-title
+      title="임신소식"
+      sub_title="임신 소식을 알리고 지엠팜만의 특별한 혜택을 만나보세요!"
+    />
     <board-list
       :boardList="dataPregnancyList"
       :totalItems="dataPregnancyList.length"

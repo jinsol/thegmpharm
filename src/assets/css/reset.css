@@ -37,6 +37,7 @@ body {
   --mobile-width: 900;
   --board-border: 1px solid #e7e7e7;
   --board-background: #f9f9f9;
+  --title-size: clamp(13px, 2.5vw, 16px);
 }
 a {
   text-decoration: none;
