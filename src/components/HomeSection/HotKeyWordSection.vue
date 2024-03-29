@@ -19,7 +19,7 @@
             <button @click="changeActiveButton(PrdMenu.menu8)" :class="{ active: activeButton === PrdMenu.menu8 }">
                 <div><img :src="getButtonImage(PrdMenu.menu8)" alt="dd"><span>{{ PrdMenu.menu8 }}</span></div></button>
         </div>
-        <div id="slideSection2" class="slideInner">
+        <div id="slideSection3" class="slideInner">
         <Swiper  class="slide" :options="swiperOptions">
             <swiper-slide v-for="(item,index) in activeProduct.PrdSlideMenu" :key="index">
                 <div class="arrivalBox">
@@ -158,8 +158,8 @@ export default {
             },
             ],
             swiperOptions:{
-                slidesPerView:3,
-                spaceBetween:15,
+                slidesPerView:2,
+                spaceBetween:50,
                 effect:"slide",
                 loop:true, 
                 navigation:{
@@ -169,7 +169,7 @@ export default {
                     breakpoints: {
                         900: {   //브라우저가 768보다 클 때
                             slidesPerView: 4,  
-                            spaceBetween: 20,
+                            spaceBetween: 80,
                         }
                     }
             },
@@ -240,11 +240,11 @@ export default {
         }
     }
     .slideInner{
-        padding: 50px 0;
+        padding: 50px 80px;
+        overflow:hidden;
         .imgBox{
             background: #f7f7f7;
             border-radius: 15px;
-            overflow:hidden ;
             img{
             padding: 30px;
             transition: all 0.3s;
@@ -298,7 +298,7 @@ export default {
         }
     }
     .slideInner{
-        padding: 50px 0;
+        padding: 50px 50px;
         .imgBox{
             background: #f7f7f7;
             border-radius: 15px;
@@ -336,8 +336,6 @@ export default {
             font-size: 10px;
             color:#222;
         }
-        .prev{}
-        .next{}
     }
 }
 }
