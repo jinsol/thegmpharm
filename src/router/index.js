@@ -1,11 +1,12 @@
 import Vue from "vue";
 import Router from "vue-router";
 import HomeView from "@/views/HomeView.vue";
+// 브랜드스토리
 import AboutUsView from "@/views/AboutUsView.vue";
-// Product (쇼핑하기, 정기배송)
+// 상품보기 - Product (쇼핑하기, 정기배송)
 import ShoppingView from "@/views/product/ShoppingView.vue";
 import RegularDeliveryView from "@/views/product/RegularDeliveryView.vue";
-// collaboration (지엠팜케어, 필독상식, 트니프렌즈)
+// 함께하는 - collaboration (지엠팜케어, 필독상식, 트니프렌즈)
 import GmpharmCareView from "@/views/collaboration/GmpharmCareView.vue";
 import PillDocView from "@/views/collaboration/PillDocView.vue";
 import TeuniView from "@/views/collaboration/TeuniView.vue";
@@ -23,8 +24,6 @@ import GuidelineView from "@/views/GuidelineView.vue";
 import MembershipView from "@/views/MembershipView.vue";
 import QuestionsView from "@/views/QuestionsView.vue";
 import InquiryView from "@/views/InquiryView.vue";
-import ContactView from "@/views/ContactView.vue";
-import NoticeView from "@/views/NoticeView.vue";
 //공지사항
 import NoticePostView from "@/views/post/NoticePostView.vue";
 import NoticePostView2 from "@/views/post/NoticePostView2.vue";
@@ -46,6 +45,7 @@ import MyPageView from "@/views/mypage/MyPageView.vue";
 import CartView from "@/views/mypage/CartView.vue";
 import SignUpview from "@/views/mypage/SignUpView.vue";
 import Loginview from "@/views/mypage/LoginView.vue";
+
 import PopUpView from "@/views/Pop/PopUpView.vue";
 
 Vue.use(Router);
@@ -73,8 +73,6 @@ export default new Router({
     { path: "/membership", name: "membership", component: MembershipView },
     { path: "/questions", name: "questions", component: QuestionsView },
     { path: "/inquiry", name: "inquiry", component: InquiryView },
-    { path: "/contact", name: "contact", component: ContactView },
-    { path: "/notice", name: "notice", component: NoticeView },
     { path: "/Terms", name: "Terms", component: TermsView },
     { path: "/privacy", name: "privacy", component: PrivacyView },
     { path: "/information", name: "information", component: InformationView },

@@ -87,8 +87,9 @@ export default {
       width: 10%;
     }
     &.table_header {
-      background-color: gray;
-      color: white;
+      background-color: var(--board-background);
+      border: var(--board-border);
+      color: black;
     }
   }
 }

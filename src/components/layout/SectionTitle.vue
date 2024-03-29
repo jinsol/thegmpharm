@@ -15,7 +15,6 @@ export default {
 <style lang="scss" scoped>
 .section__title {
   padding: 2em 0 4em;
-  border-bottom: 1px solid var(--gray-color);
   text-align: center;
   transition: all 0.5s;
 
