@@ -41,4 +41,16 @@ import SectionTitle from "@/components/layout/SectionTitle.vue"
     }
 }
 }
+@media screen and (max-width:900px){
+    .instaBox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+.insta{
+    padding: 10px;
+    img{
+    }
+}
+}
+}
 </style>
