@@ -349,5 +349,59 @@
           
           }
       }
-  
+      @media screen and (max-width:900px){
+        .question__list{
+    padding: 100px 0 30px;
+      display: flex;
+      justify-content: space-between;
+      button{
+          background: #f7f9f6;
+          padding: 2px;
+          border: 1px solid #e3e3e3;
+          flex: 1 0 20%;
+          font-size: 10px;
+          color: #7f7f7f;
+          word-break: keep-all;
+          &.click{
+              background: #fff;
+              border: 1px solid #46b7b0;
+              color: #46b7b0;
+          }
+          span{
+              display: block;
+              padding: 15px;
+          }
+      }
+  }
+  .selectBox{
+          font-size: 25px;
+          padding: 30px 0 ;
+          .faq_list{
+              border-top: 1px solid #000 ;
+              li{
+                  border-bottom: 1px solid #b8b8b8;
+                  padding: 15px 10px ;
+                  padding-right: 15px ;
+                  display: flex;
+                  justify-content: space-between;
+              }
+              .depth1{
+                  font-size: 16px;
+                  color: #353535;
+                  font-weight: bold;
+                  cursor: pointer;
+                  .rotate{
+                      transform: rotate(180deg);
+                      transition: transform 0.3s ease;
+                  }
+                  .depth2{
+                  font-size: 16px;
+                  color: #555;
+                  font-weight: lighter;
+                  }
+              }
+          
+          }
+      }
+      }
   </style>

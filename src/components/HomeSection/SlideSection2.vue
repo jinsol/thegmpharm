@@ -58,7 +58,7 @@ import '@/assets/css/myswiper.css'
             if (this.isMobileView && slider.mobile) {
                 return slider.mobile;
             } else {
-                return slider.image;
+                return slider.img;
             }
         },
         checkMobileView() {

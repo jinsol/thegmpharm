@@ -167,5 +167,52 @@ export default {
     }
 }
 }
-
+@media screen and (max-width:900px){
+  .contents{
+    padding: 0 0 100px;
+    height: 660px;
+.tag__list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+       button {
+        color: #757575;
+        font-size: 15px;
+        margin-left: 0px;
+        padding: 10px;
+        background: #fff;
+        flex: 1 0 0%;
+        border: 1px solid #ddd;
+        border-right-color: transparent;
+        &:last-child { border-right-color:#ddd }
+        &.active{
+            color: #46b7b0;
+            border-color:  #46b7b0;
+            border-bottom-color: transparent ;
+            +button { border-left-color:transparent }        
+        }
+  }
+}
+.info-section{
+    padding: 20px 10px 0px 9px;
+    p{
+        span{
+            display:block;
+            color: #353535;
+            font-size: 12px;
+        }
+        .line{
+            font-weight: bold;
+            color: #444;
+            font-size: 15px;
+        }
+        .semiLine{
+            font-weight: bold;
+            color: #353535;
+            font-size: 13px;
+        }
+    }
+}
+}
+}
 </style>

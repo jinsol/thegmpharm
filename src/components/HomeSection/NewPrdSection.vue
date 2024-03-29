@@ -130,7 +130,7 @@ padding: 15px;
     .imgBox {
       background: #fff;
       border-radius: 50%;
-      width: 80%;
+      width: 75%;
       height: 100%;
       display: flex;
       align-items: center;
@@ -194,6 +194,132 @@ padding: 15px;
     }
   }
   }
+}
+}
+@media screen and (max-width:900px){
+  .back {
+background: #f7f9f6;
+.New {
+display: flex;
+padding: 15px;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+  .titBox {
+    flex: 1;
+    width: 100%;
+    p{
+      font-size: 20px;
+      color: #333;
+    }
+    .slogun{
+      font-size: 10px;
+      color: #888;
+    }
+  }
+  .Btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button{
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    margin: 5px;
+    font-size: 10px;
+    color: #666;
+    word-break: keep-all;
+    &:hover{
+      color:#46b7B0;
+        border:1px solid #46b7B0;
+    }
+    &.active{
+      color:#fff;
+      background: #46b7B0;
+    }
+  }}
+  .prodBox {
+    width: 100%;
+    display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      .img__warp{
+       padding: 10px 30px;
+       width: 100%;
+       display: flex;
+       align-items: center;
+    .imgBox {
+      background: #fff;
+      border-radius: 50%;
+      width: 230px;
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      img {
+        max-width: 50%;
+        transition: all 0.3s;
+        &:hover{
+          scale: (1.1);
+        }
+      }
+    }
+  }
+    .productText {
+      overflow: hidden;
+      width: 100%;
+    .textBox{
+      overflow: hidden;
+      text-align: left;
+      word-break: keep-all;
+      .name{
+        font-size: 20px;
+        color: #111;
+        margin-bottom: 10px; 
+      }
+      .sub{
+        font-size: 10px;
+        color: #8c8c8c;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #333;
+      }
+      .desc{
+        font-size: 10px;
+        color: #222;
+        margin-bottom: 10px;
+      }
+      .coment{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        font-size: 10px;
+        color: #777;
+        margin-bottom: 10px;
+    }
+    .price{
+      font-size: 10px;
+      color: #222;
+      margin-bottom: 10px;
+    }
+    }
+    a{
+      display: inline-block;
+      border: 1px solid #e1e1e1;
+      padding: 15px;
+      border-radius: 75px;
+      text-align: center;
+      width: 200px;
+      &:hover{
+        color:#46b7B0;
+        border:1px solid #46b7B0;
+      }
+    }
+  }
+  }
+}
 }
 }
 </style>
