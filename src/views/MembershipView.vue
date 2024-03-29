@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="row">
     <section-title title="멤버십 안내" />
     <button-title />
-  <div class="contents row">
+  <div class="contents">
       <div class="info-section">
         <div class="box_a"> 
               <div class="inBox">

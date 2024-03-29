@@ -6,10 +6,10 @@
             <p>New Product</p>
             <p class="slogun">지엠팜의 새로운 제품을 소개합니다.</p>
             <div class="Btn">
-                 <div><button @click="changeActiveButton(BtnNames.name1)" :class="{ active: activeButton === BtnNames.name1 }">{{ BtnNames.name1 }}</button></div>
-                 <div><button @click="changeActiveButton(BtnNames.name2)" :class="{ active: activeButton === BtnNames.name2 }">{{ BtnNames.name2 }}</button></div>
-                 <div><button @click="changeActiveButton(BtnNames.name3)" :class="{ active: activeButton === BtnNames.name3 }">{{ BtnNames.name3 }}</button></div>
-                 <div><button @click="changeActiveButton(BtnNames.name4)" :class="{ active: activeButton === BtnNames.name4 }">{{ BtnNames.name4 }}</button></div>
+                 <button @click="changeActiveButton(BtnNames.name1)" :class="{ active: activeButton === BtnNames.name1 }">{{ BtnNames.name1 }}</button>
+                 <button @click="changeActiveButton(BtnNames.name2)" :class="{ active: activeButton === BtnNames.name2 }">{{ BtnNames.name2 }}</button>
+                 <button @click="changeActiveButton(BtnNames.name3)" :class="{ active: activeButton === BtnNames.name3 }">{{ BtnNames.name3 }}</button>
+                 <button @click="changeActiveButton(BtnNames.name4)" :class="{ active: activeButton === BtnNames.name4 }">{{ BtnNames.name4 }}</button>
             </div>
           </div>
           <div class="prodBox" v-for="(item,index) in activeProduct.PrdInfo" :key="index">
@@ -209,6 +209,7 @@ align-items: center;
     flex: 1;
     width: 100%;
     p{
+      text-align: center;
       font-size: 20px;
       color: #333;
     }
@@ -222,14 +223,16 @@ align-items: center;
     justify-content: space-between;
     align-items: center;
     button{
+      flex: 1 1 20%;
     border: 1px solid #e1e1e1;
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     background: #fff;
     margin: 5px;
-    font-size: 10px;
+    font-size: 12px;
     color: #666;
     word-break: keep-all;
+    height: 100px;
     &:hover{
       color:#46b7B0;
         border:1px solid #46b7B0;
@@ -250,6 +253,7 @@ align-items: center;
        width: 100%;
        display: flex;
        align-items: center;
+       justify-content: center;
     .imgBox {
       background: #fff;
       border-radius: 50%;
@@ -281,26 +285,25 @@ align-items: center;
         margin-bottom: 10px; 
       }
       .sub{
-        font-size: 10px;
+        font-size: 15px;
         color: #8c8c8c;
         margin-bottom: 10px;
         border-bottom: 1px solid #333;
       }
       .desc{
-        font-size: 10px;
+        font-size: 15px;
         color: #222;
         margin-bottom: 10px;
       }
       .coment{
         text-overflow: ellipsis;
         white-space: nowrap;
-
-        font-size: 10px;
+        font-size: 15px;
         color: #777;
         margin-bottom: 10px;
     }
     .price{
-      font-size: 10px;
+      font-size: 15px;
       color: #222;
       margin-bottom: 10px;
     }

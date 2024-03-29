@@ -26,7 +26,7 @@
                     <div class="imgBox">
                         <img :src="item.img" :alt="item.alt">
                     </div>
-                    <span v-for="(value, index) in item.icon" :key="index">
+                    <span v-for="(value, index) in item.icon" :key="index" class="iconBox">
                         <img :src="value" alt="">
                     </span>
                     <p class="name">{{ item.name }}</p>
@@ -158,14 +158,20 @@ export default {
             },
             ],
             swiperOptions:{
-                slidesPerView:4,
-                spaceBetween:20,
+                slidesPerView:3,
+                spaceBetween:15,
                 effect:"slide",
                 loop:true, 
                 navigation:{
                         prevEl:'.swiper-button-prev',
                         nextEl:'.swiper-button-next'
                     },
+                    breakpoints: {
+                        900: {   //브라우저가 768보다 클 때
+                            slidesPerView: 4,  
+                            spaceBetween: 20,
+                        }
+                    }
             },
         }
     },
@@ -215,12 +221,15 @@ export default {
 #hotKeyword{
     .Btn{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         border-bottom: 1px solid #d9d9d9;
+        padding-top: 30px;
         button{
           font-size: 15px;
           color: #333;
           &.active{color: #46b7B0;}
+          flex: 0 0 12%;
+          word-break: keep-all;
           span{
             display: block;
             padding: 10px;
@@ -243,6 +252,9 @@ export default {
                 scale:(1.1);
             }
             }
+        }
+        .iconBox{
+            margin: 5px;
         }
         .name{
             font-size: 20px;
@@ -270,16 +282,18 @@ export default {
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid #d9d9d9;
+        flex-wrap: wrap;
         button{
+            flex: 0 0 25%;
           font-size: 10px;
           color: #333;
           &.active{color: #46b7B0;}
           span{
             display: block;
-            padding: 10px;
+            padding: 15px;
           }
           img{
-            width: 40%;
+            
           }
         }
     }
@@ -297,15 +311,24 @@ export default {
             }
             }
         }
+        .iconBox{
+            margin: 5px;
+            img{
+                width: 30%
+            }
+        }
         .name{
-            font-size: 10px;
+            font-size: 15px;
             color: #222;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
         .coment{
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            font-size: 10px;
+            font-size: 15px;
             color: #777;
             margin: 5px 0;
         }

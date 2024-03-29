@@ -19,9 +19,6 @@
 :root {
   --swiper-theme-color: #b3b5b2;
 }
-:root :hover{
-  color: #5e5c5c;
-}
 #eventSlide .swiper-container {
   margin-left: auto;
   margin-right: auto;
@@ -159,7 +156,16 @@
   /*
   --swiper-navigation-color: var(--swiper-theme-color);
   */
+  
 }    
+:root #TestSection :hover{
+  color: #5e5c5c;
+
+}
+:root #slideSection2 :hover{
+  color: #5e5c5c;
+
+}
 @media screen and (max-width:900px) {
  :root #TestSection{
   --swiper-navigation-size: 0px;
@@ -186,7 +192,12 @@
   --swiper-navigation-color: var(--swiper-theme-color);
   */
 }
-
+:root #hotKeyword :hover{
+  color: #5e5c5c;
+  /*
+  --swiper-navigation-color: var(--swiper-theme-color);
+  */
+}
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;

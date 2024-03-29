@@ -123,6 +123,9 @@ import SectionTitle from "@/components/layout/SectionTitle.vue"
                     flex-wrap: wrap;
                     align-items: flex-end;
                     font-size: 18px;
+                    img{
+                        margin: 5px;
+                    }
                 }
                 .infoBox_2{
                     display: flex;
