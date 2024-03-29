@@ -3,7 +3,7 @@
     <ul class="row header_nav">
       <li class="header_nav-row1">
         <ul>
-          <li class="search_section">
+          <li v-if="!isMobile" class="search_section">
             <button>
               <input type="search" class="search_box" placeholder="검색하기" />
               <i class="fa-solid fa-magnifying-glass search_icon"></i>

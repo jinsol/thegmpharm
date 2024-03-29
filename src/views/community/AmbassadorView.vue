@@ -2,7 +2,7 @@
   <main class="row">
     <section-title
       title="엠버서더"
-      sub_title="지엠팜을 대표하는 분들의 설명??"
+      sub_title="지엠팜의 대표 엠버서더의 이야기를 들어보세요!"
     />
     <community-list
       :contentsList="contentsList"
