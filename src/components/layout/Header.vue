@@ -17,7 +17,9 @@
           <li class="myPage_section">
             <div v-if="!isMobile">
               <span v-if="isLoggedIn == true" class="myPage_section-username"
-                >환영합니다, <span>{{ username }}</span> 님</span
+                >환영합니다,
+                <span>{{ username }}</span>
+                님</span
               >
               <router-link to="/cart">
                 <i
@@ -237,6 +239,9 @@ export default {
     },
     username() {
       return this.$store.getters.loggedInUsername;
+    },
+    userId() {
+      return this.$store.getters.loggedInUserId;
     },
     ...mapState(["isMobile"]),
   },

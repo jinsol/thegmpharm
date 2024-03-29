@@ -1,11 +1,11 @@
 <template>
   <section class="login">
     <form @submit.prevent="login">
-      <label for="id">아이디</label>
+      <label for="userId">아이디</label>
       <input
         type="text"
-        id="id"
-        v-model="username"
+        id="userId"
+        v-model="userId"
         placeholder="아이디를 입력해주세요"
       />
       <label for="password">비밀번호</label>
@@ -29,6 +29,7 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
+      userId: "",
       username: "",
       password: "",
     };
@@ -39,9 +40,9 @@ export default {
   methods: {
     ...mapActions(["login"]),
     async login() {
-      if (this.username && this.password) {
+      if (this.userId && this.password) {
         await this.$store.dispatch("login", {
-          username: this.username,
+          userId: this.userId,
           password: this.password,
         });
       } else {

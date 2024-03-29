@@ -15,6 +15,7 @@ export default new Vuex.Store({
     isAddedToCart: {},
     users: [],
     isLoggedIn: false,
+    userId: "",
     username: "",
   },
   mutations: {
@@ -72,21 +73,28 @@ export default new Vuex.Store({
     addUser(state, user) {
       state.users.push(user);
     },
-    login(state, username) {
+    login(state, payload) {
       state.isLoggedIn = true;
-      state.username = username;
+      state.userId = payload.userId;
+      state.username = payload.username;
       localStorage.setItem("isLoggedIn", true);
-      localStorage.setItem("username", username);
+      localStorage.setItem("username", payload.username);
+      localStorage.setItem("userId", payload.userId);
     },
     logout(state) {
       state.isLoggedIn = false;
       state.username = null;
+      state.userId = null;
       localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("userId");
       localStorage.removeItem("username");
     },
-    setLoginState(state, { isLoggedIn, username }) {
+    setLoginState(state, { isLoggedIn, username, userId }) {
       state.isLoggedIn = isLoggedIn;
+      state.userId = userId;
       state.username = username;
+      localStorage.setItem("userId", userId);
+      localStorage.setItem("username", username);
     },
   },
   actions: {
@@ -124,21 +132,21 @@ export default new Vuex.Store({
     removeFromCart(context, index) {
       context.commit("remove__Cart", index);
     },
-    signup({ commit, state }, { id, username, password }) {
+    signup({ commit, state }, { userId, username, password }) {
       const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-      const newUser = { id, username, password };
+      const newUser = { userId, username, password };
       existingUsers.push(newUser);
       localStorage.setItem("users", JSON.stringify(existingUsers));
       commit("addUser", newUser);
       return Promise.resolve();
     },
-    login({ commit }, { username, password }) {
+    login({ commit }, { userId, password }) {
       const users = JSON.parse(localStorage.getItem("users")) || [];
       const loggedInUser = users.find(
-        (user) => user.username === username && user.password === password
+        (user) => user.userId === userId && user.password === password
       );
       if (loggedInUser) {
-        commit("login", username);
+        commit("login", loggedInUser);
         alert("로그인에 성공하였습니다.");
         window.location.href = "/";
         return true;
@@ -152,8 +160,13 @@ export default new Vuex.Store({
     },
     initLoginState({ commit }) {
       const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-      const username = localStorage.getItem("username");
-      commit("setLoginState", { isLoggedIn, username });
+      let username = "";
+      let userId = "";
+      if (isLoggedIn) {
+        username = localStorage.getItem("username");
+        userId = localStorage.getItem("userId");
+      }
+      commit("setLoginState", { isLoggedIn, username, userId });
     },
   },
   getters: {
@@ -162,6 +175,7 @@ export default new Vuex.Store({
     fnGetPregnancyList: (state) => state.pregnancyList,
     cartItemCount: (state) => state.cartItem.length,
     loggedInUsername: (state) => state.username,
+    loggedInUserId: (state) => state.userId,
     isLoggedIn: (state) => state.isLoggedIn,
   },
 });

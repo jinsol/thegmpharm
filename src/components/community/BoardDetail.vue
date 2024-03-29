@@ -1,6 +1,5 @@
 <template>
   <main class="row">
-    <!-- <section-title title="자유게시판" /> -->
     <ul class="board_list">
       <li class="board_list-title">
         <p>자유게시판 / 임신소식</p>
@@ -20,6 +19,20 @@
         <p>{{ boardList.content }}</p>
       </li>
       <li class="board_list-btn">
+        <button
+          v-if="boardList.userId === userId && isLoggedIn"
+          class="modify_BT"
+          @click="handleModify"
+        >
+          수정하기
+        </button>
+        <button
+          v-if="boardList.userId === userId && isLoggedIn"
+          class="delete_BT"
+          @click="handleDelete"
+        >
+          삭제하기
+        </button>
         <button class="prev_BT" @click="prev_BT">이전으로</button>
       </li>
     </ul>
@@ -27,11 +40,7 @@
 </template>
 
 <script>
-import SectionTitle from "@/components/layout/SectionTitle.vue";
 export default {
-  components: {
-    SectionTitle,
-  },
   data() {
     return {
       boardList: {},
@@ -54,6 +63,38 @@ export default {
   methods: {
     prev_BT() {
       this.$router.go(-1);
+    },
+    handleModify() {
+      // 게시물 ID를 파라미터로 전달하여 수정 페이지로 이동
+      this.$router.push({
+        name: "modify-post",
+        params: { id: this.boardList.id },
+      });
+    },
+    handleDelete() {
+      // 삭제 확인 메시지 출력
+      if (confirm("게시물을 삭제하시겠습니까?")) {
+        // Vuex store의 deletePost 액션 호출
+        this.$store
+          .dispatch("deletePost", this.boardList.id)
+          .then(() => {
+            // 삭제 성공 시 메시지 출력 및 목록 페이지로 이동
+            alert("게시물 삭제 완료");
+            this.$router.push("/");
+          })
+          .catch((error) => {
+            // 삭제 실패 시 에러 메시지 출력
+            alert("게시물 삭제 실패: " + error.message);
+          });
+      }
+    },
+  },
+  computed: {
+    userId() {
+      return this.$store.getters.loggedInUserId;
+    },
+    isLoggedIn() {
+      return this.$store.getters.isLoggedIn;
     },
   },
 };

@@ -1,11 +1,11 @@
 <template>
   <section class="sign_up">
     <form @submit.prevent="signup">
-      <label for="id">아이디</label>
+      <label for="userId">아이디</label>
       <input
         type="text"
-        id="id"
-        v-model="id"
+        id="userId"
+        v-model="userId"
         placeholder="아이디를 입력해주세요"
       />
       <label for="username">닉네임</label>
@@ -41,7 +41,7 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
-      id: "",
+      userId: "",
       username: "",
       password: "",
       passwordConfirm: "",
@@ -51,25 +51,27 @@ export default {
     ...mapActions(["signup"]),
     signup() {
       if (
-        this.id &&
+        this.userId &&
         this.username &&
         this.password &&
         this.password === this.passwordConfirm
       ) {
         const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-        const existingUser = existingUsers.find((user) => user.id === this.id);
+        const existingUser = existingUsers.find(
+          (user) => user.userId === this.userId
+        );
         if (existingUser) {
           alert("이미 존재하는 아이디입니다.");
           return;
         }
 
         this.$store.dispatch("signup", {
-          id: this.id,
+          userId: this.userId,
           username: this.username,
           password: this.password,
         });
 
-        alert("Signup successful");
+        alert("회원가입에 성공하셨습니다.");
         this.$router.push("/login");
       } else {
         alert("Please fill in all fields correctly");

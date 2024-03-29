@@ -46,8 +46,6 @@ import CartView from "@/views/mypage/CartView.vue";
 import SignUpview from "@/views/mypage/SignUpView.vue";
 import Loginview from "@/views/mypage/LoginView.vue";
 
-import PopUpView from "@/views/Pop/PopUpView.vue";
-
 Vue.use(Router);
 
 export default new Router({
@@ -87,7 +85,6 @@ export default new Router({
     { path: "/noticepost7", name: "noticepost7", component: NoticePostView7 },
     { path: "/noticepost8", name: "noticepost8", component: NoticePostView8 },
     { path: "/noticepost9", name: "noticepost9", component: NoticePostView9 },
-    { path: "/popup", name: "popup", component: PopUpView },
     {
       path: "/noticepost10",
       name: "noticepost10",

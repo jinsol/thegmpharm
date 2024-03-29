@@ -32,6 +32,7 @@ export default {
         title: this.title,
         content: this.content,
         author: this.username,
+        userId: this.userId,
         date: new Date().toISOString().split("T")[0],
         hits: 0,
       };
@@ -47,6 +48,9 @@ export default {
   computed: {
     username() {
       return this.$store.getters.loggedInUsername;
+    },
+    userId() {
+      return this.$store.getters.loggedInUserId;
     },
   },
 };
