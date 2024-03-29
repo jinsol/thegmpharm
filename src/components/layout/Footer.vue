@@ -32,6 +32,8 @@
     <div class="footerbot row">
         <div class="info">
             <div class="footerlogo"><router-link to="#"> <img :src="photo[0].logo" :alt="photo[0].alt"> </router-link></div>
+            
+    
     <div class="cominfo">
         <p>상호명 : <span class="gmpharm">(주)지엠팜</span></p><p>&nbsp;|&nbsp;</p>
         <p>대표이사 : 김세종, 서진혁, 전윤식</p><p>&nbsp;|&nbsp;</p>
@@ -107,7 +109,7 @@
 
 <style lang="scss" scoped>
 #footer{
-    height: 443px;
+    height: 500px;
     background: #fafafa;
     border-top: 1px solid #ddd; ;
 
@@ -179,7 +181,7 @@
     .footerbot{
         display: flex;
         justify-content: space-between;
-        padding: 60px 0 95px;
+        padding: 10px 0 30px;
         .info{
             
             color: #888;
@@ -255,10 +257,9 @@
 }
 @media screen and (max-width:900px){
     #footer{
-    height: 400px;
+    height: 500px;
     background: #fafafa;
     border-top: 1px solid #ddd; ;
-
     .footertop{
         height: 75px;
         font-size: 10px;
@@ -325,19 +326,22 @@
     }
     .footerbot{
         display: flex;
-        justify-content: space-between;
-        padding: 10px 10px 50px;
+        justify-content: center;
+        padding: 10px 10px 20px;
         text-align: center;
+        flex-direction: column;
         .info{
             color: #888;
             .footerlogo{
                 width: 140px;
                 height: 36px;
-                margin: 0 0 30px ;
+                margin: 0 0 10px ;
+                display: inline-block;
             }
             .cominfo{
                 display: flex;
                 flex-wrap: wrap;
+                justify-content: center;
                 font-size: 10px;
                 color: #888;
                 .gmpharm{
@@ -350,7 +354,7 @@
             .copyrights{
                 color: #afafaf;
                 font-size: 8px;
-                margin: 25px 0 0;
+                margin: 15px 0 0;
             }
         }
     }
