@@ -96,6 +96,7 @@ export default {
       .event_list-content-img {
         border-radius: 10px;
         overflow: hidden;
+        border: 1px solid var(--gray-color);
       }
 
       .event_list-content-text {

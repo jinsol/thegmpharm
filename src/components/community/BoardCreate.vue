@@ -23,6 +23,7 @@ export default {
   },
   created() {
     this.boardType = this.$route.meta.fromBoard;
+    this.$store.dispatch("initLoginState");
   },
   methods: {
     async submitPost() {
@@ -30,7 +31,7 @@ export default {
         id: this.$store.state.boardList.length + 1,
         title: this.title,
         content: this.content,
-        author: "익명",
+        author: this.username,
         date: new Date().toISOString().split("T")[0],
         hits: 0,
       };
@@ -41,6 +42,11 @@ export default {
       this.title = "";
       this.content = "";
       this.$router.go(-1);
+    },
+  },
+  computed: {
+    username() {
+      return this.$store.getters.loggedInUsername;
     },
   },
 };
