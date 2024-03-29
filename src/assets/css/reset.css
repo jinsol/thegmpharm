@@ -35,6 +35,8 @@ body {
   --body-font: "Gothic A1";
   --collab-font: "CookieRun-Regular";
   --mobile-width: 900;
+  --board-border: 1px solid #e7e7e7;
+  --board-background: #f9f9f9;
 }
 a {
   text-decoration: none;
