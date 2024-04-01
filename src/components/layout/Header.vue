@@ -54,7 +54,7 @@
         </ul>
       </li>
       <li class="header_nav-row2">
-        <ul v-if="isMobile" class="top_section">
+        <ul v-if="isMobile" class="info_section">
           <li class="top_section-btn_section">
             <button class="mobile_x_btn" @click="closeNav">
               <i class="fa-solid fa-xmark"></i>
@@ -72,24 +72,16 @@
                     <i class="fa-solid fa-angle-right"></i>
                   </span>
                 </router-link>
-                <span v-else>환영합니다, {{ username }} 님</span>
+                <span v-else
+                  >환영합니다, <i>{{ username }}</i> 님</span
+                >
                 <router-link to="/mypage">마이페이지</router-link>
                 <router-link to="/cart">장바구니</router-link>
-              </li>
-              <li>
-                <button
-                  v-if="isLoggedIn == true"
-                  @click="logout"
-                  class="logout_btn"
-                >
-                  로그아웃
-                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                </button>
               </li>
             </ul>
           </li>
         </ul>
-        <ul class="bottom_section">
+        <ul class="menu_section">
           <li class="depth1">
             <router-link to="/aboutus" class="depth1_menu">
               <i
@@ -185,6 +177,19 @@
               <li><router-link to="/alliance">기업제휴문의</router-link></li>
               <li><router-link to="/guideline">공지사항</router-link></li>
             </ul>
+          </li>
+        </ul>
+        <ul v-if="isMobile" class="myPage_section">
+          <li>
+            <a
+              href="#"
+              v-if="isLoggedIn == true"
+              @click="logout"
+              class="logout_btn"
+            >
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              <span>로그아웃</span>
+            </a>
           </li>
         </ul>
       </li>
@@ -471,9 +476,9 @@ header.mobile {
           width: 100%;
         }
       }
-      .top_section {
-        background-color: var(--main-color);
-        color: white;
+      .info_section {
+        // background-color: var(--main-color);
+        // color: white;
         .top_section-btn_section {
           display: flex;
           justify-content: flex-end;
@@ -482,10 +487,10 @@ header.mobile {
           ul {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             .top_section-info_section-image {
-              background-color: white;
+              background-color: whitesmoke;
               width: 60px;
               height: 60px;
               border-radius: 50%;
@@ -500,31 +505,41 @@ header.mobile {
             }
             .top_section-info_section-content {
               display: flex;
-              flex-direction: column;
+              flex-wrap: wrap;
+              // flex-direction: column;
               padding: 0 2%;
-            }
-            li:last-child {
-              margin-left: auto;
-              display: flex;
-              align-content: center;
+
+              span {
+                width: 100%;
+                i {
+                  color: var(--main-color);
+                }
+              }
+              a {
+                margin-right: 12px;
+              }
             }
           }
         }
       }
-      .bottom_section {
+      .menu_section {
         .depth1 {
           padding: 0;
           color: gray;
+
           &:hover {
-            color: black;
-            transition: all 0.3s;
+            color: var(--main-color);
           }
           a {
             padding: 8px;
             display: flex;
-            transition: all 0.3s;
+            gap: 20px;
+            span {
+              font-weight: 100;
+              font-size: 16px;
+            }
             &:hover {
-              background: lightgray;
+              background: var(--main-color-hover);
             }
             border-radius: 10px;
             &:not(:first-child) {
@@ -576,8 +591,8 @@ header.mobile {
                 display: block;
                 border-radius: 10px;
                 &:hover {
-                  background: lightgray;
-                  color: black;
+                  background: var(--main-color-hover);
+                  color: var(--main-color);
                 }
               }
               &:not(:last-child):after {
@@ -595,6 +610,21 @@ header.mobile {
               transition: 0.5s ease 0.3s;
             }
           }
+        }
+      }
+      .myPage_section {
+        li {
+          a {
+            display: flex;
+            gap: 20px;
+            color: gray;
+            align-items: center;
+            span {
+              font-weight: 100;
+              font-size: 16px;
+            }
+          }
+          padding: 8px;
         }
       }
     }

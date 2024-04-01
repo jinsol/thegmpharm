@@ -1,34 +1,8 @@
 <template>
   <main>
-    <section class="teuni_01">
-      <article class="teuni_01-text">
-        <div class="teuni_01-text-title">
-          <h3>지엠팜 X 트니프렌즈</h3>
-          <p>안녕? 우리 친구하자!</p>
-        </div>
-        <div class="teuni_01-text-sub">
-          <p>지엠팜에 찾아온 트니프렌즈</p>
-          <p>트니프렌즈와 함께 지엠팜 친구들도 건강하고 튼튼해져요!</p>
-        </div>
-      </article>
-      <article class="teuni_01-img">
-        <div class="teuni_01-img-ballon">
-          <span class="teuni_01-img-ballon1"
-            ><img src="@/assets/image/teuni_section1_balloon1.png" alt=""
-          /></span>
-          <span class="teuni_01-img-ballon2"
-            ><img src="@/assets/image/teuni_section1_balloon2.png" alt=""
-          /></span>
-          <span class="teuni_01-img-ballon3"
-            ><img src="@/assets/image/teuni_section1_balloon3.png" alt=""
-          /></span>
-        </div>
-        <span class="teuni_01-img-main"
-          ><img src="@/assets/image/teuni_section1_main.png" alt=""
-        /></span>
-      </article>
-    </section>
-    <section class="teuni_02">
+    <teuni-main-section />
+
+    <!-- <section class="teuni_02">
       <img
         class="teuni_zeri_airplane"
         src="@/assets/image/teuni_zeri_airplane.png"
@@ -52,37 +26,114 @@
     <section class="teuni_03"></section>
     <section class="teuni_04"></section>
     <section class="teuni_05"></section>
-    <section class="teuni_06"></section>
+    <section class="teuni_06"></section> -->
+    <teuni-section
+      v-for="(item, index) in teuniList"
+      :key="index"
+      :teuniList="item"
+      :ref="`imgBox${index}`"
+      class="img_box"
+    />
   </main>
 </template>
 
 <script>
+import TeuniMainSection from "@/components/collaboration/TeuniMainSection.vue";
+import TeuniSection from "@/components/collaboration/TeuniSection.vue";
+
 import { gsap } from "gsap";
 gsap.registerPlugin(ScrollTrigger);
 export default {
   name: "Teuni",
-  components: {},
-  mounted() {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: ".teuni_02",
-          start: "20% 100%",
-          end: "100% 100%",
-          scrub: 1,
-          // markers: true,
+  components: {
+    TeuniMainSection,
+    TeuniSection,
+  },
+  data() {
+    return {
+      teuniList: [
+        {
+          title: "째리",
+          titleSrc: "@/../public/image/teuni_zeri_title.png",
+          characterSrc: "@/../public/image/teuni_zeri.png",
+          content:
+            "정체를 알 수 없는 귀여운 악마 째리. 칼슘과 비타민D를 섭취할 수 있는 성장기 아이들의 필수아이템! 말랑말랑한 사과맛 구미!",
+          button: "트니프렌즈 키즈 칼슘디구미 만나기",
         },
-      })
-      .to(
-        ".teuni_zeri_airplane",
-        { x: -400, y: -100, rotate: -30, ease: "none", duration: 5 },
-        0
-      )
-      .to(
-        ".character_zeri img",
-        { x: 50, y: 100, rotate: 10, ease: "none", duration: 5 },
-        0
-      );
+        {
+          title: "키키",
+          titleSrc: "@/../public/image/teuni_kiki_title.png",
+          characterSrc: "@/../public/image/teuni_kiki.png",
+          content:
+            "노는 게 제일 좋고 항상 기분이 좋은 키키. 종합영양제도 매일 기분 좋게 먹어요! 입 안에서 사르르 녹는 오디티정으로 간편하고 맛있게!",
+          button: "트니프렌즈 키즈 멀티비타민 오디티 만나기",
+        },
+        {
+          title: "라노",
+          titleSrc: "@/../public/image/teuni_rano_title.png",
+          characterSrc: "@/../public/image/teuni_rano.png",
+          content:
+            "내일로 미루는 걸 좋아하는 라노도 절대 미루지 않는 눈 건강! 베타카로틴과 비타민A로 가득 채운 오렌지맛 초소형 츄어블",
+          button: "트니프렌즈 키즈 아이케어 오디티 만나기",
+        },
+        {
+          title: "리보",
+          titleSrc: "@/../public/image/teuni_ribo_title.png",
+          characterSrc: "@/../public/image/teuni_ribo.png",
+          content:
+            "말랑말랑한 파워 오지라퍼 리보가 지엠팜 친구들에게 추천해요! 입 안에서 톡톡! 신나는 축제를 즐겨봐!",
+          button: "트니프렌즈 톡톡 키즈 유산균 만나기",
+        },
+        {
+          title: "치코",
+          titleSrc: "@/../public/image/teuni_chico_title.png",
+          characterSrc: "@/../public/image/teuni_chico.png",
+          content:
+            "똑똑한 잔소리쟁이 치코가 지엠팜 친구들에게 전하는 사랑의 잔소리! 내 짝꿍처럼 튼튼하고 건강하고 싶다면!",
+          button: "트니프렌즈 면역 키즈비타젤리 만나기",
+        },
+      ],
+    };
+  },
+  // mounted() {
+  //   this.teuniList.forEach((item, index) => {
+  //     const imgBox = this.$refs[`imgBox${index}`][0];
+  //     gsap
+  //       .timeline({
+  //         scrollTrigger: {
+  //           trigger: imgBox,
+  //           start: "20% 100%",
+  //           end: "100% 100%",
+  //           scrub: 1,
+  //           markers: true,
+  //         },
+  //       })
+  //       .to(imgBox, {
+  //         x: 50 + index * 20,
+  //         y: 100 + index * 20,
+  //         rotate: 10 + index * 2,
+  //         ease: "none",
+  //         duration: 5,
+  //       });
+  //   });
+  // },
+  mounted() {
+    gsap.utils.toArray(".img_box div img").forEach((selector) => {
+      ScrollTrigger.create({
+        trigger: selector,
+        start: "20% 100%",
+        end: "100% 100%",
+        scrub: 1,
+        markers: true,
+        onUpdate: (self) => {
+          if (self.direction === 1) {
+            selector.classList.add("rotate"); // 아래로 스크롤 시 회전 클래스 추가
+          } else {
+            selector.classList.remove("rotate"); // 위로 스크롤 시 회전 클래스 제거
+          }
+        },
+      });
+    });
   },
 };
 </script>
@@ -95,107 +146,25 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .teuni_01 {
-    background-image: linear-gradient(to bottom, #5dc1f2, #d8f5fd);
-    height: 200vh; // 임시
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-top: 6%;
-    .teuni_01-text {
-      color: white;
-      text-align: center;
-      .teuni_01-text-title {
-        padding: 2em 0;
-        line-height: 1;
-        h3 {
-          font-size: 60px;
-          font-weight: bold;
-        }
-        p {
-          font-size: 42px;
-          font-family: var(--collab-font);
-          font-weight: bold;
-        }
-      }
-      .teuni_01-text-sub {
-        padding: 1em 0;
-      }
+    &:nth-child(2) {
+      background-color: #e73650;
+      color: #e73650;
     }
-    .teuni_01-img {
-      position: relative;
-      flex: 1;
-      display: flex;
-      align-items: flex-end;
-      flex-direction: column;
-      .teuni_01-img-ballon {
-        position: relative;
-        width: 100%;
-        span {
-          position: sticky;
-          height: auto;
-          top: 300px;
-          display: inline-block;
-        }
-        .teuni_01-img-ballon1 {
-          left: 80%;
-          transform: translateX(-50%);
-        }
-        .teuni_01-img-ballon2 {
-          left: 15%;
-        }
-        .teuni_01-img-ballon3 {
-          left: 10%;
-        }
-      }
-      .teuni_01-img-main {
-        position: relative;
-        z-index: 2;
-      }
+    &:nth-child(3) {
+      background-color: #edb101;
+      color: #edb101;
     }
-  }
-  .teuni_02 {
-    background-color: #e73650;
-    position: relative;
-    .teuni_zeri_airplane {
-      position: absolute;
-
-      width: max-content;
+    &:nth-child(4) {
+      background-color: #b3d344;
+      color: #b0d041;
     }
-    .boxwrap {
-      display: flex;
-      justify-content: space-between;
-      .text {
-        width: 70%;
-      }
-      .img {
-        width: 30%;
-      }
-      .text.character span {
-        font-family: var(--collab-font);
-        color: white;
-        display: block;
-        font-size: 40px;
-      }
+    &:nth-child(5) {
+      background-color: #f6a808;
+      color: #f7ac16;
     }
-  }
-  .teuni_03 {
-    background: #fff353;
-  }
-  .teuni_04 {
-    background: #b3d344;
-  }
-  .teuni_05 {
-    background: #f6a808;
-  }
-  .teuni_06 {
-    background: #ef85ad;
-  }
-  @media screen and (max-width: 900px) {
-    padding: 0;
-    .teuni_01 {
-      height: 120vh;
+    &:nth-child(6) {
+      background-color: #ef85ad;
+      color: #dd7eaa;
     }
   }
 }
