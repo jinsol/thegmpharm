@@ -2,7 +2,9 @@
     <div id="slideSection2" class="slideInner">
         <Swiper  class="swiper" :options="swiperOptions">
             <swiper-slide v-for="(item,index) in images" :key="index" >
+                <router-link :to="item.href">
                 <img :src="getSlideImage(item)" :alt="item.alt">
+                </router-link>
             </swiper-slide>
             <div class="swiper-button-prev" slot="button-prev"></div>
             <div class="swiper-button-next" slot="button-next"></div>
@@ -23,8 +25,8 @@ import '@/assets/css/myswiper.css'
         data(){
             return{
                 images:[
-                    {img:'./image/main_banner_slide.jpg', alt:'배너1', mobile:'./image/slide_1.jpg'},
-                    {img:'./image/main_banner_slide (1).jpg', alt:'배너2', mobile:'./image/slide_2.jpg'}
+                    {img:'./image/main_banner_slide.jpg', alt:'배너1', mobile:'./image/slide_1.jpg', href: "/event"},
+                    {img:'./image/main_banner_slide (1).jpg', alt:'배너2', mobile:'./image/slide_2.jpg', href: "/event"}
                 ],
                 breakpoint: 900,
             isMobileView: false

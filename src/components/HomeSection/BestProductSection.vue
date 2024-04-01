@@ -7,7 +7,7 @@
                     <div class="num"> 
                         <span>Best<br>01</span>
                     </div>
-                    <router-link to="/membership" class="photo">
+                    <router-link to="/shopping" class="photo">
                         <img src="/image/RDV_m1_p14.png" alt="">
                     </router-link>
                     <div class="detail">
@@ -23,7 +23,7 @@
                                 25,000원
                             </p>
                             <div class="cart">
-                                <router-link to="/popup" v-for="(item,index) in images" :key="index" class="payBtn" @click="openNewTab">
+                                <router-link to="/shopping" v-for="(item,index) in images" :key="index" class="payBtn" @click="openNewTab">
                                     <img :src="item.img" :alt="item.alt">
                                 </router-link>
                             </div>
@@ -36,7 +36,7 @@
                             <div class="num_1"> 
                             <span>Best<br>01</span>
                             </div>
-                            <router-link to="/membership">
+                            <router-link to="/shopping">
                                 <img src="/image/RDV_m1_p14.png" alt="">
                             </router-link>
                         </div>
@@ -46,7 +46,7 @@
                             <div class="num_2"> 
                             <span>Best<br>02</span>
                             </div>
-                            <router-link to="/membership">
+                            <router-link to="/shopping">
                                 <img src="/image/RDV_m1_p12.png" alt="">
                             </router-link>
                       </div>
@@ -56,7 +56,7 @@
                             <div class="num_2"> 
                             <span>Best<br>03</span>
                             </div>
-                            <router-link to="/membership">
+                            <router-link to="/shopping">
                                 <img src="/image/RDV_m1_p09.png" alt="">
                             </router-link>
                         </div>
@@ -66,7 +66,7 @@
                         <div class="num_2"> 
                             <span>Best<br>04</span>
                             </div>
-                            <router-link to="/membership">
+                            <router-link to="/shopping">
                                 <img src="/image/RDV_m1_p03.png" alt="">
                             </router-link>
                     </div>

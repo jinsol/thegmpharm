@@ -14,7 +14,7 @@
           </div>
           <div class="prodBox" v-for="(item,index) in activeProduct.PrdInfo" :key="index">
             <div class="img__warp">
-              <div class="imgBox">
+              <div class="imgBox" @click=goToLink(item)>
                 <img :src="item.img" alt="">
               </div>
             </div>
@@ -79,6 +79,9 @@ computed: {
 methods: {
   changeActiveButton(name) {
     this.activeButton = name;
+  },
+  goToLink(item){
+    this.$router.push({ path: '/shopping/'});
   }
 }
 };

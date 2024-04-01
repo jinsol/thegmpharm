@@ -8,7 +8,9 @@
                     <div id="eventSlide" class="slideInner">
                         <swiper class="slide" :options="eventSlide">
                            <swiper-slide v-for="(item, index) in images" :key="index">
-                                   <img :src="item.img" :alt="item.alt">
+                                   <router-link :to="item.href">
+                                    <img :src="item.img" :alt="item.alt">
+                                </router-link>
                             </swiper-slide>
                             <div class="swiper-pagination" slot="pagination"></div>
                         </swiper>
@@ -31,10 +33,10 @@ import '@/assets/css/myswiper.css'
         data(){
             return{
             images:[
-                {img: './image/main-event-banner02.png',     alt: 'Image 1'},
-                {img: './image/main-event-banner02 (1).png', alt: 'Image 1'},
-                {img: './image/main-event-banner02 (2).png', alt: 'Image 1'},
-                {img: './image/main-event-banner02 (3).png', alt: 'Image 1'},
+                {img: './image/main-event-banner02.png',     alt: 'Image 1', href: "/event"},
+                {img: './image/main-event-banner02 (1).png', alt: 'Image 1', href: "/event"},
+                {img: './image/main-event-banner02 (2).png', alt: 'Image 1', href: "/event"},
+                {img: './image/main-event-banner02 (3).png', alt: 'Image 1', href: "/event"},
             ],
             eventSlide:{
                 slidesPerView:1, //보여주고 싶은 슬라이드 

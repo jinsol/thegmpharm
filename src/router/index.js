@@ -47,6 +47,7 @@ import CartView from "@/views/mypage/CartView.vue";
 import SignUpview from "@/views/mypage/SignUpView.vue";
 import Loginview from "@/views/mypage/LoginView.vue";
 
+
 Vue.use(Router);
 
 export default new Router({
