@@ -11,7 +11,7 @@
   </div>
   
   <div class="selectBox" >
-      <div v-if="questionTagValue === '회원·정보'" >
+      <div v-if="questionTagValue === '유소아 · 어린이'" >
   <div class="faq_list">
   <div v-for="(item, index) in faqItems" :key="index">
       <ul class="depth1" @click="toggleDepth2(index)" :class="{'open' : item.showDepth2}">
@@ -28,7 +28,7 @@
   </div>
   
   </div>
-      <div v-else-if="questionTagValue === '주문·결제'">
+      <div v-else-if="questionTagValue === '임신 · 출산'">
           <div class="faq_list">
   <div v-for="(item, index) in faqItems2" :key="index">
   <ul class="depth1" @click="toggleDepth2_2(index)":class="{'open' : item.showDepth2}">
@@ -46,7 +46,7 @@
   </div>
   </div>
       </div>
-      <div v-else-if="questionTagValue === '배송관련'">
+      <div v-else-if="questionTagValue === '성인건강'">
           <div class="faq_list">
   <div v-for="(item, index) in faqItems3" :key="index">
   <ul class="depth1" @click="toggleDepth2_3(index)":class="{'open' : item.showDepth2}">
@@ -62,25 +62,10 @@
   </div>
   </div>
           </div>
-      <div v-else-if="questionTagValue === '취소·반품·교환·환불'">
+      <div v-else-if="questionTagValue === '이너뷰티'">
           <div class="faq_list">
   <div v-for="(item, index) in faqItems4" :key="index">
   <ul class="depth1" @click="toggleDepth2_4(index)":class="{'open' : item.showDepth2}">
-      <li>{{ item.title }}
-          <i class="fa-solid fa-chevron-down" :class="{'rotate':item.showDepth2}"></i>
-      </li>
-      <ul class="depth2" v-show="item.showDepth2">
-          <li v-for="(subItem, subIndex) in item.subItems" :key="subIndex">
-            <span v-html="breakLines(subItem.content)"></span>
-          </li>
-      </ul>
-  </ul>
-  </div>
-  </div></div>
-      <div v-else-if="questionTagValue === '쿠폰·적립금·이벤트'">
-          <div class="faq_list">
-  <div v-for="(item, index) in faqItems5" :key="index">
-  <ul class="depth1" @click="toggleDepth2_5(index)":class="{'open' : item.showDepth2}">
       <li>{{ item.title }}
           <i class="fa-solid fa-chevron-down" :class="{'rotate':item.showDepth2}"></i>
       </li>
@@ -111,117 +96,108 @@
   },
       data() {
           return {
-            questionButton:'회원·정보',
-            activeButton:'회원·정보',
+            questionButton:'유소아 · 어린이',
+            activeButton:'유소아 · 어린이',
             activeImg:'./image/faq_icon01_h.png',
               questionTagValue:'', // 클릭된 질문 버튼을 저장할 데이터 속성
               questionTag:[
-                  {name: '회원·정보', image: './image/faq_icon01.png',image1: './image/faq_icon01.png', image2: './image/faq_icon01_h.png' },
-                  {name: '주문·결제', image: './image/faq_icon02.png',image1: './image/faq_icon02.png', image2: './image/faq_icon02_h.png'  },
-                  {name: '배송관련', image: './image/faq_icon03.png',image1: './image/faq_icon03.png', image2: './image/faq_icon03_h.png'  },
-                  {name: '취소·반품·교환·환불', image: './public/image/faq_icon04.png',image1: './image/faq_icon04.png', image2: './image/faq_icon04_h.png'  },
-                  {name: '쿠폰·적립금·이벤트', image: './public/image/faq_icon05.png',image1: './image/faq_icon05.png', image2: './image/faq_icon05_h.png'  },
+                  {name: '유소아 · 어린이', image: '/image/main_hot-tab01.png',image1: '/image/main_hot-tab01.png', image2: '/image/main_hot-tab01_h.png' },
+                  {name: '임신 · 출산', image: '/image/main_hot-tab02.png',image1: '/image/main_hot-tab02.png', image2: '/image/main_hot-tab02_h.png'  },
+                  {name: '성인건강', image: '/image/main_hot-tab03.png',image1: '/image/main_hot-tab03.png', image2:'/image/main_hot-tab03_h.png'  },
+                  {name: '이너뷰티', image: '/image/main_hot-tab04.png',image1: '/image/main_hot-tab04.png', image2: '/image/main_hot-tab04_h.png'  },
               ],faqItems: [
                   {
-                      title: '상품을 주문했는데 적립금은 언제 들어오나요?',
+                      title: '더징크디 / 더징크디 시럽 / 더징크디 홍삼젤리의 섭취 방법은 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '적립금은 주문하신 상품이 배달완료로 확인이 되면 자동으로 지급됩니다.' },
+                          { content: '식후 섭취를 권장하며, 오전이나 오후 섭취를 추천합니다.' },
                       ]
                   },
                   {
-                      title: '회원이 되면 어떤 혜택이 있나요?',
+                      title: '더칼슘디 / 더칼슘디 젤리의 섭취방법은 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '회원가입시 할인쿠폰을 받으실 수 있으며, 회원 등급별로 적립금, 추가할인 혜택을 받으실 수 있습니다.' },
+                          { content: '식후 섭취를 권장하며, 저녁 섭취를 추천합니다.' },
                       ]
                   },
                   {
-                      title: '아이디와 비밀번호를 잊어버렸습니다.',
+                      title: '야미푸 철분씨의 섭취방법은 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '홈페이지 우측 상단 [로그인> 아이디/비밀번호 찾기] 버튼을 눌러 아이디 혹은 비밀번호를 찾으실 수 있습니다.  \n- 아이디 찾기: 가입 전화번호 입력 후 아이디 전송 \n- 비밀번호 찾기: 가입 전화번호 입력 후 비밀번호 재설정 링크 전송' },
+                          { content: '공복 섭취를 권장하며, 오전이나 오후 섭취를 추천합니다.\n칼슘제와 같이 먹는다면 야미푸 철분씨는 오전, 칼슘제는 저녁 식후 섭취를 권장합니다.' },
                       ]
                   },
                   {
-                      title: '휴대폰 번호가 변경되었습니다.',
+                      title: '야미푸 / 더프로바이오 아연디·츄어블의 섭취방법은 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '1:1 문의/ 고객센터 1811-7835로 연락주시면 회원 본인 확인 후 도와 드리겠습니다.' },
+                          { content: '공복 섭취를 권장 드리며, 오전이나 저녁 섭취를 추천합니다.' },
                       ]
                   },
               ],faqItems2: [
                   {
-                      title: '전화로 주문할 수 있나요?',
+                      title: '철분제 섭취 시기와 섭취방법이 궁금합니다.',
                       showDepth2: false,
                       subItems: [
-                          { content: '네. 가능합니다. 결제방법은 무통장입금 또는 카드결제로 가능합니다. \n고객센터 1811-7835 로 전화해 주시면 친절히 도와드리겠습니다. \n결제계좌안내 \n[ IBK기업은행 / (주)지엠팜 / 357-078344-01-046 ]' },
+                          { content: '철분제는 임신16주이후(4개월이후)부 터 출산 후 3개월까지 드시는 걸 추천 드립니다.\n섭취 방법은 식전/식후 상관없이 오전이나 오후에 드시는 것을 추천합니다.' },
                       ]
                   },
                   {
-                      title: '주문자와 입금자명이 다를 때는 어떻게 해야 하나요?',
+                      title: '더폴릭포마미 엽산제 섭취시기가 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '주문자와 입금자 성함이 다를 때는 입금 확인이 어렵습니다. \n1:1문의게시판에 주문자 성함과 입금 자 성함을 남겨 주시거나 고객센터 1811-7835로 문의해 주세요.' },
+                          { content: '임신전 100일부터 임신 후 20주까지 섭취하시는 걸 추천 드립니다.' },
                       ]
                   },
                   {
-                      title: '신용카드 일시불 결제에서 할부로 변경할 수 있나요?',
+                      title: '더폴릭포대디 엽산제 섭취시기가 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '결제 완료 후 할부로 변경하시고자 하는 경우엔 고객센터 1811-7835로 문의해 주세요.' },
+                          { content: '임신계획 100일전부터 하루 1번, 1캡슐씩 섭취하시면 됩니다.' },
                       ]
                   },
                   {
-                      title: '현금영수증 발급을 못했는데 어떻게 해야 하나요?',
+                      title: '엽산제 섭취방법이 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: `무통장입금과, 실시간계좌이체 결제 시 결제창에서 현금영수증 발급 선택 후 사업자번호나 휴대폰번호를 입력해주시면 입금완료시 자동으로 현금 영수증이 발급됩니다.\n만약 결제창에서 현금영수증 발급선택을 못했을 경우에는 1:1문의게시판에 주문자명과 발행하실 번호 (휴대폰번호 또는 사업자등록번호)를 알려주시면 신속히 발행해드리겠습니다.\n(사업자등록번호일 경우 사업체명도 함께 알려주시면 됩니다.)` },
+                          { content: `하루 중 편한 시간에 맞춰서 섭취해주시고 식후 섭취를 권장합니다.` },
                       ]
                   },
               ],faqItems3: [
                   {
-                      title: '주문완료 후 배송지를 수정하고 싶습니다.',
+                      title: '오메가3의 섭취 방법이 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '배송완료전인 결제완료상태에서는 배송지수정이 가능합니다.\n배송완료 상태에서는 주소지 변경이 불가능하므로 1:1 문의게시판이나 고객센터 1811-7835로 요청 주시면 빠르게 도와드리겠습니다.' },
+                          { content: '식후 섭취를 권장 드리며, 오전이나 오후에 드시는 것을 추천합니다.' },
                       ]
                   },
                   {
-                      title: '주문을 하면 언제 출고되나요?',
+                      title: '더알티지오메가3의 DHA, EPA 함유량은 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '평일 오후 3시 이전에 주문하신 제품은 당일 출고됩니다.\n(공휴일제외)' },
+                          { content: '하루 섭취량 2캡슐 기준으로 DHA 360mg, EPA 540mg 함유되어 있습니다.' },
                       ]
                   },
                   {
-                      title: '주문을 하고 언제쯤 받아볼 수 있나요?',
+                      title: '칼슘의 섭취 방법이 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '주문하신 상품은 결제 완료 후 평균 1~2일 이내에 배송이 됩니다. (연휴 및 주말은 제외 하며, 배송 지역마다 차이가 있을 수 있습니다.)\n단, 구정 추석 연휴 등 택배 물량이 많이 발생하는 경우, 폭설, 폭우 등 천재지변이 일어나는 경우 배송이 지연될 수 있습니다.\n도서산간 지방의 경우 1~5일 정도 지연될 수 있습니다.' },
+                          { content: '더스트롱칼슘 기준으로 오전에 1정 저녁에 1정 섭취하는 게 가장 이상적인 방법입니다.\n나눠서 섭취하시는 게 불편하시면 저녁시간에 2정을 한꺼번에 섭취하셔도 괜찮습니다.' },
                       ]
                   },
                   {
-                      title: '해외 배송이 가능한가요?',
+                      title: '더스트롱포맨 옥타, 밀크씨슬, 마그네슘, 더징크디 제품의 섭취 방법이 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '네 해외 배송도 가능하며, 우체국 EMS 국제특급 배송으로 배송해드리고 있습니다.\n해외지역에 따라 별도의 배송비가 추가됩니다.\n주문 방법은 결제 배송 지 입력시에 우편번호 찾기에서 ‘해외’ 를 입력하시고 검색을 누르신 다음 나머지 주소란에 해외 주소지를 적어 주시면 됩니다.\n기타문의 사항은 1:1 게시판에 남겨 주시면 신속히 답변 드리겠습니다.' },
+                          { content: '식후 섭취를 권장 드리며, 오전이나 오후에 드시는 것을 추천합니다.' },
                       ]
                   },
               ],faqItems4: [
                   {
-                      title: '물건을 반품하고 싶습니다. 어떻게 하면 되나요?',
+                      title: '더프로바이오우먼 등 성인 유산균 제품의 섭취 방법이 어떻게 되나요?',
                       showDepth2: false,
                       subItems: [
-                          { content: '미개봉 시 단순 변심에 의한 반품은 구입일로부터 14일 이내에만 가능하며, 왕복 택배비 6,000원을 제외한 금액만 환불됩니다. (계좌 이체일 경우 현금 6,000원을 따로 입금해 주셔야 합니다.)' },
-                      ]
-                  },
-              ],faqItems5: [
-                  {
-                      title: '적립금 사용방법이 궁금합니다.',
-                      showDepth2: false,
-                      subItems: [
-                          { content: '구매 시 적립금 사용금액 한도는 없습니다.\n단, 이벤트 제품에 해당될 경우 적립금 사용이 불가 할 수 있습니다.' },
+                          { content: '공복 섭취를 권장 드리며, 오전이나 취침 전 섭취를 추천합니다.' },
                       ]
                   },
               ],
@@ -268,15 +244,6 @@
           },
           toggleDepth2_4(index) {
               this.faqItems4.forEach((item, i) => {
-                  if (i === index) {
-                      item.showDepth2 = !item.showDepth2;
-                  } else {
-                      item.showDepth2 = false;
-                  }
-              });
-          },
-          toggleDepth2_5(index) {
-              this.faqItems5.forEach((item, i) => {
                   if (i === index) {
                       item.showDepth2 = !item.showDepth2;
                   } else {
