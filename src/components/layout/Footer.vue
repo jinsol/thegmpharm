@@ -141,13 +141,17 @@ export default {
   height: 500px;
   background: #fafafa;
   border-top: 1px solid #ddd;
-
+  padding: 0 2%;
+  & > div {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
   .footertop {
     height: 75px;
     font-size: 15px;
     border-bottom: 1px solid #ddd;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     .footerlink {
       flex: 0 0 35%;
       display: flex;
@@ -167,6 +171,7 @@ export default {
     .footerright {
       display: flex;
       align-items: center;
+      gap: 12px;
       .inquiry {
         width: 122px;
         height: 47px;
@@ -177,7 +182,6 @@ export default {
         line-height: 47px;
         border: 1px solid #e9e9e9;
         display: inline-block;
-        margin-right: 15px;
         background: #fff;
         transition: all 0.3s;
       }
@@ -188,7 +192,6 @@ export default {
       .hoverBox {
         width: 45px;
         height: 46px;
-        margin-right: 15px;
         .kakao {
           .talk-image:hover {
             content: url("./image/footer_talk_h.png");
@@ -285,11 +288,12 @@ export default {
 @media screen and (max-width: 900px) {
   #footer {
     height: auto;
+    padding: 0 4%;
     background: #fafafa;
     border-top: 1px solid #ddd;
     .footertop {
-      padding: 4%;
       height: auto;
+      padding: 2% 0;
       font-size: var(--info-size);
       border-bottom: 1px solid #ddd;
       display: flex;
@@ -356,7 +360,7 @@ export default {
     .footerbot {
       display: flex;
       justify-content: center;
-      padding: 4%;
+      padding: 2% 0;
       text-align: center;
       flex-direction: column;
       .info {
@@ -365,12 +369,15 @@ export default {
           width: 140px;
           height: 36px;
           margin: 0 0 10px;
-          display: inline-block;
+          display: block;
+          text-align: center;
         }
         .cominfo {
-          display: flex;
+          display: inline;
           flex-wrap: wrap;
-          justify-content: center;
+          p {
+            display: inline;
+          }
           .gmpharm {
             color: #555;
           }
@@ -403,7 +410,7 @@ export default {
           font-size: 14px;
         }
         .time {
-          margin: 0 0 50px;
+          margin: 0;
           p {
             color: #888;
             font-size: 10px;

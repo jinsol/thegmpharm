@@ -95,6 +95,11 @@ legend {
   max-width: 1400px;
   margin: 4% auto 10%;
 }
+@media screen and (max-width: 1400px) {
+  main {
+    padding: 0 2%;
+  }
+}
 
 @media screen and (max-width: 900px) {
   main {

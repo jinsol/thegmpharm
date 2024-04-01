@@ -49,7 +49,29 @@
 </template>
 
 <script>
-export default {};
+import { gsap } from "gsap";
+gsap.registerPlugin(ScrollTrigger);
+export default {
+  mounted() {
+    gsap.utils.toArray(".brand_benefit ul").forEach((item, index) => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: item,
+            start: "20% 100%",
+            end: "100% 100%",
+            scrub: 1,
+          },
+        })
+        .from(item, {
+          opacity: 0,
+          y: 50,
+          duration: 1,
+          markers: true,
+        });
+    });
+  },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -5,17 +5,17 @@
       <p>Loading...</p>
     </div>
     <div v-show="!isLoading">
-    <Header />
-    <router-view />
-    <Footer />
-      <test-section />
+      <Header />
+      <router-view />
+      <Footer />
+      <!-- <test-section />
       <event-section />
       <best-product-section />
       <slide-section2 />
       <hot-key-word-section />
       <new-prd-section />
       <instargram-section />
-      <go-link-section />
+      <go-link-section /> -->
     </div>
   </div>
 </template>
@@ -76,14 +76,18 @@ export default {
 }
 .spinner {
   border: 4px solid #f3f3f3;
-  border-top: 4px solid #46b7B0;
+  border-top: 4px solid #46b7b0;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   animation: spin 2s linear infinite;
 }
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
