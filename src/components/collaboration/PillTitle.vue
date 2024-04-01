@@ -86,6 +86,7 @@ export default {
       li {
         p {
           padding: 10px;
+          font-size: var(--title-size);
         }
         .main-color {
           color: var(--main-color);

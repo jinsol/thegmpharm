@@ -30,6 +30,7 @@ body {
 }
 :root {
   --main-color: #46b7b0;
+  --main-color-hover: rgba(70, 183, 176, 0.08);
   --gray-color: rgba(0, 0, 0, 0.15);
   --main-font: "GmarketSansMedium";
   --body-font: "Gothic A1";
@@ -40,6 +41,7 @@ body {
   --board-background: #f9f9f9;
   --body-size: clamp(16px, 2.5vw, 20px);
   --title-size: clamp(18px, 2.5vw, 28px);
+  --teuni-intro-size: clamp(28px, 2.5vw, 42px);
 }
 a {
   text-decoration: none;

@@ -53,7 +53,6 @@ export default {
     const gmpElements = document.querySelectorAll(
       ".pill_introduction-contents li"
     );
-
     gsap.utils.toArray(gmpElements).forEach((element) => {
       gsap
         .timeline({
@@ -62,20 +61,19 @@ export default {
             start: "20% 100%",
             end: "100% 100%",
             scrub: 1,
-            markers: true,
           },
         })
         .fromTo(
           element,
           {
-            transform: "translateX(10%)",
+            transform: "translateY(20%)",
             opacity: 0,
           },
           {
-            transform: "translateX(0)",
+            transform: "translateY(0)",
             opacity: 1,
             duration: 1,
-            ease: "power1.inOut",
+            ease: "none",
           },
           2
         );
@@ -92,14 +90,18 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 60px;
+    position: relative;
     li {
+      display: flex;
+      // position: sticky;
+      position: relative;
       &.pill_introduction-contents-gmp {
         .text {
           text-align: left;
         }
       }
       &.pill_introduction-contents-pill {
-        flex-direction: row-reverse;
+        position: absolute;
         .text {
           display: flex;
           flex-direction: column;
@@ -109,26 +111,23 @@ export default {
         }
       }
       &:nth-child(1) {
-        left: 1 * 10%;
+        left: 0;
       }
       &:nth-child(2) {
-        left: 2 * 10%;
+        left: 10%;
       }
       &:nth-child(3) {
-        left: 3 * 10%;
+        right: 10%;
       }
       &:nth-child(4) {
-        left: 4 * 10%;
+        right: 0;
+        bottom: 0;
       }
-      display: flex;
+
       align-items: flex-end;
-      position: sticky;
-      left: 0;
-      top: 100px;
-      // backdrop-filter: blur(10px);
+
       .img {
         position: relative;
-
         span {
           display: block;
           width: 100%;
@@ -152,6 +151,41 @@ export default {
           font-size: 38px;
           letter-spacing: -2px;
           font-family: var(--body-font);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .pill_introduction-contents {
+      li {
+        &.pill_introduction-contents-pill {
+          position: relative;
+        }
+        &:nth-child(1) {
+          left: 0;
+        }
+        &:nth-child(2) {
+          left: 0;
+        }
+        &:nth-child(3) {
+          right: 0;
+        }
+        &:nth-child(4) {
+          right: 0;
+        }
+        .img {
+          span {
+            left: 10%;
+            width: 85%;
+          }
+        }
+        .text {
+          z-index: 1;
+          p {
+            i {
+              font-size: 24px;
+            }
+          }
         }
       }
     }

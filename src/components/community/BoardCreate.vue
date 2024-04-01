@@ -2,8 +2,11 @@
   <main class="board_create row">
     <form @submit.prevent="submitPost">
       <input type="text" v-model="title" placeholder="제목" />
-      <textarea v-model="content" placeholder="내용"></textarea>
-      <button type="submit">게시글 추가</button>
+      <textarea
+        v-model="content"
+        placeholder="본문에 내용을 입력하세요"
+      ></textarea>
+      <button type="submit">게시글 등록</button>
     </form>
   </main>
 </template>
@@ -59,7 +62,6 @@ export default {
 <style lang="scss" scoped>
 .board_create {
   height: 60vh;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
