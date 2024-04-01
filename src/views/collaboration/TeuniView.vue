@@ -124,7 +124,7 @@ export default {
         start: "20% 100%",
         end: "100% 100%",
         scrub: 1,
-        markers: true,
+        // markers: true,
         onUpdate: (self) => {
           if (self.direction === 1) {
             selector.classList.add("rotate"); // 아래로 스크롤 시 회전 클래스 추가
@@ -166,6 +166,9 @@ main {
       background-color: #ef85ad;
       color: #dd7eaa;
     }
+  }
+  @media screen and (max-width: 900px) {
+    padding: 0;
   }
 }
 </style>

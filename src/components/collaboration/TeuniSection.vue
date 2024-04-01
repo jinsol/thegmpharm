@@ -42,7 +42,6 @@ export default {
   //           start: "20% 100%",
   //           end: "100% 100%",
   //           scrub: 1,
-  //           markers: true,
   //         },
   //       })
   //       //   .to(

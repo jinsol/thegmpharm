@@ -32,6 +32,8 @@ body {
   --main-color: #46b7b0;
   --main-color-hover: rgba(70, 183, 176, 0.08);
   --gray-color: rgba(0, 0, 0, 0.15);
+  --red-color: #d1180b;
+  --red-color-hover: rgba(209, 24, 11, 0.08);
   --main-font: "GmarketSansMedium";
   --body-font: "Gothic A1";
   --collab-font: "CookieRun-Regular";

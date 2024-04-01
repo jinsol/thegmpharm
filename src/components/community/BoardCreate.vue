@@ -6,7 +6,12 @@
         v-model="content"
         placeholder="본문에 내용을 입력하세요"
       ></textarea>
-      <button type="submit">게시글 등록</button>
+      <div class="section_BT">
+        <button type="button" @click="prev_BT" class="prev_BT">
+          등록 취소
+        </button>
+        <button type="submit" class="create_BT">게시글 등록</button>
+      </div>
     </form>
   </main>
 </template>
@@ -47,6 +52,9 @@ export default {
       this.content = "";
       this.$router.go(-1);
     },
+    prev_BT() {
+      this.$router.go(-1);
+    },
   },
   computed: {
     username() {
@@ -64,7 +72,6 @@ export default {
   height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: #fff;
   form {
@@ -80,18 +87,47 @@ export default {
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-family: var(--body-font);
+      font-size: 16px;
     }
     textarea {
       height: 200px;
     }
-    button {
+    .section_BT {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #000;
-      color: #fff;
+      button {
+        display: flex;
+        padding: 15px 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        line-height: 1em;
+        &.prev_BT {
+          border: 1px solid gray;
+          color: gray;
+          transform: translateY(0);
+          transition: all 0.5s;
+          &:hover {
+            background-color: gray;
+            color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px 8px whitesmoke;
+          }
+        }
+        &.create_BT {
+          border: 1px solid var(--main-color);
+          color: var(--main-color);
+          transform: translateY(0);
+          transition: all 0.5s;
+          &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px 8px var(--main-color-hover);
+            background-color: var(--main-color);
+            color: #fff;
+          }
+        }
+      }
     }
   }
 }
