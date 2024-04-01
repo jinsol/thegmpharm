@@ -54,40 +54,40 @@ export default {
       teuniList: [
         {
           title: "째리",
-          titleSrc: "@/../public/image/teuni_zeri_title.png",
-          characterSrc: "@/../public/image/teuni_zeri.png",
+          titleSrc: "./image/teuni_zeri_title.png",
+          characterSrc: "./image/teuni_zeri.png",
           content:
             "정체를 알 수 없는 귀여운 악마 째리. 칼슘과 비타민D를 섭취할 수 있는 성장기 아이들의 필수아이템! 말랑말랑한 사과맛 구미!",
           button: "트니프렌즈 키즈 칼슘디구미 만나기",
         },
         {
           title: "키키",
-          titleSrc: "@/../public/image/teuni_kiki_title.png",
-          characterSrc: "@/../public/image/teuni_kiki.png",
+          titleSrc: "./image/teuni_kiki_title.png",
+          characterSrc: "./image/teuni_kiki.png",
           content:
             "노는 게 제일 좋고 항상 기분이 좋은 키키. 종합영양제도 매일 기분 좋게 먹어요! 입 안에서 사르르 녹는 오디티정으로 간편하고 맛있게!",
           button: "트니프렌즈 키즈 멀티비타민 오디티 만나기",
         },
         {
           title: "라노",
-          titleSrc: "@/../public/image/teuni_rano_title.png",
-          characterSrc: "@/../public/image/teuni_rano.png",
+          titleSrc: "./image/teuni_rano_title.png",
+          characterSrc: "./image/teuni_rano.png",
           content:
             "내일로 미루는 걸 좋아하는 라노도 절대 미루지 않는 눈 건강! 베타카로틴과 비타민A로 가득 채운 오렌지맛 초소형 츄어블",
           button: "트니프렌즈 키즈 아이케어 오디티 만나기",
         },
         {
           title: "리보",
-          titleSrc: "@/../public/image/teuni_ribo_title.png",
-          characterSrc: "@/../public/image/teuni_ribo.png",
+          titleSrc: "./image/teuni_ribo_title.png",
+          characterSrc: "./image/teuni_ribo.png",
           content:
             "말랑말랑한 파워 오지라퍼 리보가 지엠팜 친구들에게 추천해요! 입 안에서 톡톡! 신나는 축제를 즐겨봐!",
           button: "트니프렌즈 톡톡 키즈 유산균 만나기",
         },
         {
           title: "치코",
-          titleSrc: "@/../public/image/teuni_chico_title.png",
-          characterSrc: "@/../public/image/teuni_chico.png",
+          titleSrc: "./image/teuni_chico_title.png",
+          characterSrc: "./image/teuni_chico.png",
           content:
             "똑똑한 잔소리쟁이 치코가 지엠팜 친구들에게 전하는 사랑의 잔소리! 내 짝꿍처럼 튼튼하고 건강하고 싶다면!",
           button: "트니프렌즈 면역 키즈비타젤리 만나기",

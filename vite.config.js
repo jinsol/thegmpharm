@@ -8,4 +8,6 @@ export default defineConfig({
       "@": "/src",
     },
   },
+  // build
+  publicPath: "/the_gmpharm",
 });

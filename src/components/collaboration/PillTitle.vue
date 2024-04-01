@@ -2,15 +2,15 @@
   <section class="pill_title">
     <ul class="pill_title-top">
       <li>
-        <img src="@/assets/image/PillDoc_barcode.png" alt="" />
+        <img :src="`./image/PillDoc_barcode.png`" alt="" />
       </li>
       <li>
-        <img src="@/assets/image/PillDoc_logo.png" alt="" />
+        <img :src="`./image/PillDoc_logo.png`" alt="" />
       </li>
     </ul>
     <article class="pill_title-main">
       <h3 class="pill_title-main-title">
-        <img src="@/assets/image/pildoc_logo.png" alt="" />
+        <img :src="`./image/pildoc_logo.png`" alt="" />
       </h3>
       <ul class="pill_title-main-text">
         <li>

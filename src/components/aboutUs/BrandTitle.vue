@@ -10,10 +10,10 @@
       <span>약사들이 만든 회사입니다.</span>
     </p>
     <ul class="brand__title-image">
-      <li><img src="/public/image/brandstory_sec01_1.png" alt="" /></li>
-      <li><img src="/public/image/brandstory_sec01_2.png" alt="" /></li>
-      <li><img src="/public/image/brandstory_sec01_3.png" alt="" /></li>
-      <li><img src="/public/image/brandstory_sec01_4.png" alt="" /></li>
+      <li><img :src="`./image/brandstory_sec01_1.png`" alt="" /></li>
+      <li><img :src="`./image/brandstory_sec01_2.png`" alt="" /></li>
+      <li><img :src="`./image/brandstory_sec01_3.png`" alt="" /></li>
+      <li><img :src="`./image/brandstory_sec01_4.png`" alt="" /></li>
     </ul>
   </section>
 </template>

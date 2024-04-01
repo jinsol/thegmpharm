@@ -123,17 +123,17 @@ export default new Vuex.Store({
   },
   actions: {
     init__Shopping({ commit }) {
-      axios.get("/assets/data/product_SP.json").then((response) => {
+      axios.get("./assets/data/product_SP.json").then((response) => {
         commit("set__ShoppingList", response.data);
       });
     },
     init__Board({ commit }) {
-      axios.get("/assets/data/board.json").then((response) => {
+      axios.get("./assets/data/board.json").then((response) => {
         commit("set__BoardList", response.data);
       });
     },
     init__Pregnancy({ commit }) {
-      axios.get("/assets/data/pregnancy.json").then((response) => {
+      axios.get("./assets/data/pregnancy.json").then((response) => {
         commit("set__Pregnancy", response.data);
       });
     },

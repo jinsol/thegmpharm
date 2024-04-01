@@ -2,7 +2,7 @@
   <div class="box row">
     <h2>[추천] 지엠팜 유소아 필수 면역템</h2>
     <div class="photo">
-      <img src="../../../public/image/240304ev1.jpg" alt="" />
+      <img :src="`./image/240304ev1.jpg`" alt="" />
       <router-link to="/guideline"><button>목록으로</button></router-link>
     </div>
   </div>

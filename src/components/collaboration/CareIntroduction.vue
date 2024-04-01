@@ -18,7 +18,7 @@
     <p>
       <!-- <img src="../../../public/image/gmpharmCare_collaboration.png" alt="" /> -->
       <img
-        src="@/../public/image/gmpharmCare_collaboration.png"
+        :src="`./image/gmpharmCare_collaboration.png`"
         alt="지엠팜이 창립 10주년을 맞이하여 미래에셋생명과 함께 콜라보레이션을 진행합니다."
       />
     </p>

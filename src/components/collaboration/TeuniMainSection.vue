@@ -10,7 +10,7 @@
         </p>
       </li>
       <li class="teuni_main_section-image">
-        <img src="@/assets/image/teuni_section1_main.png" alt="" />
+        <img :src="`./image/teuni_section1_main.png`" alt="" />
       </li>
     </ul>
   </section>

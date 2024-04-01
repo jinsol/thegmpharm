@@ -54,7 +54,7 @@ export default {
       productList: [
         {
           month: 1,
-          image_src: "@/../public/image/RDV_m1_p01.png",
+          image_src: "./image/RDV_m1_p01.png",
           target: "성인건강",
           tag: ["성인건강"],
           name: "더스트롱칼슘/ 1개월분 산호칼슘,마그네슘,비타민D함유) 온가족용, 임산부, 성인",
@@ -65,7 +65,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p02.png",
+          image_src: "./image/RDV_m1_p02.png",
           target: "성인건강",
           tag: ["성인건강"],
           name: "더스트롱포맨 옥타 / 1개월분 (남성비타민) 옥타코사놀,아연,남성건강식품",
@@ -76,7 +76,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p03.png",
+          image_src: "./image/RDV_m1_p03.png",
           target: "성인건강",
           tag: ["성인건강", "눈건강"],
           name: "더알티지 오메가3 / 1개월분 (rTG오메가3 +비타민D 1000IU 함유)",
@@ -87,7 +87,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p04.png",
+          image_src: "./image/RDV_m1_p04.png",
           target: "유소아·어린이",
           tag: ["유소아면역"],
           name: "더징크디 / 1개월분 (유소아 / 효모아연+효모비타민D) 아기아연, 유아아연, 어린이아연",
@@ -98,7 +98,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p05.png",
+          image_src: "./image/RDV_m1_p05.png",
           target: "유소아·어린이",
           tag: ["어린이홍삼"],
           name: "더징크디 홍삼젤리 28포 (어린이/ 홍삼+아연+나이아신) 어린이홍삼,홍삼젤리",
@@ -109,7 +109,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p06.png",
+          image_src: "./image/RDV_m1_p06.png",
           target: "유소아·어린이",
           tag: ["유소아면역"],
           name: "더징크디시럽 / 1개월분 ( 아연 + 비타민D ) 어린이아연",
@@ -120,7 +120,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p07.png",
+          image_src: "./image/RDV_m1_p07.png",
           target: "유소아·어린이",
           tag: ["유소아유산균"],
           name: "더프로바이오 아연디 / 1개월분 (17종 유산균+비타민D+아연) 유소아용 유산균",
@@ -131,7 +131,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p08.png",
+          image_src: "./image/RDV_m1_p08.png",
           target: "여성건강",
           tag: ["장건강"],
           name: "더프로바이오우먼/ 1개월분(100억보장 특허유산균)",
@@ -142,7 +142,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p09.png",
+          image_src: "./image/RDV_m1_p09.png",
           target: "유소아·어린이",
           tag: ["유소아건강"],
           name: "야미푸 식물성 알티지 오메가3 (DHA, 비타민 E, 베타카로틴) / 30일분",
@@ -153,7 +153,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p10.png",
+          image_src: "./image/RDV_m1_p10.png",
           target: "유소아·어린이",
           tag: ["신상품", "에너지UP", "유소아건강"],
           name: "야미푸 키즈 멀티비타민",
@@ -164,7 +164,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p11.png",
+          image_src: "./image/RDV_m1_p11.png",
           target: "유소아·어린이",
           tag: ["유소아건강"],
           name: "야미푸철분씨 / 1개월 (철분, 비타민C 함유) 유소아철분제 어린이철분, 야미푸 철분씨",
@@ -175,7 +175,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p12.png",
+          image_src: "./image/RDV_m1_p12.png",
           target: "성인건강" + "여성건강",
           tag: ["임신준비", "성인건강"],
           name: "피코스 이노시톨(지엠팜 x 우리동산)",
@@ -186,7 +186,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p13.png",
+          image_src: "./image/RDV_m1_p13.png",
           target: "성인건강",
           tag: ["눈건강"],
           name: "더루테인 알티지 오메가3/루테인지아잔틴 일일최대 함유, 눈건강",
@@ -197,7 +197,7 @@ export default {
         },
         {
           month: 1,
-          image_src: "../public/image/RDV_m1_p14.png",
+          image_src: "./image/RDV_m1_p14.png",
           target: "성인건강",
           tag: ["눈건강"],
           name: "더칼슘디/1개월분 (유소아 / 어린이 칼슘) 칼슘 마그네슘",
@@ -208,7 +208,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p01.png",
+          image_src: "./image/RDV_m3_p01.png",
           target: "성인건강",
           tag: ["눈건강"],
           name: "더루테인 알티지 오메가3",
@@ -219,7 +219,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p02.png",
+          image_src: "./image/RDV_m3_p02.png",
           target: "성인건강",
           tag: [],
           name: "더스트롱 밀크씨슬",
@@ -230,7 +230,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p03.png",
+          image_src: "./image/RDV_m3_p03.png",
           target: "성인건강",
           tag: ["유소아성장"],
           name: "더스트롱칼슘",
@@ -241,7 +241,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p04.png",
+          image_src: "./image/RDV_m3_p04.png",
           target: "성인건강",
           tag: [],
           name: "더알티지 오메가3",
@@ -252,7 +252,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p05.png",
+          image_src: "./image/RDV_m3_p05.png",
           target: "성인건강" + "여성건강",
           tag: ["여성건강"],
           name: "더프로바이오우먼",
@@ -263,7 +263,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p06.png",
+          image_src: "./image/RDV_m3_p06.png",
           target: "유소아·어린이",
           tag: ["유소아성장"],
           name: "야미푸 식물성 알티지 오메가3",
@@ -274,7 +274,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p07.png",
+          image_src: "./image/RDV_m3_p07.png",
           target: "유소아·어린이",
           tag: ["에너지UP", "유소아건강"],
           name: "야미푸 키즈 멀티비타민",
@@ -285,7 +285,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p08.png",
+          image_src: "./image/RDV_m3_p08.png",
           target: "유소아·어린이",
           tag: ["유소아성장"],
           name: "야미푸철분씨",
@@ -296,7 +296,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p09.png",
+          image_src: "./image/RDV_m3_p09.png",
           target: "성인건강" + "여성건강",
           tag: ["여성건강"],
           name: "피코스 이노시톨 맥스 40:1 (지엠팜 x 우리동산)",
@@ -307,7 +307,7 @@ export default {
         },
         {
           month: 3,
-          image_src: "../public/image/RDV_m3_p10.png",
+          image_src: "./image/RDV_m3_p10.png",
           target: "성인건강" + "여성건강",
           tag: ["여성건강"],
           name: "피코스 이노시톨(지엠팜 x 우리동산)",

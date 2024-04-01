@@ -10,9 +10,9 @@
             </button>
           </li>
           <li class="logo_section">
-            <router-link to="/"
-              ><img src="@/../public/image/logo_default.png" alt="지엠팜"
-            /></router-link>
+            <router-link to="/">
+              <img :src="`./image/logo_default.png`" alt="지엠팜" />
+            </router-link>
           </li>
           <li class="myPage_section">
             <div v-if="!isMobile">

@@ -4,7 +4,7 @@
       <li class="pill_introduction-contents-gmp">
         <div class="img">
           <span></span>
-          <img src="@/assets/image/pilldoc_p1.png" alt="서진혁" />
+          <img :src="`./image/pilldoc_p1.png`" alt="서진혁" />
         </div>
         <div class="text">
           <h4><i>서진혁</i></h4>
@@ -14,7 +14,7 @@
       <li class="pill_introduction-contents-gmp">
         <div class="img">
           <span></span>
-          <img src="@/assets/image/pilldoc_p2.png" alt="전윤식" />
+          <img :src="`./image/pilldoc_p2.png`" alt="전윤식" />
         </div>
         <div class="text">
           <h4><i>전윤식</i></h4>
@@ -24,7 +24,7 @@
       <li class="pill_introduction-contents-pill">
         <div class="img">
           <span></span>
-          <img src="@/assets/image/pilldoc_p3.png" alt="임성용" />
+          <img :src="`./image/pilldoc_p3.png`" alt="임성용" />
         </div>
         <div class="text">
           <h4><i>임성용</i></h4>
@@ -34,7 +34,7 @@
       <li class="pill_introduction-contents-pill">
         <div class="img">
           <span></span>
-          <img src="@/assets/image/pilldoc_p4.png" alt="이정철" />
+          <img :src="`./image/pilldoc_p4.png`" alt="이정철" />
         </div>
         <div class="text">
           <h4><i>이정철</i></h4>

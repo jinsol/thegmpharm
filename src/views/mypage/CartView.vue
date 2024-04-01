@@ -1,9 +1,6 @@
 <template>
   <main class="row">
-    <section-title
-      title="장바구니"
-      sub_title="장바구니를 확인할 수 있습ㄴ디ㅏ"
-    />
+    <section-title title="장바구니" sub_title="장바구니를 확인할 수 있습니다" />
     <cart-list />
   </main>
 </template>

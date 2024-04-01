@@ -35,17 +35,17 @@ export default {
       itemsPerPage: 4,
       contentsList: [
         {
-          imageSrc: "@/../public/image/magazine_220712.png",
+          imageSrc: "./image/magazine_220712.png",
           title: "다낭 난소 증후군이란? ㅣ 우리동네산부인과 권정은원장님",
           postingDate: "2022-07-12",
         },
         {
-          imageSrc: "@/../public/image/magazine_220422.jpg",
+          imageSrc: "./image/magazine_220422.jpg",
           title: "칼슘! 뼈 건강만 지킬까? 칼슘의 다양한 역할",
           postingDate: "2022-04-22",
         },
         {
-          imageSrc: "@/../public/image/magazine_220407.jpg",
+          imageSrc: "./image/magazine_220407.jpg",
           title: "장과 뇌가 연결되어 있다?!",
           postingDate: "2022-04-07",
         },

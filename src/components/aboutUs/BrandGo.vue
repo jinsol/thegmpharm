@@ -12,7 +12,7 @@
         </button>
       </li>
       <li class="image_box">
-        <img src="/public/image/brandstory_sec03_1.png" alt="" />
+        <img :src="`./image/brandstory_sec03_1.png`" alt="" />
       </li>
     </ul>
   </section>

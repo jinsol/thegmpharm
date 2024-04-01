@@ -10,12 +10,12 @@
         </p>
       </li>
       <li class="image_box">
-        <img src="/public/image/brandstory_sec02_1.png" alt="" />
+        <img :src="`./image/brandstory_sec02_1.png`" alt="" />
       </li>
     </ul>
     <ul>
       <li class="image_box text-right">
-        <img src="/public/image/brandstory_sec02_2.png" alt="" />
+        <img :src="`./image/brandstory_sec02_2.png`" alt="" />
       </li>
       <li class="text_box">
         <h3 class="text_box-title">프리미엄</h3>
@@ -42,7 +42,7 @@
         </p>
       </li>
       <li class="image_box">
-        <img src="/public/image/brandstory_sec02_3.png" alt="" />
+        <img :src="`./image/brandstory_sec02_3.png`" alt="" />
       </li>
     </ul>
   </section>
