@@ -25,6 +25,7 @@ import GuidelineView from "@/views/GuidelineView.vue";
 import MembershipView from "@/views/MembershipView.vue";
 import QuestionsView from "@/views/QuestionsView.vue";
 import InquiryView from "@/views/InquiryView.vue";
+import IntakeView from "@/views/IntakeView.vue";
 //공지사항
 import NoticePostView from "@/views/post/NoticePostView.vue";
 import NoticePostView2 from "@/views/post/NoticePostView2.vue";
@@ -36,6 +37,7 @@ import NoticePostView7 from "@/views/post/NoticePostView7.vue";
 import NoticePostView8 from "@/views/post/NoticePostView8.vue";
 import NoticePostView9 from "@/views/post/NoticePostView9.vue";
 import NoticePostView10 from "@/views/post/NoticePostView10.vue";
+
 // 회사관련 (이용약관, 개인정보취급방침, 이용안내, 기업제휴문의)
 import TermsView from "@/views/TermsView.vue";
 import PrivacyView from "@/views/PrivacyView.vue";
@@ -88,6 +90,7 @@ export default new Router({
     { path: "/noticepost7", name: "noticepost7", component: NoticePostView7 },
     { path: "/noticepost8", name: "noticepost8", component: NoticePostView8 },
     { path: "/noticepost9", name: "noticepost9", component: NoticePostView9 },
+    { path: "/intake", name: "intakeview", component: IntakeView },
     {
       path: "/noticepost10",
       name: "noticepost10",

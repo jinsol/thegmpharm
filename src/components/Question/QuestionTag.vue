@@ -356,9 +356,8 @@
       justify-content: space-between;
       button{
           background: #f7f9f6;
-          padding: 2px;
+          padding: 0px;
           border: 1px solid #e3e3e3;
-          flex: 1 0 20%;
           font-size: 10px;
           color: #7f7f7f;
           word-break: keep-all;

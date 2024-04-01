@@ -170,7 +170,7 @@
               <i class="fa-solid fa-chevron-down mobile_arrowIcon"></i>
             </a>
             <ul class="depth2">
-              <li><router-link to="/guideline">섭취가이드</router-link></li>
+              <li><router-link to="/intake">섭취가이드</router-link></li>
               <li><router-link to="/membership">맴버십 안내</router-link></li>
               <li><router-link to="/questions">자주묻는질문</router-link></li>
               <li><router-link to="/inquiry">1:1 문의</router-link></li>
