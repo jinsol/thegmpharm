@@ -19,13 +19,7 @@
         <p>{{ boardList.content }}</p>
       </li>
       <li class="board_list-btn">
-        <button
-          v-if="boardList.userId === userId && isLoggedIn"
-          class="modify_BT"
-          @click="handleModify"
-        >
-          수정하기
-        </button>
+        <button class="prev_BT" @click="prev_BT">이전으로</button>
         <button
           v-if="boardList.userId === userId && isLoggedIn"
           class="delete_BT"
@@ -33,7 +27,13 @@
         >
           삭제하기
         </button>
-        <button class="prev_BT" @click="prev_BT">이전으로</button>
+        <button
+          v-if="boardList.userId === userId && isLoggedIn"
+          class="modify_BT"
+          @click="handleModify"
+        >
+          수정하기
+        </button>
       </li>
     </ul>
   </main>
@@ -114,7 +114,8 @@ main {
         color: var(--main-color);
       }
       h3 {
-        font-size: var(-title-size);
+        font-size: var(--title-size);
+        line-height: 1.8em;
       }
     }
     .board_list-writer {
@@ -126,7 +127,6 @@ main {
         display: flex;
         flex-wrap: wrap;
         align-content: center;
-        width: 100%;
         &.board_list-writer-profile {
           background: whitesmoke;
           border-radius: 50%;
@@ -161,8 +161,54 @@ main {
       }
     }
     .board_list-btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
       button {
-        width: 100%;
+        display: flex;
+        padding: 15px 20px;
+        margin: 10px 0;
+        border-radius: 5px;
+        line-height: 1em;
+
+        &.prev_BT {
+          border: 1px solid gray;
+          color: gray;
+          transform: translateY(0);
+          transition: all 0.5s;
+          &:hover {
+            background-color: gray;
+            color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px 8px whitesmoke;
+          }
+        }
+        &.delete_BT {
+          border: 1px solid var(--red-color);
+          color: var(--red-color);
+          transform: translateY(0);
+          transition: all 0.5s;
+          margin-left: auto;
+          &:hover {
+            background-color: var(--red-color);
+            color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px 8px var(--red-color-hover);
+          }
+        }
+        &.modify_BT {
+          border: 1px solid var(--main-color);
+          color: var(--main-color);
+          transform: translateY(0);
+          transition: all 0.5s;
+          &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px 8px var(--main-color-hover);
+            background-color: var(--main-color);
+            color: #fff;
+          }
+        }
       }
     }
   }
@@ -171,16 +217,6 @@ main {
   }
   p {
     font-size: 14px;
-  }
-  .prev_BT {
-    width: 140px;
-    height: 50px;
-    background-color: var(--main-color);
-    color: white;
-    font-size: 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
   }
 }
 </style>
