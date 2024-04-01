@@ -2,7 +2,6 @@
   <div>
     <div class="loading-overlay" v-show="isLoading">
       <div class="spinner"></div>
-      <iframe src="https://lottie.host/embed/5ea2414a-5bde-4f71-bc5b-7c724bd55c09/fKltP5yiqk.json"></iframe>
       <p>Loading...</p>
     </div>
     <div v-show="!isLoading">
@@ -77,10 +76,14 @@ export default {
 }
 .spinner {
   border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
+  border-top: 4px solid #46b7B0;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 </style>
