@@ -9,5 +9,5 @@ export default defineConfig({
     },
   },
   // build
-  publicPath: "/the_gmpharm",
+  // publicPath: "/the_gmpharm",
 });

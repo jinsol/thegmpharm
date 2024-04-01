@@ -52,7 +52,7 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   // build
-  base: "/the_gmpharm",
+  // base: "/the_gmpharm",
   routes: [
     { path: "/", name: "home", component: HomeView },
     { path: "/aboutus", name: "aboutus", component: AboutUsView },
