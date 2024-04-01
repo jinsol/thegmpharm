@@ -1,19 +1,14 @@
 <template>
   <main class="row">
-    <section-title
-      title="지엠팜케어"
-      sub_title="지엠팜 상품 구매시 적용되는 '소비자케어프로그램!'"
-    />
     <care-introduction />
     <h3 class="care_title">지엠팜케어 프로그램 보장 내역</h3>
     <care-program :program="program" />
     <Care-qnA :answerData="answerData" :class="{ mobile: isMobile }" />
-    <img src="@/assets/image/GmpharmCare_02.jpg" alt="" />
+    <!-- <img :src="`./image/GmpharmCare_02.jpg`" alt="" /> -->
   </main>
 </template>
 
 <script>
-import SectionTitle from "@/components/layout/SectionTitle.vue";
 import CareIntroduction from "@/components/collaboration/CareIntroduction.vue";
 import CareProgram from "@/components/collaboration/CareProgram.vue";
 import CareQnA from "@/components/collaboration/CareQnA.vue";
@@ -22,7 +17,6 @@ import { mapState } from "vuex";
 export default {
   name: "GmpharmCare",
   components: {
-    SectionTitle,
     CareIntroduction,
     CareProgram,
     CareQnA,
@@ -36,15 +30,15 @@ export default {
           InsuranceSubscriptionAge: "1~14세",
           insuranceProducts: [
             {
-              image: "@/../public/image/gmpaharmcare_p1_1.png",
+              image: "./image/gmpaharmcare_p1_1.png",
               content: "골절 시 10만원 (골절 1회당)",
             },
             {
-              image: "@/../public/image/gmpaharmcare_p1_2.png",
+              image: "./image/gmpaharmcare_p1_2.png",
               content: "재해수술 시 10만원 (수술 1회당)",
             },
             {
-              image: "@/../public/image/gmpaharmcare_p1_3.png",
+              image: "./image/gmpaharmcare_p1_3.png",
               content: "'어린이질환' 수술 시 최대 100만원 (수술 1회당)",
             },
           ],
@@ -56,15 +50,15 @@ export default {
           InsuranceSubscriptionAge: "20~60세",
           insuranceProducts: [
             {
-              image: "@/../public/image/gmpaharmcare_p2_1.png",
+              image: "./image/gmpaharmcare_p2_1.png",
               content: "골절 시 10만원 (골절 1회당)",
             },
             {
-              image: "@/../public/image/gmpaharmcare_p2_2.png",
+              image: "./image/gmpaharmcare_p2_2.png",
               content: "재해수술 시 10만원 (수술 1회당)",
             },
             {
-              image: "@/../public/image/gmpaharmcare_p2_3.png",
+              image: "./image/gmpaharmcare_p2_3.png",
               content: "'대상포진' 진단 시 10만원 (최초 1회한)",
             },
           ],

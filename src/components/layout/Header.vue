@@ -75,8 +75,6 @@
                 <span v-else
                   >환영합니다, <i>{{ username }}</i> 님</span
                 >
-                <router-link to="/mypage">마이페이지</router-link>
-                <router-link to="/cart">장바구니</router-link>
               </li>
             </ul>
           </li>
@@ -180,6 +178,13 @@
           </li>
         </ul>
         <ul v-if="isMobile" class="myPage_section">
+          <li>
+            <!-- <router-link to="/mypage">마이페이지</router-link> -->
+            <router-link to="/cart">
+              <i class="fa-heart fa-regular goToCart_BT"></i>
+              <span>장바구니</span>
+            </router-link>
+          </li>
           <li>
             <a
               href="#"
@@ -482,6 +487,11 @@ header.mobile {
         .top_section-btn_section {
           display: flex;
           justify-content: flex-end;
+          .mobile_x_btn {
+            font-size: 20px;
+            color: gray;
+            font-weight: 100;
+          }
         }
         .top_section-info_section {
           ul {
@@ -523,6 +533,27 @@ header.mobile {
         }
       }
       .menu_section {
+        position: relative;
+        &::before {
+          content: "";
+          border-top: 1px dotted lightgray;
+          display: block;
+          width: 92%;
+          height: 1px;
+          position: absolute;
+          top: 0;
+          left: 4%;
+        }
+        &::after {
+          content: "";
+          border-top: 1px dotted lightgray;
+          display: block;
+          width: 92%;
+          height: 1px;
+          position: absolute;
+          bottom: 0;
+          left: 4%;
+        }
         .depth1 {
           padding: 0;
           color: gray;

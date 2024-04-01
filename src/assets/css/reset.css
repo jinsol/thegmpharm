@@ -41,6 +41,7 @@ body {
   --main-border: 1px solid rgba(0, 0, 0, 0.15);
   --board-border: 1px solid #e7e7e7;
   --board-background: #f9f9f9;
+  --info-size: clamp(10px, 2.5vw, 14px);
   --body-size: clamp(16px, 2.5vw, 20px);
   --title-size: clamp(18px, 2.5vw, 28px);
   --teuni-intro-size: clamp(28px, 2.5vw, 42px);

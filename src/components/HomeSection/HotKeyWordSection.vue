@@ -195,21 +195,21 @@ export default {
   // 활성화되었다면 바꾼 후 이미지를 반환, 그렇지 않으면 기존 이미지 반환
   switch (menu) {
     case this.PrdMenu.menu1:
-      return isActive ? '/image/main_hot-tab01_h.png' : '/image/main_hot-tab01.png';
+      return isActive ? './image/main_hot-tab01_h.png' : './image/main_hot-tab01.png';
     case this.PrdMenu.menu2:
-      return isActive ? '/image/main_hot-tab02_h.png' : '/image/main_hot-tab02.png';
+      return isActive ? './image/main_hot-tab02_h.png' : './image/main_hot-tab02.png';
     case this.PrdMenu.menu3:
-      return isActive ? '/image/main_hot-tab03_h.png' : '/image/main_hot-tab03.png';
+      return isActive ? './image/main_hot-tab03_h.png' : './image/main_hot-tab03.png';
     case this.PrdMenu.menu4:
-      return isActive ? '/image/main_hot-tab04_h.png' : '/image/main_hot-tab04.png';
+      return isActive ? './image/main_hot-tab04_h.png' : './image/main_hot-tab04.png';
     case this.PrdMenu.menu5:
-      return isActive ? '/image/main_hot-tab05_h.png' : '/image/main_hot-tab05.png';
+      return isActive ? './image/main_hot-tab05_h.png' : './image/main_hot-tab05.png';
     case this.PrdMenu.menu6:
-      return isActive ? '/image/main_hot-tab06_h.png' : '/image/main_hot-tab06.png';
+      return isActive ? './image/main_hot-tab06_h.png' : './image/main_hot-tab06.png';
     case this.PrdMenu.menu7:
-      return isActive ? '/image/main_hot-tab07_h.png' : '/image/main_hot-tab07.png';
+      return isActive ? './image/main_hot-tab07_h.png' : './image/main_hot-tab07.png';
     case this.PrdMenu.menu8:
-      return isActive ? '/image/main_hot-tab08_h.png' : '/image/main_hot-tab08.png';
+      return isActive ? './image/main_hot-tab08_h.png' : './image/main_hot-tab08.png';
     // 나머지 버튼들에 대해서도 동일하게 처리 가능
     default:
       return ''; // 기본값 설정
