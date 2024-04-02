@@ -1,38 +1,11 @@
 <template>
   <main>
     <teuni-main-section />
-
-    <!-- <section class="teuni_02">
-      <img
-        class="teuni_zeri_airplane"
-        src="@/assets/image/teuni_zeri_airplane.png"
-        alt=""
-      />
-      <div class="boxwrap row">
-        <div class="text character">
-          <p>
-            <span>정체를 알 수 없는 귀여운 악마 째리!</span>
-            <span>
-              칼슘과 비타민D를 섭취할 수 있는 성장기 아이들의 필수아이템!
-            </span>
-            <span>말랑말랑한 사과맛 구미!</span>
-          </p>
-        </div>
-        <div class="img character_zeri">
-          <img src="@/assets/image/teuni_zeri.png" alt="" />
-        </div>
-      </div>
-    </section>
-    <section class="teuni_03"></section>
-    <section class="teuni_04"></section>
-    <section class="teuni_05"></section>
-    <section class="teuni_06"></section> -->
     <teuni-section
       v-for="(item, index) in teuniList"
       :key="index"
       :teuniList="item"
-      :ref="`imgBox${index}`"
-      class="img_box"
+      :class="{ teuni_section: true, 'row-reverse': index % 2 !== 0 }"
     />
   </main>
 </template>
@@ -134,6 +107,23 @@ export default {
         },
       });
     });
+    gsap.utils.toArray(".teuni_section").forEach((selector) => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: selector,
+            start: "0% 20%",
+            end: "0% 0%",
+            scrub: 1,
+            // markers: true,
+          },
+        })
+        .to(selector, {
+          transform: "rotateX(-10deg)",
+          transformOrigin: "top",
+          // filter: "brightness(0.3)",
+        });
+    });
   },
 };
 </script>
@@ -146,12 +136,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+
     &:nth-child(2) {
       background-color: #e73650;
       color: #e73650;
     }
     &:nth-child(3) {
-      background-color: #edb101;
+      background-color: #fff353;
       color: #edb101;
     }
     &:nth-child(4) {

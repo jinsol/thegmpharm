@@ -50,7 +50,7 @@ export default {
             y: 0,
             ease: "power2.inOut",
             duration: 1,
-            delay: 1,
+            delay: 0.5,
           }
         );
       });

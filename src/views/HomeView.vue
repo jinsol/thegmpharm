@@ -12,14 +12,14 @@
 </template>
 
 <script>
-import TestSection from "@/components/HomeSection/TestSection.vue"
-import EventSection from "@/components/HomeSection/EventSection.vue"
-import BestProductSection from "@/components/HomeSection/BestProductSection.vue"
-import SlideSection2 from "@/components/HomeSection/SlideSection2.vue"
-import HotKeyWordSection from "@/components/HomeSection/HotKeyWordSection.vue"
-import NewPrdSection from "@/components/HomeSection/NewPrdSection.vue"
-import instargramSection from "@/components/HomeSection/instargramSection.vue"
-import GoLinkSection from "@/components/HomeSection/GoLinkSection.vue"
+import TestSection from "@/components/HomeSection/TestSection.vue";
+import EventSection from "@/components/HomeSection/EventSection.vue";
+import BestProductSection from "@/components/HomeSection/BestProductSection.vue";
+import SlideSection2 from "@/components/HomeSection/SlideSection2.vue";
+import HotKeyWordSection from "@/components/HomeSection/HotKeyWordSection.vue";
+import NewPrdSection from "@/components/HomeSection/NewPrdSection.vue";
+import instargramSection from "@/components/HomeSection/instargramSection.vue";
+import GoLinkSection from "@/components/HomeSection/GoLinkSection.vue";
 
 export default {
   name: "HomeView",
@@ -36,6 +36,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

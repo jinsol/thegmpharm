@@ -35,7 +35,6 @@ span {
 }
 .care_introduction {
   text-align: center;
-  padding: 10% 0;
   .care_introduction-title {
     font-size: clamp(18px, 2.5vw, 28px);
     font-weight: lighter;

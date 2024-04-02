@@ -36,7 +36,7 @@
           <li class="product_desc">{{ item.desc }}</li>
           <li v-if="item.stock">
             {{ item.price | formatPrice }}
-            <span v-if="item.discount">{{ item.price / item.discount }}</span>
+            <!-- <span v-if="item.discount">{{ item.price / item.discount }}</span> -->
             <button @click="addCart(item)">
               <i v-if="heartFilled[index]" class="fa-heart fa-solid"></i>
               <i v-else class="fa-heart fa-regular"></i>

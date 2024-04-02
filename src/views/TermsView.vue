@@ -1,9 +1,7 @@
 <template>
-  <div class="row">
+  <main class="row">
+    <section-title title="이용약관" />
     <div class="base">
-      <div class="titleArea">
-        <section-title title="이용약관" />
-      </div>
       <div class="outBox">
         <div class="inBox">
           <p>
@@ -676,7 +674,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -701,15 +699,6 @@ export default {
 <style lang="scss" scoped>
 .row {
   .base {
-    padding: 10px;
-    .titleArea {
-      text-align: center;
-      padding: 85px 0;
-      h2 {
-        font-size: 45px;
-        color: #222;
-      }
-    }
     .outBox {
       border: 1px solid #ddd;
       padding: 20px;
@@ -720,9 +709,12 @@ export default {
         background: #fff;
         p {
           font-size: 15px;
+
           color: #404040;
           span {
             display: block;
+            font-family: var(--body-font);
+            line-height: 1.6em;
           }
         }
       }

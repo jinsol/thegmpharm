@@ -19,7 +19,22 @@
 </template>
 
 <script>
-export default {};
+import { gsap } from "gsap";
+
+export default {
+  mounted() {
+    const images = document.querySelectorAll(".brand__title-image li img");
+
+    gsap.from(images, {
+      duration: 1,
+      opacity: 0,
+      y: 100,
+      scale: 0.9,
+      stagger: 0.2, // 요소들 사이의 간격을 조절하여 차례로 애니메이션을 적용
+      ease: "power3.out", // 원하는 이징 함수로 변경 가능
+    });
+  },
+};
 </script>
 
 <style lang="scss" scoped>

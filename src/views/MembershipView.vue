@@ -9,10 +9,10 @@
             <h3>신규 회원 혜택</h3>
             <p>지엠팜 가족을 위한 적립금 혜택</p>
             <div class="box_b">
-              <p>Benefit <sapn class="circle">01</sapn></p>
+              <p>Benefit <span class="circle">01</span></p>
               <div class="member">
                 <a href="https://thegmpharm.co.kr/member/join.html">
-                  <img src="/image/newmem01.png" alt="" />
+                  <img :src="`./image/newmem01.png`" alt="" />
                   <div class="font">
                     <p>신규회원가입시</p>
                     <p><span>2,000원!</span></p>
@@ -21,10 +21,10 @@
               </div>
             </div>
             <div class="box_b">
-              <p>Benefit <sapn class="circle">02</sapn></p>
+              <p>Benefit <span class="circle">02</span></p>
               <div class="member">
                 <a href="https://pf.kakao.com/_AvxbqV">
-                  <img src="/image/newmem02.png" alt="" />
+                  <img :src="`./image/newmem02.png`" alt="" />
                   <div class="font">
                     <p>카카오톡 플러스 친구 등록시</p>
                     <p><span>2,000원!</span></p>
@@ -33,10 +33,10 @@
               </div>
             </div>
             <div class="box_b">
-              <p>Benefit <sapn class="circle">03</sapn></p>
+              <p>Benefit <span class="circle">03</span></p>
               <div class="member">
                 <a href="#">
-                  <img src="/image/newmem03.png" alt="" />
+                  <img :src="`./image/newmem03.png`" alt="" />
                   <div class="font">
                     <p>어플 다운로드시</p>
                     <p><span>2,000원!</span></p>
@@ -53,10 +53,10 @@
             <table>
               <tr>
                 <th>회원등급</th>
-                <td><img src="/image/level01.png" alt="" /></td>
-                <td><img src="/image/level02.png" alt="" /></td>
-                <td><img src="/image/level03.png" alt="" /></td>
-                <td><img src="/image/level04.png" alt="" /></td>
+                <td><img :src="`./image/level01.png`" alt="" /></td>
+                <td><img :src="`./image/level02.png`" alt="" /></td>
+                <td><img :src="`./image/level03.png`" alt="" /></td>
+                <td><img :src="`./image/level04.png`" alt="" /></td>
               </tr>
               <tr>
                 <th>결제금액(이상)</th>

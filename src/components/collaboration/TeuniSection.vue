@@ -34,6 +34,7 @@ import { gsap } from "gsap";
 gsap.registerPlugin(ScrollTrigger);
 export default {
   props: ["teuniList"],
+  mounted() {},
   //   mounted() {
   //     gsap
   //       .timeline({
@@ -65,6 +66,9 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: sticky;
+  top: 0;
+  perspective: 900px;
   & > ul {
     position: relative;
     padding: 10% 0;
@@ -78,6 +82,7 @@ export default {
         display: flex;
         gap: 2%;
         height: inherit;
+
         .text_box {
           flex-basis: 70%;
           display: flex;
@@ -88,6 +93,7 @@ export default {
           & > * {
             font-family: var(--collab-font);
             font-size: var(--teuni-intro-size);
+            word-break: keep-all;
           }
         }
         .img_box {
@@ -149,6 +155,12 @@ export default {
   }
   .rotate-animation.rotate {
     transform: rotate(5deg) translate(20px, 20px); /* 회전 각도 설정 */
+  }
+  &.row-reverse .rotate-animation.rotate {
+    transform: rotate(-10deg) translate(-20px, -20px); /* 회전 각도 설정 */
+  }
+  &.row-reverse .teuni_section-contents ul {
+    flex-direction: row-reverse;
   }
 }
 </style>

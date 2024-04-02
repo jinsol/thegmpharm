@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <section>
     <div class="base">
       <div class="tag__list">
         <router-link
@@ -21,7 +21,7 @@
         </router-link>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -31,6 +31,7 @@ export default {
       allianceTag: "",
       activeIndex: null,
       allianceName: [
+        { name: "섭취가이드", link: "/intake" },
         { name: "멤버십 안내", link: "/membership" },
         { name: "자주묻는 질문", link: "/questions" },
         { name: "1:1 문의", link: "/inquiry" },
@@ -53,7 +54,7 @@ export default {
   display: flex;
   justify-content: center;
   .tag__item {
-    flex: 0 0 19%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     button {
