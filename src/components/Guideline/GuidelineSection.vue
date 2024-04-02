@@ -211,3 +211,34 @@ export default {
   }
   }
 </style>
+<!-- <template>
+  <div>
+
+    <div v-for="post in boardList" :key="post.id" @click="viewPost(post)">
+      <h3>{{ post.title }}</h3>
+    </div>
+
+    <button @click="goToAddPostPage">글쓰기</button>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    boardList() {
+      return this.$store.getters.fnGetBoardList;
+    }
+  },
+  methods: {
+   
+
+    goToAddPostPage() {
+      this.$router.push('/guidelineCreate');
+    },
+    viewPost(post) {
+      
+      this.$router.push({ name: 'PostDetail', params: { postId: post.id } });
+    }
+  }
+};
+</script> -->

@@ -22,6 +22,8 @@ import BoardDetail from "@/components/community/BoardDetail.vue";
 import ModifyPost from "@/components/community/ModifyPost.vue";
 // 고객센터 (맴버십안내, 자주묻는질문, 1:1문의, 기업제휴문의, 공지사항)
 import GuidelineView from "@/views/GuidelineView.vue";
+import GuidelineCreateView from "@/views/GuidelineCreateView.vue";
+import GuideLineListView from "@/views/GuideLineListView.vue";
 import MembershipView from "@/views/MembershipView.vue";
 import QuestionsView from "@/views/QuestionsView.vue";
 import InquiryView from "@/views/InquiryView.vue";
@@ -81,6 +83,8 @@ export default new Router({
     { path: "/information", name: "information", component: InformationView },
     { path: "/alliance", name: "allianceview", component: AllianceView },
     { path: "/guideline", name: "guideline", component: GuidelineView },
+    { path: "/guidelineCreate", name: "guidelineCreate", component: GuidelineCreateView },
+    { path: "/guideLineList/:id", name: "postDetail", component: GuideLineListView },
     { path: "/noticepost", name: "noticepost", component: NoticePostView },
     { path: "/noticepost2", name: "noticepost2", component: NoticePostView2 },
     { path: "/noticepost3", name: "noticepost3", component: NoticePostView3 },
