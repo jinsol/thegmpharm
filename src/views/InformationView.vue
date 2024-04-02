@@ -1,9 +1,10 @@
 <template>
   <main class="row">
-    <div class="base">
-      <section-title title="이용안내" />
-      <info-section />
-    </div>
+    <section-title
+      title="이용안내"
+      sub_title="지엠팜 사이트 이용 안내를 확인할 수 있습니다"
+    />
+    <info-section />
   </main>
 </template>
 

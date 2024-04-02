@@ -383,6 +383,9 @@ header {
           position: relative;
           line-height: 1.5;
           .depth1_menu {
+            span {
+              line-height: 1em;
+            }
             .mobile_arrowIcon {
               font-size: 12px;
               margin-left: 8px;
@@ -412,6 +415,7 @@ header {
               flex: none;
               a {
                 display: inline-block;
+                line-height: 1em;
               }
               &:not(:last-child):after {
                 content: "";

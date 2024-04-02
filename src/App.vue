@@ -7,8 +7,7 @@
       <div class="spinner"></div>
       <p>Loading...</p>
     </div>
-    <div v-show="!isLoading">
-    </div>
+    <div v-show="!isLoading"></div>
   </div>
 </template>
 
@@ -16,6 +15,9 @@
 import Header from "./components/layout/Header.vue";
 import Footer from "./components/layout/Footer.vue";
 import store from "./store";
+import { gsap } from "gsap";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: "App",
   components: {

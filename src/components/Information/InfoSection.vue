@@ -1,5 +1,5 @@
 <template>
-  <div class="contents">
+  <section class="contents">
     <div class="tag__list">
       <button
         v-for="item in infoName"
@@ -178,7 +178,7 @@
         >
       </p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -217,18 +217,17 @@ export default {
 
 <style lang="scss" scoped>
 .contents {
-  padding: 0 0 100px;
   height: 660px;
   .tag__list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     button {
       color: #757575;
       font-size: 15px;
       margin-left: 0px;
       padding: 18px;
       background: #fff;
-      flex: 0 0 15%;
+      flex: 1;
       border: 1px solid #ddd;
       border-right-color: transparent;
       &:last-child {

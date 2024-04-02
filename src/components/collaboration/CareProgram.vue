@@ -30,7 +30,6 @@
         </p>
       </li>
       <li class="care_program-goto">
-        <p></p>
         <button class="gotoBT">{{ item.buttonTitle }}</button>
       </li>
     </ul>
@@ -50,10 +49,15 @@ span {
 .care_program {
   text-align: center;
   color: gray;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   & > ul {
-    padding: 6% 0 8%;
+    border: 1px solid var(--main-color);
+
     .care_program-title {
-      margin-bottom: 20px;
+      padding: 1.2em 0;
+      background-color: var(--main-color-hover);
       h4 {
         font-size: 20px;
         color: var(--main-color);
@@ -61,6 +65,9 @@ span {
       .care_program-title-target {
         li {
           display: inline;
+          font-family: var(--body-font);
+          letter-spacing: -2px;
+          font-weight: 300;
           &:first-child:after {
             content: " / ";
           }
@@ -71,7 +78,11 @@ span {
       ul {
         display: flex;
         justify-content: space-between;
+        padding: 20px 0;
         li {
+          &:not(:last-child) {
+            // border-right: 1px dotted var(--main-border);
+          }
           width: 30%;
           display: flex;
           flex-direction: column;
@@ -92,13 +103,17 @@ span {
       }
 
       .care_program-contents-warning {
-        font-family: var(--body-font);
-        font-size: 12px;
+        span {
+          font-family: var(--body-font);
+        }
+        padding: 20px;
+        font-size: var(--info-size);
         text-align: right;
         color: lightgray;
       }
     }
     .care_program-goto {
+      padding: 20px;
       .gotoBT {
         background-color: var(--main-color);
         color: white;
@@ -106,7 +121,14 @@ span {
         border: none;
         border-radius: 5px;
         padding: 10px 20px;
+        transition: all 0.5s;
         cursor: pointer;
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 4px 8px 8px var(--main-color-hover);
+          background-color: var(--main-color);
+          color: #fff;
+        }
       }
     }
   }

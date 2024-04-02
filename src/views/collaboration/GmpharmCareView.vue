@@ -142,7 +142,8 @@ main {
   }
   .care_title {
     text-align: center;
-    font-size: 30px;
+    font-size: var(--title-size);
+    padding: 2em 0;
   }
 }
 </style>

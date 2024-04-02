@@ -19,19 +19,35 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-
 export default {
   mounted() {
+    const titleBox = document.querySelector(".title_box");
+    const textBox = document.querySelector(".text_box");
     const images = document.querySelectorAll(".brand__title-image li img");
+
+    gsap.from(titleBox, {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power3.out",
+    });
+
+    gsap.from(textBox, {
+      duration: 1,
+      opacity: 0,
+      y: 50,
+      ease: "power3.out",
+      delay: 0.5,
+    });
 
     gsap.from(images, {
       duration: 1,
       opacity: 0,
       y: 100,
       scale: 0.9,
-      stagger: 0.2, // 요소들 사이의 간격을 조절하여 차례로 애니메이션을 적용
-      ease: "power3.out", // 원하는 이징 함수로 변경 가능
+      stagger: 0.2,
+      ease: "power3.out",
+      delay: 1, // titleBox와 textBox가 완전히 나타난 후 이미지들이 나타나도록 delay 추가
     });
   },
 };

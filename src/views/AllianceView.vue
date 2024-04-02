@@ -1,7 +1,10 @@
 <template>
   <main class="row">
     <div class="base">
-      <section-title title="기업제휴 문의" />
+      <section-title
+        title="기업제휴 문의"
+        sub_title="지엠팜과의 기업 제휴 문의를 할 수 있습니다"
+      />
       <button-title />
       <div class="unquiryBtn">
         <a
