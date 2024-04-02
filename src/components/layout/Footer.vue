@@ -39,7 +39,7 @@
     <div class="footerbot">
       <div class="info">
         <div class="footerlogo">
-          <router-link to="#">
+          <router-link to="/">
             <img :src="photo[0].logo" :alt="photo[0].alt" />
           </router-link>
         </div>
@@ -364,11 +364,12 @@ export default {
       text-align: center;
       flex-direction: column;
       .info {
+        text-align: center;
         color: #888;
         .footerlogo {
           width: 140px;
           height: 36px;
-          margin: 0 0 10px;
+          margin: 0 auto;
           display: block;
           text-align: center;
         }

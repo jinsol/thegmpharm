@@ -11,13 +11,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in paginatedList" :key="index">
+          <tr v-for="(item, index) in paginatedList" :key="index" class="tdBox">
             <td class="num">{{ index + 1 }}</td>
             <td class="title">
               <router-link :to="item.link">{{ item.title }}</router-link>
             </td>
-            <td>{{ item.author }}</td>
-            <td>{{ item.date }}</td>
+            <td class="author">{{ item.author }}</td>
+            <td class="date">{{ item.date }}</td>
           </tr>
         </tbody>
       </table>
@@ -137,5 +137,77 @@ export default {
     button.next{
       margin-right: 10px;
     }
+  }
+  @media screen and (max-width: 900px){
+    .notice {
+  padding: 20px 0;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    th, td {
+      padding: 1px 30px 1px 10px;
+    }
+    thead{
+      border: 1px solid #e7e7e7;
+      background: #f9f9f9;
+      border-right: none;
+      display: none;
+    th {
+      text-align: left;
+    }
+    th.title{
+      text-align: center;
+      display: none;
+    }
+    th.num{
+      text-align: center;
+      display: none;
+    }
+  }
+.tdBox{  
+  display: flex;
+  justify-content: flex-start;
+  td.title{
+    text-align: left;
+  }
+    td {
+      word-break: break-all;
+      border-bottom: 1px solid #e7e7e7;
+      text-align: center;
+    }
+  }
+}
+.title{
+  width: 60%;
+}
+.num{
+  text-align: center;
+  width: 10%;
+}
+.author{font-size: 10px;}
+.date{font-size: 10px;}}
+  .angle{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    button {
+      border: 1px solid lightgray;
+      color: gray;
+      font-weight: 100;
+      width: 40px;
+      height: 40px;
+      font-size: 12px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button.prev{
+      margin-right: 10px;
+    }
+    button.next{
+      margin-right: 10px;
+    }
+  }
   }
 </style>
