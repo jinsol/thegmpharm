@@ -8,20 +8,6 @@
       <p>Loading...</p>
     </div>
     <div v-show="!isLoading">
-<<<<<<< HEAD
-=======
-      <Header />
-      <router-view />
-      <Footer />
-      <!-- <test-section />
-      <event-section />
-      <best-product-section />
-      <slide-section2 />
-      <hot-key-word-section />
-      <new-prd-section />
-      <instargram-section />
-      <go-link-section /> -->
->>>>>>> 885a0b9be40e5426c16483ff01f3aa30077a4109
     </div>
   </div>
 </template>
