@@ -1,21 +1,13 @@
 <template>
   <div>
+    <Header />
+    <router-view />
+    <Footer />
     <div class="loading-overlay" v-show="isLoading">
       <div class="spinner"></div>
       <p>Loading...</p>
     </div>
     <div v-show="!isLoading">
-    <Header />
-    <router-view />
-    <Footer />
-      <test-section />
-      <event-section />
-      <best-product-section />
-      <slide-section2 />
-      <hot-key-word-section />
-      <new-prd-section />
-      <instargram-section />
-      <go-link-section />
     </div>
   </div>
 </template>
@@ -40,7 +32,7 @@ export default {
     window.addEventListener("resize", this.updateScreenWidth);
     setTimeout(() => {
       this.isLoading = false;
-    }, 3000);
+    }, 3500);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.updateScreenWidth);
@@ -69,10 +61,11 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99999999;
 }
 .spinner {
   border: 4px solid #f3f3f3;

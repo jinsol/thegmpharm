@@ -8,7 +8,6 @@
     <new-prd-section />
     <instargram-section />
     <go-link-section />
-
   </main>
 </template>
 
