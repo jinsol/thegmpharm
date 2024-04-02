@@ -1,6 +1,9 @@
 <template>
   <main class="row">
-    <section-title title="이용약관" />
+    <section-title
+      title="이용약관"
+      sub_title="지엠팜의 사이트 이용약관을 확인하세요"
+    />
     <div class="base">
       <div class="outBox">
         <div class="inBox">

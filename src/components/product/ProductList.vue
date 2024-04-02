@@ -129,6 +129,29 @@ export default {
       }
     },
   },
+  mounted() {
+    window.scrollTo(0, 0);
+    gsap.registerPlugin(ScrollTrigger);
+    const trigger = {
+      trigger: this.$el,
+      start: "20% 100%", // 시작 지점
+      end: "100% 100%", // 끝 지점
+      toggleActions: "play none none none", // 트리거 시 동작 설정 (시작할 때 play)
+    };
+
+    const timeline = gsap.timeline({
+      scrollTrigger: trigger,
+    });
+
+    timeline.from(".product__list ul li", {
+      opacity: 0,
+      y: 20,
+      rotationY: 50, // perspective 적용
+      duration: 1,
+      delay: 1.5,
+      stagger: 0.02,
+    });
+  },
 };
 </script>
 
@@ -146,21 +169,17 @@ export default {
   }
   .list_main {
     .product_list {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+      gap: 2%;
       flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
+      perspective: 900px;
       ul {
         display: flex;
         flex-direction: column;
-        // flex-basis: 20%;
-        width: 18.4%;
-        margin-right: 2%;
-        margin-bottom: 2%;
-        &:nth-child(5n) {
-          margin-right: 0;
-        }
-
+        width: 100%;
         .product_image {
           width: 100%;
           aspect-ratio: 1/1;

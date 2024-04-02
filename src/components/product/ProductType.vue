@@ -29,23 +29,44 @@ export default {
       this.$emit("click", type);
     },
   },
+  mounted() {
+    const items = this.$el.querySelectorAll(".product__type ul li");
+    gsap.from(items, {
+      opacity: 0,
+      y: 20,
+      duration: 0.5,
+      delay: 0.8,
+      stagger: 0.1, // Stagger time between animations
+    });
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .product__type {
-  margin: 1.4% auto;
-
+  margin: 0 auto;
   ul {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
     li {
-      display: inline-block;
-      margin-right: 1%;
       button {
+        font-size: var(--body-size);
+        display: flex;
+        line-height: 1em;
+        padding: 15px 20px 12px;
         background-color: white;
         color: var(--main-color);
         border: 1px solid var(--main-color);
-        padding: 8px 18px;
+        transform: translateY(0);
         border-radius: 50px;
+        transition: all 0.5s;
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 4px 8px 8px var(--main-color-hover);
+          background-color: var(--main-color);
+          color: #fff;
+        }
         &.active {
           background-color: var(--main-color);
           color: white;

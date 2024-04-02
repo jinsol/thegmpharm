@@ -30,30 +30,14 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-
 export default {
   mounted() {
-    gsap.fromTo(
-      ".pill_title-main-title",
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, ease: "power2.inOut", duration: 1 }
-    );
-    gsap.utils
-      .toArray(".pill_title-main-text li p")
-      .forEach((selector, index) => {
-        gsap.fromTo(
-          selector,
-          { opacity: 0, y: 50, overflow: "hidden" },
-          {
-            opacity: 1,
-            y: 0,
-            ease: "power2.inOut",
-            duration: 1,
-            delay: 0.5,
-          }
-        );
-      });
+    gsap.from(".pill_title-main-title", { opacity: 0, y: 50 });
+    gsap.from(".pill_title-main-text li", {
+      opacity: 0,
+      y: 50,
+      stagger: 0.2, // 요소들이 순차적으로 등장하도록 설정
+    });
   },
 };
 </script>

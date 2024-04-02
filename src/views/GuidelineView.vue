@@ -1,6 +1,9 @@
 <template>
   <main class="row">
-    <section-title title="공지사항" />
+    <section-title
+      title="공지사항"
+      sub_title="지엠팜의 공지사항을 확인하세요"
+    />
     <button-title />
     <guideline-section />
     <guideline-search />

@@ -1,6 +1,9 @@
 <template>
   <main class="row">
-    <section-title title="개인정보취급방침" />
+    <section-title
+      title="개인정보취급방침"
+      sub_title="지엠팜의 개인정보취급방침을 확인하세요"
+    />
     <div class="base">
       <div class="outBox">
         <div class="inBox">

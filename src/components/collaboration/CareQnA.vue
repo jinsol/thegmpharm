@@ -42,69 +42,77 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  text-align: center;
-  font-size: 2em;
-  span {
-    color: var(--main-color);
-  }
-}
-.list_box {
-  width: 100%;
-  li {
-    ul {
-      padding: 1.6% 0;
-      display: flex;
-      justify-content: space-between;
-      cursor: pointer;
-      .list_box-tag {
-        width: 2%;
-        color: var(--main-color);
-        font-weight: bolder;
-      }
-      .list_box-text {
-        text-align: left;
-        font-family: "Gothic A1";
-        word-break: keep-all;
-        flex: 1;
-        line-height: 160%;
-      }
-      .list_box-arrow {
-        padding: 0 6px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.5s ease-in-out;
-      }
-    }
-    .list_box_Q {
-      border-bottom: 1px solid var(--gray-color);
-    }
-    .list_box_A {
-      display: none;
-      background-color: whitesmoke;
+.QnA_section {
+  padding: 4em 0;
+  .title {
+    text-align: center;
+    font-size: var(--title-size);
+    padding: 2em 0;
+    span {
+      color: var(--main-color);
     }
   }
-}
-
-.list_box.active {
-  .list_box-arrow {
-    transform: rotate(180deg);
-  }
-  .list_box_A {
-    display: flex;
-  }
-}
-
-.QnA_section.mobile {
   .list_box {
-    padding: 0 3%;
+    width: 100%;
     li {
       ul {
-        padding: 3% 0;
+        padding: 1.6% 0;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
         .list_box-tag {
-          width: auto;
-          padding-right: 2%;
+          width: 5%;
+          display: flex;
+          justify-content: center;
+          color: var(--main-color);
+          font-weight: bolder;
+        }
+        .list_box-text {
+          text-align: left;
+          font-family: var(--body-font);
+          letter-spacing: -1.4px;
+          font-weight: 300;
+          word-break: keep-all;
+          flex: 1;
+          line-height: 1.6em;
+        }
+        .list_box-arrow {
+          padding: 0 6px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.5s ease-in-out;
+        }
+      }
+      .list_box_Q {
+        border-bottom: 1px solid var(--gray-color);
+      }
+      .list_box_A {
+        display: none;
+        background-color: whitesmoke;
+      }
+    }
+  }
+
+  .list_box.active {
+    .list_box-arrow {
+      transform: rotate(180deg);
+    }
+    .list_box_A {
+      display: flex;
+    }
+  }
+
+  .QnA_section.mobile {
+    .list_box {
+      padding: 0 3%;
+      li {
+        ul {
+          padding: 3% 0;
+          .list_box-tag {
+            width: auto;
+            padding-right: 2%;
+          }
         }
       }
     }

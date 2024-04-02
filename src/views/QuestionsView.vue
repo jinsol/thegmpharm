@@ -1,6 +1,9 @@
 <template>
   <main class="row">
-    <section-title title="자주묻는 질문" />
+    <section-title
+      title="자주묻는 질문"
+      sub_title="자주 묻는 질문들을 확인하세요"
+    />
     <button-title />
     <question-tag />
   </main>

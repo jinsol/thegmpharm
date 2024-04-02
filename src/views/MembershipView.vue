@@ -1,6 +1,9 @@
 <template>
   <main class="row">
-    <section-title title="멤버십 안내" />
+    <section-title
+      title="멤버십 안내"
+      sub_title="지엠팜 회원만의 특별한 혜택을 만나보세요!"
+    />
     <button-title />
     <div class="contents">
       <div class="info-section">
