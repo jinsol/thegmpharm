@@ -15,7 +15,7 @@
       <li>*기존에 보험을 가지고 있더라도 중복 보장이 가능합니다.</li>
       <li>*보험료는 전액 지엠팜이 부담합니다.</li>
     </ul>
-    <p>
+    <p class="care_introduction-image">
       <!-- <img src="../../../public/image/gmpharmCare_collaboration.png" alt="" /> -->
       <img
         :src="`./image/gmpharmCare_collaboration.png`"
@@ -26,7 +26,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    gsap.from(".care_introduction-title", { opacity: 0, y: 50 });
+    gsap.from(".care_introduction-contents", { opacity: 0, y: 50, delay: 0.5 });
+    gsap.from(".care_introduction-image", { opacity: 0, y: 50, delay: 1 });
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +44,6 @@ span {
   .care_introduction-title {
     font-size: clamp(18px, 2.5vw, 28px);
     font-weight: lighter;
-    transition: all 0.3s;
     margin-bottom: 20px;
     line-height: 140%;
     color: gray;

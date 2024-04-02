@@ -1,7 +1,6 @@
 <template>
   <main class="row">
     <care-introduction />
-    <h3 class="care_title">지엠팜케어 프로그램 보장 내역</h3>
     <care-program :program="program" />
     <Care-qnA :answerData="answerData" :class="{ mobile: isMobile }" />
     <!-- <img :src="`./image/GmpharmCare_02.jpg`" alt="" /> -->
@@ -31,15 +30,18 @@ export default {
           insuranceProducts: [
             {
               image: "./image/gmpaharmcare_p1_1.png",
-              content: "골절 시 10만원 (골절 1회당)",
+              content: "골절 시 10만원",
+              content_sub: "(골절 1회당)",
             },
             {
               image: "./image/gmpaharmcare_p1_2.png",
-              content: "재해수술 시 10만원 (수술 1회당)",
+              content: "재해수술 시 10만원",
+              content_sub: "(수술 1회당)",
             },
             {
               image: "./image/gmpaharmcare_p1_3.png",
-              content: "'어린이질환' 수술 시 최대 100만원 (수술 1회당)",
+              content: "'어린이질환' 수술 시 최대 100만원",
+              content_sub: "(수술 1회당)",
             },
           ],
           buttonTitle: "유소아·어린이 제품 구매하러 가기",
@@ -51,15 +53,18 @@ export default {
           insuranceProducts: [
             {
               image: "./image/gmpaharmcare_p2_1.png",
-              content: "골절 시 10만원 (골절 1회당)",
+              content: "골절 시 10만원",
+              content_sub: "(골절 1회당)",
             },
             {
               image: "./image/gmpaharmcare_p2_2.png",
-              content: "재해수술 시 10만원 (수술 1회당)",
+              content: "재해수술 시 10만원",
+              content_sub: "(수술 1회당)",
             },
             {
               image: "./image/gmpaharmcare_p2_3.png",
-              content: "'대상포진' 진단 시 10만원 (최초 1회한)",
+              content: "'대상포진' 진단 시 10만원",
+              content_sub: "(최초 1회한)",
             },
           ],
           buttonTitle: "성인 제품 구매하러 가기",
@@ -139,11 +144,6 @@ export default {
 main {
   img {
     width: 100%;
-  }
-  .care_title {
-    text-align: center;
-    font-size: var(--title-size);
-    padding: 2em 0;
   }
 }
 </style>

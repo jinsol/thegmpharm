@@ -61,16 +61,20 @@ export default {
         justify-content: space-between;
         cursor: pointer;
         .list_box-tag {
-          width: 2%;
+          width: 5%;
+          display: flex;
+          justify-content: center;
           color: var(--main-color);
           font-weight: bolder;
         }
         .list_box-text {
           text-align: left;
-          font-family: "Gothic A1";
+          font-family: var(--body-font);
+          letter-spacing: -1.4px;
+          font-weight: 300;
           word-break: keep-all;
           flex: 1;
-          line-height: 160%;
+          line-height: 1.6em;
         }
         .list_box-arrow {
           padding: 0 6px;
