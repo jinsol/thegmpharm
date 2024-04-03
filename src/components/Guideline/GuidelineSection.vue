@@ -12,12 +12,12 @@
         </thead>
         <tbody>
           <tr v-for="(item, index) in paginatedList" :key="index" class="tdBox">
-            <td class="num">{{ index + 1 }}</td>
-            <td class="title">
-              <router-link :to="item.link">{{ item.title }}</router-link>
-            </td>
-            <td class="author">{{ item.author }}</td>
-            <td class="date">{{ item.date }}</td>
+              <td class="num">{{ index + 1 }}</td>
+              <td class="title">
+                <router-link :to="item.link">{{ item.title }}</router-link>
+              </td>
+              <td class="author">{{ item.author }}</td>
+              <td class="date">{{ item.date }}</td>
           </tr>
         </tbody>
       </table>
@@ -145,7 +145,7 @@ export default {
     width: 100%;
     border-collapse: collapse;
     th, td {
-      padding: 1px 30px 1px 10px;
+      padding: 1px 1px 1px 5px;
     }
     thead{
       border: 1px solid #e7e7e7;
@@ -167,6 +167,9 @@ export default {
 .tdBox{  
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 10px 0;
   td.title{
     text-align: left;
   }
@@ -175,17 +178,35 @@ export default {
       border-bottom: 1px solid #e7e7e7;
       text-align: center;
     }
-  }
+    td.title{
+  width: 400%;
+  border: none;
+  font-size: 18px;
 }
-.title{
-  width: 60%;
-}
-.num{
+td.num{
   text-align: center;
   width: 10%;
+  display: none;
 }
-.author{font-size: 10px;}
-.date{font-size: 10px;}}
+td.author{
+  width: 10%;
+  font-size: 10px;
+  text-align: left;
+  border: none;
+  color: #808080;
+  font-size: 13px
+}
+td.date{
+  width: 20%;
+  font-size: 10px;
+  text-align: left;
+  border: none;
+  color: #808080;
+  font-size: 13px
+}
+  }
+}
+}
   .angle{
     padding: 30px;
     display: flex;
