@@ -157,6 +157,7 @@ export default {
   }
   @media screen and (max-width: 900px) {
     .pill_introduction-contents {
+      align-items: center;
       li {
         &.pill_introduction-contents-pill {
           position: relative;

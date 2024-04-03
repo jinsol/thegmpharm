@@ -68,6 +68,7 @@ export default {
         font-weight: 100;
         font-size: var(--small-body-size);
         transition: all 0.5s;
+        line-height: 1em;
         &::after {
           content: "";
           display: block;

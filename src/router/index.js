@@ -83,8 +83,16 @@ export default new Router({
     { path: "/information", name: "information", component: InformationView },
     { path: "/alliance", name: "allianceview", component: AllianceView },
     { path: "/guideline", name: "guideline", component: GuidelineView },
-    { path: "/guidelineCreate", name: "guidelineCreate", component: GuidelineCreateView },
-    { path: "/guideLineList/:id", name: "postDetail", component: GuideLineListView },
+    {
+      path: "/guidelineCreate",
+      name: "guidelineCreate",
+      component: GuidelineCreateView,
+    },
+    {
+      path: "/guideLineList/:id",
+      name: "postDetail",
+      component: GuideLineListView,
+    },
     { path: "/noticepost", name: "noticepost", component: NoticePostView },
     { path: "/noticepost2", name: "noticepost2", component: NoticePostView2 },
     { path: "/noticepost3", name: "noticepost3", component: NoticePostView3 },
@@ -112,20 +120,13 @@ export default new Router({
     { path: "/login", name: "login", component: Loginview },
     { path: "/signup", name: "signup", component: SignUpview },
   ],
-  scrollBehavior(to,from, savedPosition){
-    if(savedPosition){
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
       //이전 위치로 스크롤
-      return savedPosition
-    }else{
+      return savedPosition;
+    } else {
       //새로운 라우트로 이동 시 페이지 맨 위로 스크롤
-      return {x:0, y:0};
+      return { x: 0, y: 0 };
     }
   },
-  // router.beforeEach((to,from,next))=>{
-  //   if(!AuthenticatorAssertionResponse.loggedin){
-  //     next({
-  //       next
-  //     })
-  //   }
-  // }
 });
