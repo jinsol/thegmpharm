@@ -168,10 +168,11 @@ export default {
     }
   }
   .list_main {
+    display: flex;
     .product_list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
-      gap: 2%;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
       flex-wrap: wrap;
       align-items: center;
       justify-content: flex-start;
@@ -268,14 +269,7 @@ export default {
 .product__list.mobile {
   .list_main {
     .product_list {
-      ul {
-        width: 49%;
-
-        margin-right: 2%;
-        &:nth-child(2n) {
-          margin-right: 0;
-        }
-      }
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }

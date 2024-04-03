@@ -109,6 +109,7 @@ export default {
       }
     }
     .teuni_section-btn_box {
+      z-index: 1;
       display: flex;
       justify-content: center;
       a {
@@ -122,9 +123,15 @@ export default {
       }
     }
   }
+  &.row-reverse .teuni_section-contents ul {
+    flex-direction: row-reverse;
+  }
   @media screen and (max-width: 900px) {
     & {
       padding: 0 4%;
+    }
+    &.row-reverse > ul > .teuni_section-contents > ul {
+      flex-direction: column;
     }
     ul {
       justify-content: flex-start;
@@ -132,10 +139,20 @@ export default {
         height: 80%;
         ul {
           flex-direction: column;
+          .text_box {
+            justify-content: center;
+            padding: 20px 0;
+            text-align: center;
+            h3 {
+              img {
+                height: 60px;
+              }
+            }
+          }
           .img_box {
             div {
               img {
-                width: 50%;
+                width: 40%;
               }
             }
           }
@@ -158,9 +175,6 @@ export default {
   }
   &.row-reverse .rotate-animation.rotate {
     transform: rotate(-10deg) translate(-20px, -20px); /* 회전 각도 설정 */
-  }
-  &.row-reverse .teuni_section-contents ul {
-    flex-direction: row-reverse;
   }
 }
 </style>

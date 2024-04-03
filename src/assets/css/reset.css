@@ -45,7 +45,7 @@ body {
   --body-size: clamp(16px, 2.5vw, 20px);
   --small-body-size: clamp(13px, 2.5vw, 16px);
   --title-size: clamp(18px, 2.5vw, 28px);
-  --teuni-intro-size: clamp(28px, 2.5vw, 42px);
+  --teuni-intro-size: clamp(24px, 2.5vw, 42px);
 }
 a {
   text-decoration: none;
