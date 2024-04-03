@@ -112,4 +112,13 @@ export default new Router({
     { path: "/login", name: "login", component: Loginview },
     { path: "/signup", name: "signup", component: SignUpview },
   ],
+  scrollBehavior(to,from, savedPosition){
+    if(savedPosition){
+      //이전 위치로 스크롤
+      return savedPosition
+    }else{
+      //새로운 라우트로 이동 시 페이지 맨 위로 스크롤
+      return {x:0, y:0};
+    }
+  }
 });
