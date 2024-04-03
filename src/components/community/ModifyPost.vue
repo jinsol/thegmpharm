@@ -57,6 +57,7 @@ export default {
             name: "board-detail",
             params: { id: this.postId, type: this.boardType },
           });
+          this.$router.go(-3);
 
           // 수정된 내용을 로컬 스토리지에 반영
           const modifiedPostKey =

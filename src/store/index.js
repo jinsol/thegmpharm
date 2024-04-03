@@ -172,7 +172,7 @@ export default new Vuex.Store({
       if (loggedInUser) {
         commit("login", loggedInUser);
         alert("로그인에 성공하였습니다.");
-        window.location.href = "/";
+        window.location.href = "/home";
         return true;
       } else {
         alert("아이디 또는 비밀번호가 일치하지 않습니다.");

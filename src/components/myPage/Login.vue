@@ -46,7 +46,7 @@ export default {
           password: this.password,
         });
       } else {
-        alert("Please enter username and password");
+        alert("올바른 아이디와 패스워드를 입력해주세요");
       }
     },
   },
