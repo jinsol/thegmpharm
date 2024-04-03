@@ -41,7 +41,8 @@
           <li class="cart_list-right-content-title">
             <h3>영수증 <span>Receipt</span></h3>
           </li>
-          <li>총 {{ cartItemCount }} 종류이고 개수는{{ totalCartLength }}개</li>
+          <li>총 {{ cartItemCount }} 종류의 상품이 있습니다</li>
+          <li>총 {{ totalCartLength }}개의 상품이 있습니다</li>
           <li>
             <p>합계</p>
             <p>{{ totalCartPrice | formatPrice }}</p>
@@ -170,18 +171,23 @@ export default {
             }
           }
           &.cart_list-left-price {
-            width: 10%;
+            width: 14%;
           }
           &.cart_list-left-quantity {
-            width: 10%;
+            width: 14%;
           }
           &.cart_list-left-totalPrice {
-            width: 10%;
+            width: 14%;
           }
           &.cart_list-left-remove {
             width: 5%;
             justify-content: center;
           }
+        }
+        .cart_list-left-price,
+        .cart_list-left-quantity,
+        .cart_list-left-totalPrice {
+          justify-content: center;
         }
       }
       .cart_list-left-content {
@@ -202,6 +208,11 @@ export default {
           span {
             width: 50%;
           }
+        }
+        .cart_list-left-price,
+        .cart_list-left-quantity,
+        .cart_list-left-totalPrice {
+          justify-content: center;
         }
         .cart_list-left-remove {
           button {
@@ -252,11 +263,18 @@ export default {
           text-align: center;
           button {
             color: white;
-            font-size: 16px;
+            font-size: var(--button-size);
             display: block;
             padding: 6%;
             width: 100%;
             background-color: var(--main-color);
+            transition: all 0.5s;
+            &:hover {
+              transform: translateY(-4px);
+              box-shadow: 0 4px 8px 8px var(--main-color-hover);
+              background-color: var(--main-color);
+              color: #fff;
+            }
           }
         }
       }
@@ -306,8 +324,12 @@ export default {
               .imageBox {
                 max-width: 100px;
               }
-              .textBox {
-              }
+            }
+            .cart_list-left-price,
+            .cart_list-left-quantity,
+            .cart_list-left-totalPrice {
+              width: 14%;
+              justify-content: center;
             }
           }
         }
