@@ -120,5 +120,12 @@ export default new Router({
       //새로운 라우트로 이동 시 페이지 맨 위로 스크롤
       return {x:0, y:0};
     }
-  }
+  },
+  // router.beforeEach((to,from,next))=>{
+  //   if(!AuthenticatorAssertionResponse.loggedin){
+  //     next({
+  //       next
+  //     })
+  //   }
+  // }
 });
